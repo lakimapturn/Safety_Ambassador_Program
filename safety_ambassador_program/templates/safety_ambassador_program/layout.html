@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Safety Ambassador Program</title>
+        <link rel="shortcut icon" href = "https://www.safetyandhealthmagazine.com/ext/resources/images/news/NSC/Safety-Ambassador-logo.jpg?1532462257" type="image/x-icon">
+        <link rel="stylesheet" href = "{% static 'safety_ambassador_program/styles.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"
+            rel="stylesheet"
+        />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    </head>
+    <body class = "light">
+        <!-- <h1>Safety Ambassador Program</h1> -->
+        <header class="cd-header">
+            <div class="header-wrapper">
+                <div class="logo-wrap">
+                    <a href="#" class="hover-target">logo</a>
+                </div>
+                <div class="nav-but-wrap">
+                    <div class="menu-icon hover-target">
+                        <span class="menu-icon__line menu-icon__line-left"></span>
+                        <span class="menu-icon__line"></span>
+                        <span class="menu-icon__line menu-icon__line-right"></span>
+                    </div>					
+                </div>					
+            </div>				
+        </header>
+    
+        <div class="nav">
+            <div class="nav__content">
+                <ul class="nav__list">
+                    <li class="nav__list-item active-nav"><a href="{% url 'index' %}" class="hover-target">Home</a></li>
+                    <li class="nav__list-item"><a href="#" class="hover-target">Games</a></li>
+                    <li class="nav__list-item"><a href="#" class="hover-target">About</a></li>
+                    <!-- <li class="nav__list-item"><a href="#" class="hover-target">contact</a></li> -->
+                </ul>
+            </div>
+        </div>		
+    
+        <div class="section full-height over-hide">	
+            <div class="switch-wrap">
+                <h1>Safety Ambassador Program</h1>
+            </div>
+        </div>	
+
+        <div class = "page-content">
+            {% block body %}
+            {% endblock %}
+            {% if request.user.is_authenticated %}
+                
+            {% else %}
+                {% block login %}
+                {% endblock %}
+            {% endif %}
+        </div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        
+        (function($) { "use strict";
+                
+                //Navigation
+            
+                var app = function () {
+                    var body = undefined;
+                    var menu = undefined;
+                    var menuItems = undefined;
+                    var init = function init() {
+                        body = document.querySelector('body');
+                        menu = document.querySelector('.menu-icon');
+                        menuItems = document.querySelectorAll('.nav__list-item');
+                        applyListeners();
+                    };
+                    var applyListeners = function applyListeners() {
+                        menu.addEventListener('click', function () {
+                            return toggleClass(body, 'nav-active');
+                        });
+                    };
+                    var toggleClass = function toggleClass(element, stringClass) {
+                        if (element.classList.contains(stringClass)) element.classList.remove(stringClass);else element.classList.add(stringClass);
+                    };
+                    init();
+                }();
+            
+                
+                // //Switch light/dark
+                
+                // $("#switch").on('click', function () {
+                //     if ($("body").hasClass("light")) {
+                //         $("body").removeClass("light");
+                //         $("#switch").removeClass("switched");
+                //     }
+                //     else {
+                //         $("body").addClass("light");
+                //         $("#switch").addClass("switched");
+                //     }
+                // });
+                
+            })(jQuery); 
+        </script>
+    </body>
+</html>
