@@ -1,0 +1,93 @@
+{% extends "safety_ambassador_program/layout.html" %}
+
+{% block title %} Safety Ambassador Program {% endblock %}
+
+{% block body %}
+<div class = "slide-in from-right index-section-container">
+    <h2>Recommended Games</h2>
+    <div class = "carousel-containers">
+      <div class = "update-title">
+        <h3>Check these out!</h3>
+      </div>
+        <div>
+          <div id="firstCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#firstCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#firstCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#firstCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+                <div class="carousel-inner">
+                  {% for item in Digital %}
+                    {% if forloop.counter == 1 %}
+                      <div class="carousel-item active">
+                    {% else %}
+                      <div class="carousel-item">
+                    {% endif %}
+                      <img src="{{item.image.url}}" class="d-block" alt="..." height = "600" width="1100">
+                      <div style = "background-color: rgba(0, 0, 0, 0.74);" class="carousel-caption d-none d-md-block">
+                        <a style = "color: white;" href = "{{item.url}}">
+                          <h5>{{item.title}}</h5>
+                        </a>
+                        <p>{{item.description}}</p>
+                      </div>
+                  </div>
+                {% endfor %} 
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#firstCarousel" data-bs-slide="prev">
+                <span class="" style="color: black; font-size: 5rem;" aria-hidden="true">&#8249;</span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#firstCarousel" data-bs-slide="next">
+                <span class="" style="color: black; font-size: 5rem;" aria-hidden="true">&#8250;</span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+      </div>
+  </div>
+
+    <div class = "slide-in from-right index-section-container">
+      <h2>Recommended Games</h2>
+      <div class = "carousel-containers">
+          <div>
+            <div id="secondCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#secondCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#secondCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#secondCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                  <div class="carousel-inner">
+                    {% for item in Digital|slice:"3:6" %}
+                      {% if forloop.counter == 1 %}
+                        <div class="carousel-item active">
+                      {% else %}
+                        <div class="carousel-item">
+                      {% endif %}
+                        <img src="{{item.image.url}}" class="d-block" alt="..." height = "600" width="1100">
+                        <div style = "background-color: rgba(0, 0, 0, 0.74);" class="carousel-caption d-none d-md-block">
+                          <a style = "color: white;" href = "{{item.url}}">
+                            <h5>{{item.title}}</h5>
+                          </a>
+                          <p>{{item.description}}</p>
+                        </div>
+                    </div>
+                  {% endfor %} 
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#secondCarousel" data-bs-slide="prev">
+                  <span class="" style="color: black; font-size: 5rem;" aria-hidden="true">&#8249;</span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#secondCarousel" data-bs-slide="next">
+                  <span class="" style="color: black; font-size: 5rem;" aria-hidden="true">&#8250;</span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <div class = "update-title">
+              <h3>Games For All Grades!</h3>
+          </div>
+        </div>
+    </div>
+
+  </div>
+{% endblock %}
