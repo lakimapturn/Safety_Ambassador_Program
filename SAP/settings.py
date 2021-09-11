@@ -26,7 +26,7 @@ SECRET_KEY = 'g^7!uxnnkm(@r-pydt%g48(+yuqjd%+c=oi3hly42uow%^ke_6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['safety-ambassador-program.herokuapp', '127.0.0.1']
+ALLOWED_HOSTS = ['safety-ambassador-program.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
