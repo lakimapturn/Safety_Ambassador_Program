@@ -4,11 +4,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.db import IntegrityError
-
+from django.views.decorators.clickjacking import xframe_options_exempt
 from .models import Digital, Grade, User, Article, Section
 
 # Create your views here.
 
+@xframe_options_exempt
 @login_required
 def index(request):
     # print(user_stats = request.user.objects.user_stats(request.user.start_time, request.user.end_time))

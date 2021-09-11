@@ -26,7 +26,7 @@ SECRET_KEY = 'g^7!uxnnkm(@r-pydt%g48(+yuqjd%+c=oi3hly42uow%^ke_6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['safety-ambassador-program.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['safety-ambassador-program.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -131,3 +131,9 @@ AUTH_USER_MODEL = 'safety_ambassador_program.User'
 
 # Tracking settings
 TRACK_IGNORE_STATUS_CODES = [400, 404, 403, 405, 410, 500]
+
+# Login Settings
+LOGIN_URL = 'authentication_page'
+
+# X-Frame Options
+X_FRAME_OPTIONS = 'SAMEORIGIN'
