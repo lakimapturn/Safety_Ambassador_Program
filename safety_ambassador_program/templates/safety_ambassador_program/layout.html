@@ -52,10 +52,12 @@
                     <h1 class = "display-3">{% block title %}{% endblock %}</h1>
                 </div>
             </div>
-            {% if request.url == "" %}
+            {% if request.path == "/" %}
+            <a href = "{% url 'games_page' %}">
                 <div class = "header col fade-in">
                     <button class = "btn btn-info btn-lg btn-radius">Get Started</button>
                 </div>
+            </a>
             {% endif %}
         </div>	
 
