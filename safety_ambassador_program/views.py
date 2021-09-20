@@ -4,13 +4,13 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.db import IntegrityError
-from django.views.decorators.clickjacking import xframe_options_exempt
+from django.views.decorators.clickjacking import xframe_options_exempt, xframe_options_sameorigin
 from .models import Digital, Grade, User, Article, Section
 
 # Create your views here.
 
-@xframe_options_exempt
 @login_required
+@xframe_options_exempt
 def index(request):
     # print(user_stats = request.user.objects.user_stats(request.user.start_time, request.user.end_time))
     return render(request, "safety_ambassador_program/index.html", {
@@ -34,8 +34,8 @@ def authenticationPage(request):
     #     return HttpResponseRedirect(reverse("index"))
         
     if request.method == 'POST' and request.POST['purpose'] == "login": # If the user is attempting to login this function runs
-        enteredUsername = request.POST["username"]
-        enteredPassword = request.POST["password"]
+        enteredUsername = request.POST["loguser"]
+        enteredPassword = request.POST["logpass"]
         user = authenticate(request, username = enteredUsername, password = enteredPassword)
 
         if user is not None: # checking if the user exists or not
@@ -46,16 +46,15 @@ def authenticationPage(request):
                 "purpose": "login", 
                 "message": "Invalid username and/or password!"
             })
-    elif(request.method == 'POST'): # if the user has submitted data this function runs
-        enteredUsername = request.POST["username"]
-        enteredEmail = request.POST["email"]
-        enteredFirstName = request.POST["first_name"]
-        enteredLastName = request.POST["last_name"]
-        enteredPassword = request.POST["password"]
+    elif(request.method == 'POST' and request.POST['purpose'] == "register"): # if the user has submitted data this function runs
+        enteredUsername = request.POST["loguname"]
+        enteredGrade = request.POST["loggrade"]
+        enteredFirstName = request.POST["logfname"]
+        enteredPassword = request.POST["logpass"]
 
         # Trying to create a new user
-        try: 
-            user = User.objects.create_user(username = enteredUsername, email = enteredEmail, password = enteredPassword, first_name = enteredFirstName, last_name = enteredLastName)
+        try: # add grade 
+            user = User.objects.create_user(username = enteredUsername, password = enteredPassword, first_name = enteredFirstName)
             user.save()
         except IntegrityError:
             return render(request, "safety_ambassador_program/authentication.html", {
@@ -68,3 +67,9 @@ def authenticationPage(request):
         return render(request, "safety_ambassador_program/authentication.html", {
             "purpose": "login"
         })
+
+def logoutPage(request): # function to log user out
+	logout(request)
+	return render(request, "safety_ambassador_program/authentication.html", {
+			"purpose": "login"
+		})
