@@ -664,6 +664,7 @@ body.light .switch-wrap p span:nth-child(1):before {
 	background-color: rgba(0, 0, 0, 0.445);
 	float: left;
 	z-index: 1000;
+	padding: 0.25rem;
 }
 
 .yt-link-title:hover {
