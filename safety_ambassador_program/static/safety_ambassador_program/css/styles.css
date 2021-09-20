@@ -660,11 +660,12 @@ body.light .switch-wrap p span:nth-child(1):before {
 .yt-link-title {
 	position: absolute;
 	opacity: 0;
-	transition: opacity 600ms ease-in;
+	transition: opacity 100ms ease-in;
 	background-color: rgba(0, 0, 0, 0.445);
 	float: left;
 	z-index: 1000;
 	padding: 0.25rem;
+	color: white;
 }
 
 .yt-link-title:hover {
