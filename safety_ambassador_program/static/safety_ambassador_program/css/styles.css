@@ -653,6 +653,23 @@ body.light .switch-wrap p span:nth-child(1):before {
 	object-fit: cover;
 }
 
+.yt-container {
+	position: relative;
+}
+
+.yt-link-title {
+	position: absolute;
+	opacity: 0;
+	transition: opacity 600ms ease-in;
+	background-color: rgba(0, 0, 0, 0.445);
+	float: left;
+	z-index: 1000;
+}
+
+.yt-link-title:hover {
+	opacity: 1;
+}
+
 /* FADE AND SCROLL IN STYLES 
 ====================================== */
 
