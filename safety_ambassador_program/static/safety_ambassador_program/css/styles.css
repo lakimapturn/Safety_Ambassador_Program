@@ -500,8 +500,7 @@ body.light .switch-wrap p span:nth-child(1):before {
 }
 
 /* .page-content {
-    padding: 1rem;
-
+    margin: 1rem 0rem;
 } */
 
 /* Get Started Button 
@@ -591,9 +590,9 @@ body.light .switch-wrap p span:nth-child(1):before {
 ================================================== */
 
 hr {
-	width: 90%;
-	border: 0.125rem;
-	margin: auto;
+	height: 0.125rem !important;
+	width: 95%;
+	margin: 1rem auto !important;
 }
 
 .layout-header {
@@ -659,22 +658,10 @@ hr {
 	object-fit: cover;
 }
 
-.yt-container {
-	position: relative;
-}
-
-.yt-link-title {
-	position: absolute;
-	opacity: 0;
-	transition: opacity 100ms ease-in;
-	background-color: rgba(0, 0, 0, 0.445);
-	z-index: 1000;
-	padding: 0.25rem;
-	color: white;
-}
-
-.yt-link-title:hover {
-	opacity: 1;
+.index-test-containers {
+	display: flex;
+	justify-content: space-around;
+	margin: 1rem;
 }
 
 /* FADE AND SCROLL IN STYLES 

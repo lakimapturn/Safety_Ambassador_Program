@@ -7,7 +7,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class Grade(models.Model):
     grade = models.IntegerField(default = 3, validators=[MinValueValidator(3), MaxValueValidator(8)])
 
-    def __str__(self):
+    def __int__(self):
         return self.grade
 
 class Section(models.Model):

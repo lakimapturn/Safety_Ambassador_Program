@@ -4,7 +4,7 @@
 
 {% block body %}
     <hr>
-    <div>
+    <div class = "index-test-containers">
         {% include "safety_ambassador_program/pretest.html" %}
     </div>
     <div>
@@ -125,8 +125,8 @@
     <div style = "justify-content: space-around; display: flex;">
         <iframe src="https://padlet.com/sharmapratyush2005/9gxlvqsac9zocrha" width="1200" height="900" frameborder="0" marginheight="0" marginwidth="0" >Padlet</iframe>
     </div>
-    <div>
-        {% if request.user.grade >= 3 and request.user.grade <= 5 %}
+    <div class = "index-test-containers">
+        {% if request.user.grade.grade >= 3 and 5 <= request.user.grade.grade %}
             {% include "safety_ambassador_program/posttest-middle.html" %}
         {% else %}
             {% include "safety_ambassador_program/posttest-primary.html" %}
