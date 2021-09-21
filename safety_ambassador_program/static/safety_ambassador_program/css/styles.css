@@ -593,6 +593,7 @@ body.light .switch-wrap p span:nth-child(1):before {
 hr {
 	width: 90%;
 	border: 0.125rem;
+	margin: auto;
 }
 
 .layout-header {
@@ -667,7 +668,6 @@ hr {
 	opacity: 0;
 	transition: opacity 100ms ease-in;
 	background-color: rgba(0, 0, 0, 0.445);
-	float: left;
 	z-index: 1000;
 	padding: 0.25rem;
 	color: white;
@@ -760,6 +760,17 @@ ol.gradient-list > li::before {
   padding: 0.125em 0.25em;
   z-index: 1;
   background: linear-gradient(135deg, rgba(162, 237, 86, 0.2) 0%, rgba(253, 220, 50, 0.2) 100%);
+}
+
+.modal-dialogue {
+	text-align: center;
+	margin: 1.75rem 2rem;
+	max-width: 100% !important;
+	width: 90% !important;
+}
+
+.modal-body {
+	text-align: center;
 }
 
 /* 

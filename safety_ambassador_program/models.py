@@ -1,10 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.core.validators import MaxValueValidator, MinValueValidator 
 
 # Create your models here.
 
 class Grade(models.Model):
-    grade = models.CharField(max_length=100)
+    grade = models.IntegerField(default = 3, validators=[MinValueValidator(3), MaxValueValidator(8)])
 
     def __str__(self):
         return self.grade
@@ -17,7 +18,6 @@ class Section(models.Model):
 
 class User(AbstractUser, models.Model):
     grade = models.ForeignKey(Grade, on_delete=models.CASCADE, null = True)
-
     start_time = models.DateTimeField(auto_now=True, editable=False)
     end_time = models.DateTimeField(null=True, editable=False)
 

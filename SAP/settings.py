@@ -134,6 +134,3 @@ TRACK_IGNORE_STATUS_CODES = [400, 404, 403, 405, 410, 500]
 
 # Login Settings
 LOGIN_URL = 'authentication_page'
-
-# X-Frame Options
-X_FRAME_OPTIONS = 'ALLOW-FROM https://www.youtube.com/'

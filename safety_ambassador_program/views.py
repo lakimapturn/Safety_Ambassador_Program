@@ -4,13 +4,11 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.db import IntegrityError
-from django.views.decorators.clickjacking import xframe_options_exempt, xframe_options_sameorigin
 from .models import Digital, Grade, User, Article, Section
 
 # Create your views here.
 
 @login_required
-@xframe_options_exempt
 def index(request):
     # print(user_stats = request.user.objects.user_stats(request.user.start_time, request.user.end_time))
     return render(request, "safety_ambassador_program/index.html", {
