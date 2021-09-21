@@ -590,6 +590,11 @@ body.light .switch-wrap p span:nth-child(1):before {
 /* Custom CSS
 ================================================== */
 
+hr {
+	width: 90%;
+	border: 0.125rem;
+}
+
 .layout-header {
 	background: linear-gradient(165deg, #F8E9A1 50%, #fff 50%);
 }
