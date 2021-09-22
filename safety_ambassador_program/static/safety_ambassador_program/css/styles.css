@@ -696,6 +696,15 @@ hr {
 	opacity: 1;
 }
 
+.logo-img {
+	margin: 0.1rem;
+}
+
+.logo-div {
+	display: flex !important;
+	margin: 1rem !important;
+}
+
 /* LIST ITEM CSS
 ======================================================================= */
 @import url(https://fonts.googleapis.com/css?family=Montserrat:900|Raleway:400,400i,700,700i);

@@ -31,6 +31,7 @@ class Digital(models.Model):
     description = models.TextField(null=True, blank=True)
     section = models.ForeignKey(Section, on_delete= models.CASCADE, null = True)
     image = models.FileField(blank=True, null=True)
+    grade = models.ForeignKey(Grade, null=True, on_delete= models.SET_NULL)
 
     def __str__(self):
         return self.title
