@@ -697,12 +697,12 @@ hr {
 }
 
 .logo-img {
-	margin: 0.1rem;
+	margin: 0.15rem;
 }
 
 .logo-div {
 	display: flex !important;
-	margin: 1rem !important;
+	margin: 1rem !;
 }
 
 /* LIST ITEM CSS

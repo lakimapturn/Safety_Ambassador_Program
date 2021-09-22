@@ -23,7 +23,7 @@
                     {% else %}
                       <div class="carousel-item">
                     {% endif %}
-                      <img src="{{item.image.url}}" class="d-block" alt="..." height = "600" width="1100">
+                      <img src="{{item.image.url}}" style = "height: 60vh; object-fit: cover; width: 115vh;" class="d-block" alt="...">
                       <div style = "background-color: rgba(0, 0, 0, 0.74);" class="carousel-caption d-none d-md-block">
                         <a style = "color: white;" href = "{{item.url}}">
                           <h5>{{item.title}}</h5>
@@ -63,7 +63,7 @@
                       {% else %}
                         <div class="carousel-item">
                       {% endif %}
-                        <img src="{{item.image.url}}" class="d-block" alt="..." height = "600" width="1100">
+                        <img src="{{item.image.url}}" class="d-block" style = "height: 60vh; object-fit: cover; width: 115vh;" alt="...">
                         <div style = "background-color: rgba(0, 0, 0, 0.74);" class="carousel-caption d-none d-md-block">
                           <a style = "color: white;" href = "{{item.url}}">
                             <h5>{{item.title}}</h5>
