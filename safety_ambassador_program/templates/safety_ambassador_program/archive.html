@@ -1,0 +1,103 @@
+{% extends "safety_ambassador_program/layout.html" %}
+
+{% block title %} Safety Ambassador Program {% endblock %}
+
+{% block body %}
+    <div>
+        <div style="background-color: white; padding-bottom: 5%;">
+            <h1 class = "display-4" style="text-align: center;"><b>Our Work So Far:</b></h1>
+        </div>
+        <div class = "timeline-container">
+            <section class="timeline">
+                <ul>
+                  <li style="padding-top: 12rem;">
+                    <div class = "slide-in from-right">
+                        <time>1687</time>
+                        <img src = "/media/posters/image0.png" class="poster">
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                        <time>1785</time>
+                        <img src = "/media/posters/image1.png" class="poster">
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <time>1827</time>
+                      <img src = "/media/posters/image2.png" class="poster">
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                        <img src = "/media/posters/image3.png" class="poster">
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                        <time>1867</time>
+                        <img src = "/media/posters/image4.png" class="poster">
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                        <time>1895</time>
+                        <img src = "/media/posters/image5.png" class="poster">
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                        <time>1897</time>
+                        <img src = "/media/posters/image6.png" class="poster">
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <time>1898</time>
+                      <img src = "/media/posters/image7.png" class="poster">
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                        <time>1900</time>
+                        <img src = "/media/posters/image8.png" class="poster">
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                        <time>1905</time>
+                        <img src = "/media/posters/image9.png" class="poster">
+                    </div>
+                  </li>
+                </ul>
+              </section>
+        </div>
+    </div>
+    <script>
+        var items = document.querySelectorAll(".timeline li");
+        function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+        }
+
+        function callbackFunc() {
+        for (var i = 0; i < items.length; i++) {
+            if (isElementInViewport(items[i])) {
+            if(!items[i].classList.contains("in-view")){
+                items[i].classList.add("in-view");
+            }
+            } else if(items[i].classList.contains("in-view")) {
+                items[i].classList.remove("in-view");
+            }
+        }
+        }
+        
+        window.addEventListener("load", callbackFunc);
+        window.addEventListener("scroll", callbackFunc);
+    </script>
+{% endblock %}

@@ -8,6 +8,7 @@ from django.views.static import serve
 urlpatterns = [
     path('', views.index, name="index"),
     path('about', views.aboutPage, name="about"),
+    path('archive', views.archive, name="archive"),
     path('authentication-page', views.authenticationPage, name="authentication_page"),
     path('games', views.gamesPage, name="games_page"),
     path('authentication', views.authenticationPage, name="authentication"),

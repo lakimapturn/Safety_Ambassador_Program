@@ -23,6 +23,10 @@ def gamesPage(request):
         "Digital": Game.objects.all()
     })
 
+@login_required
+def archive(request):
+    return render(request, "safety_ambassador_program/archive.html")
+
 def authenticationPage(request):
     # if request.user.is_authenticated: # prevents user from going to login page if already logged in
     #     return HttpResponseRedirect(reverse("index"))

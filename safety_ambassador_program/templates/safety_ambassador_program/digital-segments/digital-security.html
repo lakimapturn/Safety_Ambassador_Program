@@ -24,3 +24,27 @@
     </div>
 </div>
 <hr>
+<div class = "section-questions">
+    {% if request.user.grade.grade >= 3 and 5 <= request.user.grade.grade %}
+        <h4>Who can you share your passwords with?</h4>
+        <select class="form-select answer-fields" id = "digital-security" aria-label="Default select example">
+            <option selected>Your Teacher</option>
+            <option id = "correct-answer" value="1">Your Family</option>
+            <option value="2">Your Friends</option>
+            <option value="3">Nobody – you should keep them to yourself</option>
+        </select>
+    {% else %}
+        <h4>Should you accept friend requests from online?</h4>
+        <select class="form-select answer-fields" id = "digital-security" aria-label="Default select example">
+            <option selected>Someone you think you’ve met before.</option>
+            <option id = "correct-answer">Only from people you definitely know.</option>
+            <option>Anyone</option>
+        </select>
+    {% endif %}
+    <br>
+    <br>
+    <button onclick="verifyAnswer('digital-security')" class = "btn btn-secondary confetti">Verify Answer</button>
+    <div class="alert alert-danger" role="alert" id = "invalid-input-msg">
+        Wrong Answer!
+    </div>
+</div>

@@ -25,6 +25,7 @@
             <div class="header-wrapper">
                 <div class="logo-wrap">
                     <img class = "logo-img" src = "/media/SAP-logo.png" height = 95px>
+                    <img class = "logo-img" src = "https://i2.wp.com/dxbmodern.com/wp-content/uploads/2020/10/1564693423_LOGO-1.png?fit=200%2C200" height = "80px">
                 </div>
                 {% if request.user.intro_completed %}
                     <div class="nav-but-wrap">
@@ -47,6 +48,7 @@
                     <li class="nav__list-item"><a href="{% url 'index' %}" class="hover-target">Home</a></li>
                     <li class="nav__list-item"><a href="{% url 'games_page' %}" class="hover-target">Games</a></li>
                     <li class="nav__list-item"><a href="{% url 'about' %}" class="hover-target">About</a></li>
+                    <li class="nav__list-item"><a href="{% url 'archive' %}" class="hover-target">Archives</a></li>
                     <li class="nav__list-item"><a href="{% url 'logout' %}" class="hover-target">Log Out</a></li>
                 </ul>
             </div>
@@ -68,11 +70,9 @@
         </div>	
 
         <div class = "page-content">
-            <div class = "logo-wrap" style="padding-left: 7rem; padding-top: 0.5rem;">
+            <div class = "logo-wrap" style="padding-left: 12rem; padding-top: 0.5rem;">
                 <img class = "logo-img" src = "https://www.ilearnme.com/wp-content/uploads/2020/05/dxbpolice_logo-3.png" height = 80px>
-                <img class = "logo-img" src = "https://www.ibo.org/globalassets/digital-toolkit/logos-and-programme-models/ib-world-school-logo-1-colour-tb.png" height="80px">
                 <img class = "logo-img" src = "https://iconape.com/wp-content/png_logo_vector/gems-education-logo.png" height = "80px">
-                <img class = "logo-img" src = "https://i2.wp.com/dxbmodern.com/wp-content/uploads/2020/10/1564693423_LOGO-1.png?fit=200%2C200" height = "80px">
             </div>
             {% block body %}
             {% endblock %}

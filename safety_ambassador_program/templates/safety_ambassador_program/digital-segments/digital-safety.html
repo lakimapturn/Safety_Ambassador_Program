@@ -28,3 +28,27 @@
     </div>
 </div>
 <hr>
+<div class = "section-questions">
+    {% if request.user.grade.grade >= 3 and 5 <= request.user.grade.grade %}
+        <h4>You’ve gone on a gaming website and it asks you to download a link before you play. What should you do?</h4>
+        <select class="form-select answer-fields" id = "digital-safety" aria-label="Default select example">
+            <option id = "correct-answer" selected>Show the link to an adult and ask them if it’s safe.</option>
+            <option value="1">Download it anyway.</option>
+            <option value="2">Ask your friends what to do.</option>
+        </select>
+    {% else %}
+        <h4>Should you accept friend requests from online?</h4>
+        <select class="form-select answer-fields" id = "digital-safety" aria-label="Default select example">
+            <option selected>A nickname that your friends call you (e.g. jumpingjacks).</option>
+            <option>Your full name (e.g. jacksmith).</option>
+            <option id = "correct-answer">A random word, number and punctuation combination (e.g. 1cecr3am!).</option>
+            <option>Part of your name and a number (e.g. jack123)</option>
+        </select>
+    {% endif %}
+    <br>
+    <br>
+    <button onclick="verifyAnswer('digital-safety')" class = "btn btn-secondary">Verify Answer</button>
+    <div class="alert alert-danger" role="alert" id = "invalid-input-msg">
+        Wrong Answer!
+    </div>
+</div>

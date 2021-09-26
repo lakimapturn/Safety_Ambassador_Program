@@ -11,12 +11,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function verifyAnswer(question) {
     const val = document.getElementById(question).value;
-    if (val.length > 3 && val.length < 20) {
-        document.getElementById("next-button").disabled = false;
+    // if (val.length > 3 && val.length < 20) {
+    //     document.getElementById("next-button").disabled = false;
+    //     document.getElementById("invalid-input-msg").style.opacity = 0;
+    // }
+    // else {
+    //     document.getElementById("invalid-input-msg").style.opacity = 1;
+    //     document.getElementById("next-button").disabled = true;
+    // }
+    console.log(val);
+    if (val == document.getElementById("correct-answer").value) {
         document.getElementById("invalid-input-msg").style.opacity = 0;
+        console.log("here!")
     }
     else {
         document.getElementById("invalid-input-msg").style.opacity = 1;
-        document.getElementById("next-button").disabled = true;
     }
+    document.getElementById("next-button").disabled = false;
+    document.getElementById(question).disabled = true;
 }
