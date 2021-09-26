@@ -14,6 +14,7 @@ body{
 a {
 	cursor: pointer;
     text-decoration: none !important; /* delete if u want the underline*/
+	color: #000 !important;
 }
 a:hover {
 	text-decoration: none;
@@ -581,10 +582,56 @@ body.light .switch-wrap p span:nth-child(1):before {
     }
 }
 
-/* About Us Page CSS
+/* Animated balloon CSS
 ================================================== */
 
-
+.balloon {
+	/* background-image: url(https://image.flaticon.com/icons/png/512/206/206542.png); */
+	background-image: url(/media/coin.gif);
+	width: 200px;
+	height: 200px;
+	background-size: contain;
+	position: absolute;
+	animation: move_y 30s linear forwards, oscil1 6s infinite;
+	opacity: 0.8;
+	transition: opacity 200ms ease-in;
+}
+  
+  @keyframes move_y {
+	from {
+	  bottom: -10%;
+	}
+	to {
+	  bottom: 100%;
+	}
+  }
+  
+  @keyframes oscil1 {
+	from {
+	  translate: 0 0;
+	  transform: rotate(0deg);
+	  animation-timing-function: cubic-bezier(0.1, 0.3, 0.3, 1);
+	}
+	25% {
+	  translate: 10px 0;
+	  transform: rotate(3deg);
+	  animation-timing-function: cubic-bezier(0.7, 0.0, 0.9, 0.7);
+	}
+	50% {
+	  translate: 0 0;
+	  transform: rotate(0deg);
+	  animation-timing-function: cubic-bezier(0.1, 0.3, 0.3, 1);
+	}
+	75% {
+	  translate: -10px 0;
+	  transform: rotate(-3deg);
+	  animation-timing-function: cubic-bezier(0.7, 0.0, 0.9, 0.7);
+	}
+	to {
+	  translate: 0 0;
+	  transform: rotate(0deg);
+	}
+  }
 
 /* Custom CSS
 ================================================== */
@@ -669,7 +716,7 @@ hr {
 
 .fade-in {
 	opacity: 0;
-	transition: opacity 400ms ease-in;
+	transition: opacity 800ms ease-in;
 }
 
 .fade-in.appear {
@@ -703,6 +750,63 @@ hr {
 .logo-div {
 	display: flex !important;
 	margin: 1rem !;
+}
+
+.carousel-item {
+	text-align: center;
+}
+
+.carousel-controls {
+	display: flex;
+	justify-content: space-around;
+	background-color: whitesmoke;
+	width: 80%;
+	padding: 1rem;
+	margin-left: 10%;
+	border-radius: 2rem;
+}
+
+.games-container {
+	text-align: center;
+	margin: 1rem 0rem;
+}
+
+.game-div {
+	width: 100%;
+	height: 32rem;
+	margin: 1rem 0rem;
+	padding: 1rem;
+	display: grid;
+	border-radius: 2rem;
+}
+
+.game-img {
+	/* transform: skewX(10deg); */
+	object-fit: cover !important; 
+	height: 22rem !important; 
+	margin: 2rem;
+	margin-bottom: 4rem;
+}
+
+.right-game {
+	float: right;
+	background-color: #f76c6cb0; 
+}
+
+.left-game {
+	float: left;
+}
+
+.section-questions {
+	text-align: center;
+	margin: 1rem;
+}
+
+.alert-danger {
+	margin: 1rem 0rem;
+	opacity: 0;
+	width: 20%;
+	left: 40%;
 }
 
 /* LIST ITEM CSS
@@ -767,6 +871,32 @@ ol.gradient-list > li::before {
 
 .modal-body {
 	text-align: center;
+}
+
+/* CELEBRATION CSS
+============================================================= */
+.congrats {
+	position: absolute;
+	top: 140px;
+	width: 550px;
+	height: 100px;
+	padding: 20px 10px;
+	text-align: center;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+}
+
+.blob {
+	height: 50px;
+	width: 50px;
+	color: #ffcc00;
+	position: absolute;
+	top: 45%;
+	left: 45%;
+	z-index: 1;
+	font-size: 30px;
+	display: none;	
 }
 
 /* 

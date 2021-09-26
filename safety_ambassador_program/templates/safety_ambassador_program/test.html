@@ -1,0 +1,50 @@
+{% extends "safety_ambassador_program/layout.html" %}
+
+{% block title %} Safety Ambassador Program {% endblock %}
+
+{% block body %}
+    {% load static %}
+    <script src = "{% static 'safety_ambassador_program/js/balloon.js' %}"></script>
+    <div class="games-container">
+        {% for game in Digital %}
+            <div 
+            {% if forloop.counter|divisibleby:2 %} 
+            class = "slide-in from-right right-game game-div" 
+            {% else %} 
+            class = "slide-in from-left left-game game-div" 
+            {% endif %}
+            >
+                <a href="{{game.url}}">
+                    <h2>{{game.title}}</h2>
+                    <hr>
+                    <div style="display: flex;">
+                        {% if forloop.counter|divisibleby:2 %} 
+                            <div style="margin-right: 5rem;">
+                                <img src="{{game.image.url}}" class="d-block game-img" alt="...">
+                            </div>
+                            <div style="display: block; margin: auto;">
+                                <h4>{{game.description}}</h4>
+                            </div>
+                            <div style="margin-right: 5rem;">
+                                <img src="https://lh3.googleusercontent.com/proxy/wyt6E4VUP8sP7Ysg8Ix3L6bmnFZEcTa0cbKDxjdqdQV-Bgk6jOHA4vTms5ZKD_AD7VmW-inCb-7FzV06s3kCtzAc_b8YQSw" class="d-block game-img" alt="...">
+                            </div>
+                            <!-- https://media3.giphy.com/media/Ri98Ht4Q9hczOeHC1E/giphy.gif -->
+                            <!-- https://i.gifer.com/WME8.gif -->
+                            <!-- https://c.tenor.com/lNtmoshuUI8AAAAj/bahroo-hacker.gif -->
+                        {% else %} 
+                            <div>
+                                <img src="/media/reddude.gif" class="d-block game-img" alt="...">
+                            </div>
+                            <div style="display: block; margin: auto;">
+                                <h5>{{game.description}}</h5>
+                            </div> 
+                            <div style="margin-right: 5rem;">
+                                <img src="{{game.image.url}}" class="d-block game-img" alt="...">
+                            </div>
+                        {% endif %}
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

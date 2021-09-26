@@ -3,189 +3,72 @@
 {% block title %} Safety Ambassador Program {% endblock %}
 
 {% block body %}
+{% load static %}
+    <script src="{% static 'safety_ambassador_program/js/validator.js' %}"></script>
     <hr>
-    <div class = "index-test-containers">
-        {% include "safety_ambassador_program/pretest.html" %}
-    </div>
+    <div id="quiz-div" class="carousel slide" data-bs-interval="false">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="index-test-containers d-block">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfHm23gUuDwYCzfM_8egUpl41gV7mhpAJw6Fq2QowEg3_bqng/viewform?embedded=true" width="800" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                </div>          
+            </div>
+            <div class="carousel-item">
+                <div class="index-test-containers d-block">
+                    <div class = "digital" style = "justify-content: space-around; display: block;">
+                        <h2>The Digital Intelligence Framework</h2>
+                        <img src = "https://www.dqinstitute.org/wp-content/uploads/2019/02/DQFrameworkWheel.png" height="600px">
+                        <p>The colourful wheel you see here, is the Wheel of Digital Intelligence (DQ). It is made up of 8 areas and 24 sections, collectively known as digital competences. This wheel covers all different sections of the Internet and Digital Technology.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                {% include "safety_ambassador_program/digital-segments/digital-use.html" %}
+            </div>
+            <!-- <div class = "carousel-item">
+                <div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'>
+                    <iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/92785c847df8749f641365ed823ac987/fe42adbf3a38' style='position: absolute; top: 0; left: 0; width: 90%; height: 50%;' width='420'></iframe>
+                </div>
+            </div> -->
+            <div class = "carousel-item">
+                {% include "safety_ambassador_program/digital-segments/digital-identity.html" %}
+            </div>
+            <div class = "carousel-item">
+                {% include "safety_ambassador_program/digital-segments/digital-safety.html" %}
+            </div>
+            <div class = "carousel-item">
+                {% include "safety_ambassador_program/digital-segments/digital-security.html" %}
+            </div>
+            <div class = "carousel-item">
+                <div style = "justify-content: space-around; display: flex;">
+                    <iframe src="https://padlet.com/sharmapratyush2005/9gxlvqsac9zocrha" width="1200" height="900" frameborder="0" marginheight="0" marginwidth="0" >Padlet</iframe>
+                </div>
+            </div>
+            <div class = "carousel-item">
+                <div class = "index-test-containers">
+                    {% if request.user.grade.grade >= 3 and 5 <= request.user.grade.grade %}
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSePNjJZ2HLHd0dM0vRRYrsNSsIVIMaPlSZ4Rx7DDeZRT53H9A/viewform?embedded=true" width="800" height="500" frameborder="0" marginheight="0" marginwidth="0" >Posttest - Middle School</iframe>
+                    {% else %}
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdX9OjKp77sWZjRciIxTjH2OlAcYGpG76rEss_aPWxtpHpp4w/viewform?embedded=true" width = "800" height="500" frameborder="0" marginheight="0" marginwidth="0">Pretest</iframe>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class = "carousel-controls">
+            <button class="btn btn-primary" onclick="enableNext()" type="button" data-bs-target="#quiz-div" data-bs-slide="prev">
+                Previous
+            </button>
+            <button id = "next-button" class="btn btn-primary" type="button" data-bs-target="#quiz-div" data-bs-slide="next">
+                Next
+            </button>
+        </div>
     <div>
-        <div id = "section-0" class = "digital fade-in" style = "justify-content: space-around;">
-            <img src = "https://www.dqinstitute.org/wp-content/uploads/2019/02/DQFrameworkWheel.png" height="600px">
-        </div>
-        <div id = "section-1" class = "digital slide-in from-right" >
-            <div style = "margin: 1rem">
-                <img class = "digital-use-image" style = "width: 90vh; height: 60vh; object-fit: cover;" src = "https://miro.medium.com/max/4494/1*fqPdrzbdfUKdyiLQJZR9gw.png" alt = "">
-            </div>
-            <div style = "margin: 1rem;">
-                <div class = "digital-use-title">
-                    <h2>Digital Use</h2>
-                </div>
-                <div class = "digital-use-body">
-                    <p>
-                        <b>Digital Wellbeing </b>is an important part of our lives. All people, irrespective of age, culture or colour, use modern technology and depend on it to complete daily tasks. 
-                    </p>
-                    <p>
-                        Take yourself as an example… you are accessing this wonderful platform of information through the help of your device and our best friend: The Internet. Sometimes, though, the Internet can be a confusing friend to deal with. Sometimes you spend so much time on the internet- on your device- that you forget about your real friends.
-                    </p>
-                    <p>
-                        It is <b>important</b> to note the balance, and use the internet in a safe and healthy way. 
-                    </p>
-                    <p>
-                        Through this video we may be able to understand that balancing your digital life and your real life is very important. Further into the module we will explain the precautions you must keep in mind while using your devices.
-                    </p>
-                    <div style = "display: flex; justify-content: space-evenly;">
-                        <iframe width="420" height="236" src="https://www.youtube.com/embed/JkkTN0pQ_Ug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <iframe width="420" height="236" src="https://www.youtube.com/embed/rt5LY5TeTVQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- <div id = "section-1-questions">
-            <div id="carouselExampleInterval" class="carousel slide" data-interval="false">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-
-                    <div class="d-block w-100">
-                        <div class="question bg-white p-3 border-bottom">
-                            <div class="d-flex flex-row align-items-center question-title">
-                                <h3 class="text-danger">Q.1</h3>
-                                <h5 class="mt-1 ml-2">Which of the following country has largest population?</h5>
-                            </div>
-                            <div class="ans ml-2">
-                                <label class="radio">
-                                    <input type="radio" name="brazil" value="brazil"> 
-                                    <span>Brazil</span>
-                                </label>
-                            </div>
-                            <div class="ans ml-2">
-                                <label class="radio"> 
-                                    <input type="radio" name="Germany" value="Germany"> 
-                                    <span>Germany</span>
-                                </label>
-                            </div>
-                            <div class="ans ml-2">
-                                <label class="radio"> 
-                                    <input type="radio" name="Indonesia" value="Indonesia"> 
-                                    <span>Indonesia</span>
-                                </label>
-                            </div>
-                            <div class="ans ml-2">
-                                <label class="radio"> 
-                                    <input type="radio" name="Russia" value="Russia"> 
-                                    <span>Russia</span>
-                                </label>
-                            </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="2000">
-                    <div class="d-block w-100">
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="d-block w-100">
-                    </div>
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-        </div> -->
-        <div id = "section-2" class = "digital slide-in from-left">
-            <div style = "margin: 1rem">
-                <div class = "digital-use-title">
-                    <h2>Digital Identity</h2>
-                </div>
-                <div class = "digital-use-body">
-                    <p>
-                        <b>Digital Identity</b> is a set of characteristics- a digital profile of your own personality- that often helps the internet identify you as a unique individual. It consists of your name, address, age, profession, email and more. It increases it’s knowledge on you with every click of your keyboard, every website you visit, and every item you shop online. 
-                    </p>
-                    <p>
-                        <main>
-                            <ol class = "gradient-list">
-                                <li>Nothing is temporary online. Everything you do is recorded and monitored which is why you must be careful and aware of what you do on the internet.</li>
-                                <li>Keep your profile as private as possible. This makes it harder for hackers and stalkers to know about your life.</li>
-                                <li>Be aware of what you post online. Think twice about posting a picture that’s private to you. If there are others in the photo, make sure you have their consent before uploading it anywhere.</li>
-                                <li>It is important to stay calm while on the internet. Take breathers and breaks from social media. Avoid getting into any arguments or spats online.</li>
-                            </ol>
-                        </main>
-                    </p>
-                </div>
-            </div>
-            <div style = "margin: 1rem">
-                <div>
-                    <img src = "https://learn.easycrypto.com/wp-content/uploads/2021/06/2.-What-is-Digital-Identity-803x420.jpg">
-                </div>
-            </div>
-        </div>
-        <div id = "section-3" class = "digital slide-in from-right">
-            <div style = "margin: 1rem">
-                <div>
-                    <img class = "digital-use-image" style = "width: 90vh; height: 60vh; object-fit: cover;" src = "https://www.periodicodigitalgratis.com/gratis/img/27148/27148_0216334001569993846.jpg">
-                </div>
-            </div>
-            <div style = "margin: 1rem">
-                <div class = "digital-use-title" >
-                    <h2>Digital Safety</h2>
-                </div>
-                <div class = "digital-use-body">
-                    <p>
-                        <main>
-                            <ol class = "gradient-list">
-                                <li>Give <b>no one</b> your password, name, address, school name, or any other personal information about yourself or your family.</li>
-                                <li>On the internet, avoid chatting with strangers.</li>
-                                <li>Don't agree to meet anyone you've met online in person.</li>
-                                <li>If a profile asks for your name and address, don't fill it out.</li>
-                                <li>If you see something you believe your parents won't like, don't stay online.</li>
-                                <li>If you don't have your parents' consent, don't upload images of yourself online.</li>
-                                <li>Ask your parent or guardian if you have any questions regarding something you've read.</li>
-                            </ol>
-                        </main>
-                    </p>
-                    <iframe width="420" height="236" src="https://www.youtube.com/embed/X9Htg8V3eik" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-        <div id = "section-4" class = "digital slide-in from-left">
-            <div style = "margin: 1rem">
-                <div class = "digital-use-title" >
-                    <h2>Digital Security</h2>
-                </div>
-                <div class = "digital-use-body">
-                    <p>
-                        <main>
-                            <ol class = "gradient-list">
-                                <li>Ensure you have a strong password. Make sure it has at least one capital letter, a number and a special symbol.</li>
-                                <li>Keep your personal information to yourself. If you need to upload it somewhere, make sure you do so with your parents’ consent.</li>
-                                <li>Don’t immediately trust everything you see on the internet. You never know who is sitting behind the screen, thousands of miles away. It is always recommended to talk to your parents, teachers or elders about any suspicious activity that comes up.</li>
-                                <li>Avoid giving personal information such as your address, mobile number and age, to websites.</li>
-                            </ol>
-                        </main>
-                    </p>
-                    <iframe width="420" height="236" src="https://www.youtube.com/embed/yiKeLOKc1tw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div style = "margin: 1rem">
-                <div>
-                    <!-- <img class = "digital-use-image" style = "width: 90vh; height: 50vh; object-fit: cover;" src = "https://lh3.googleusercontent.com/proxy/1xpe3LWdhy4emuwZnv-jPLVRez_jslqMeuJg_rHImfKsWpk_CJqL1D8h9K0ADfY77X8bREZAMcb5vQ5BTlxl5XpMw4NFVVqbZ5ZeeT_8HuHjHtCPY2uFpVQ"> -->
-                </div>
-            </div>
-        </div>
     </div>
     <br>
     <hr>
-    <div style = "justify-content: space-around; display: flex;">
-        <iframe src="https://padlet.com/sharmapratyush2005/9gxlvqsac9zocrha" width="1200" height="900" frameborder="0" marginheight="0" marginwidth="0" >Padlet</iframe>
-    </div>
-    <div class = "index-test-containers">
-        {% if request.user.grade.grade >= 3 and 5 <= request.user.grade.grade %}
-            {% include "safety_ambassador_program/posttest-middle.html" %}
-        {% else %}
-            {% include "safety_ambassador_program/posttest-primary.html" %}
-        {% endif %}
-    </div>
+    <script>  
+        function enableNext() {
+            document.getElementById("next-button").disabled = false;
+        }
+    </script>
 {% endblock %}

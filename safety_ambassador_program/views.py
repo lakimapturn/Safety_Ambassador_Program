@@ -4,27 +4,23 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.db import IntegrityError
-from .models import Digital, Grade, User, Article, Section
+from .models import Game, Grade, User, Article, Section
 
 # Create your views here.
 
 @login_required
 def index(request):
     # print(user_stats = request.user.objects.user_stats(request.user.start_time, request.user.end_time))
-    return render(request, "safety_ambassador_program/index.html", {
-        'Digital': Digital.objects.all()
-    })
+    return render(request, "safety_ambassador_program/index.html")
 
 @login_required
 def aboutPage(request):
-    return render(request, "safety_ambassador_program/about.html", {
-        'Digital': Digital.objects.all()
-    })
+    return render(request, "safety_ambassador_program/about.html")
 
 @login_required
 def gamesPage(request):
-    return render(request, "safety_ambassador_program/games.html", {
-        "Digital": Digital.objects.all()
+    return render(request, "safety_ambassador_program/test.html", {
+        "Digital": Game.objects.all()
     })
 
 def authenticationPage(request):
@@ -46,13 +42,14 @@ def authenticationPage(request):
             })
     elif(request.method == 'POST' and request.POST['purpose'] == "register"): # if the user has submitted data this function runs
         enteredUsername = request.POST["loguname"]
-        enteredGrade = request.POST["loggrade"]
+        enteredGrade = Grade.objects.get(grade = request.POST["loggrade"])
         enteredFirstName = request.POST["logfname"]
+        enteredLastName = request.POST["loglname"]
         enteredPassword = request.POST["logpass"]
 
         # Trying to create a new user
         try: # add grade 
-            user = User.objects.create_user(username = enteredUsername, password = enteredPassword, first_name = enteredFirstName)
+            user = User.objects.create_user(username = enteredUsername, password = enteredPassword, first_name = enteredFirstName, last_name = enteredLastName,grade = enteredGrade)
             user.save()
         except IntegrityError:
             return render(request, "safety_ambassador_program/authentication.html", {
