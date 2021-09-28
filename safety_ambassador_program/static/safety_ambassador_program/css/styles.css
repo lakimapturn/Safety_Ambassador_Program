@@ -445,6 +445,7 @@ body.light .logo-wrap a {
 }
 body.light .menu-icon__line {
 	background-color: #1f2029;
+	background-color: #F76C6C;
 }
 body.light .nav:before {
 	background: rgba(235, 235, 235,0.6);
@@ -643,7 +644,8 @@ hr {
 }
 
 .layout-header {
-	background: linear-gradient(165deg, #F8E9A1 50%, #fff 50%);
+	background: linear-gradient(165deg, #24305E 50%, #374785 50%);
+	padding-bottom: 0.5rem;
 }
 
 .header {
@@ -724,9 +726,9 @@ hr {
 	-o-transition: all .3s ease-in;
 	transition: all .3s ease-in;
 	opacity: 1;
-	transform: scale(2.25);
-	-ms-transform: scale(2.25); /* IE 9 */
-	-webkit-transform: scale(2.25); /* Safari and Chrome */
+	transform: scale(2.15);
+	-ms-transform: scale(2.15); /* IE 9 */
+	-webkit-transform: scale(2.15); /* Safari and Chrome */
 }
 
 /* FADE AND SCROLL IN STYLES 
@@ -916,23 +918,23 @@ ol.gradient-list > li::before {
 }
 
 .timeline ul li {
-  list-style-type: none;
-  position: relative;
-  width: 6px;
-  margin: 0 auto;
-  padding-top: 50px;
-  background: #fff;
+	list-style-type: none;
+	position: relative;
+	width: 6px;
+	margin: 0 auto;
+	padding-top: 50px;
+	background: #fff;
 }
 .timeline ul li::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%) rotate(45deg);
-  width: 20px;
-  height: 20px;
-  z-index: 2;
-  background: #eee;
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%) rotate(45deg);
+	width: 20px;
+	height: 20px;
+	z-index: 2;
+	background: #eee;
 }
 .timeline ul li div {
 	position: relative;

@@ -19,8 +19,12 @@ def aboutPage(request):
 
 @login_required
 def gamesPage(request):
+    gradeGames = []
+    for game in Game.objects.all(): 
+        if request.user.grade in game.grade.all():
+            gradeGames.append(game)
     return render(request, "safety_ambassador_program/test.html", {
-        "Digital": Game.objects.all()
+        "Digital": gradeGames
     })
 
 @login_required

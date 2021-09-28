@@ -26,14 +26,14 @@
                                 <h4>{{game.description}}</h4>
                             </div>
                             <div style="margin-right: 5rem;">
-                                <img src="https://lh3.googleusercontent.com/proxy/wyt6E4VUP8sP7Ysg8Ix3L6bmnFZEcTa0cbKDxjdqdQV-Bgk6jOHA4vTms5ZKD_AD7VmW-inCb-7FzV06s3kCtzAc_b8YQSw" class="d-block game-img" alt="...">
+                                <img class="d-block game-img" alt="...">
                             </div>
                             <!-- https://media3.giphy.com/media/Ri98Ht4Q9hczOeHC1E/giphy.gif -->
                             <!-- https://i.gifer.com/WME8.gif -->
                             <!-- https://c.tenor.com/lNtmoshuUI8AAAAj/bahroo-hacker.gif -->
                         {% else %} 
                             <div>
-                                <img src="/media/reddude.gif" class="d-block game-img" alt="...">
+                                <img class="d-block game-img" alt="...">
                             </div>
                             <div style="display: block; margin: auto;">
                                 <h5>{{game.description}}</h5>
@@ -47,4 +47,23 @@
             </div>
         {% endfor %}
     </div>
+    <script>
+        const gifs = ['reddude.gif', 'octo.gif', 'glitch.gif', 'batman.gif'];
+        const basePath = '/media/';
+        document.addEventListener("DOMContentLoaded", function() {
+            let gifsCopy = gifs.slice(0); //make a copy of the array.
+            for (let i = 0; i < document.getElementsByClassName('game-img').length; i++) {
+                console.log(gifsCopy);
+                let rNumber = Math.floor(Math.random() * gifsCopy.length);
+                let img = document.getElementsByClassName('game-img')[i];
+                if(!img.src) {
+                    let rand = gifsCopy.splice(rNumber, 1); //deletes the img from the array and returns it;
+                    img.src = basePath+rand;
+                }
+            }
+        })
+        function imgRandom() {
+            
+        }
+    </script>
 {% endblock %}

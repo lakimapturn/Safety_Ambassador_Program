@@ -41,10 +41,10 @@
     
         <div class="nav">
             <div class="nav__content">
-                <div class = "nav__list-item">
-                    <h6 style = "color: black;">Welcome Back {{request.user.first_name}} {{request.user.last_name}}!</h6>
-                </div>
                 <ul class="nav__list">
+                    <div class = "nav__list-item">
+                        <h6 style = "color: black;">Welcome Back {{request.user.first_name}} {{request.user.last_name}}!</h6>
+                    </div>
                     <li class="nav__list-item"><a href="{% url 'index' %}" class="hover-target">Home</a></li>
                     <li class="nav__list-item"><a href="{% url 'games_page' %}" class="hover-target">Games</a></li>
                     <li class="nav__list-item"><a href="{% url 'about' %}" class="hover-target">About</a></li>
@@ -57,7 +57,7 @@
         <div class = "layout-header">
             <div class="section full-height over-hide">	
                 <div class="switch-wrap">
-                    <h1 class = "display-3">{% block title %}{% endblock %}</h1>
+                    <h1 style = "color: white;" class = "display-3">{% block title %}{% endblock %}</h1>
                 </div>
             </div>
             {% if request.path == "/" and request.user.intro_completed %}
