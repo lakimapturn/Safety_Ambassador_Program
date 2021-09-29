@@ -22,7 +22,6 @@ function verifyAnswer(question) {
     console.log(val);
     if (val == document.getElementById("correct-answer").value) {
         document.getElementById("invalid-input-msg").style.opacity = 0;
-        console.log("here!")
     }
     else {
         document.getElementById("invalid-input-msg").style.opacity = 1;

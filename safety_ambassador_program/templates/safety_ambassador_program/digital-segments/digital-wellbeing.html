@@ -32,14 +32,48 @@
     </div>
 </div>
 <hr>
-<!-- <div class = "section-questions">
-    <h4>In your opinion, what is Digital Wellbeing?</h4>
-    <input maxlength="60" class = "form-control" id = "digital-wellbeing" type = "text" style = "width: 60%; display: initial;">
-    <p><i>Maximum word limit: 30 - 60 characters</i></p>
+<div class = "section-questions">
+    {% if request.user.grade.grade >= 3 and 5 <= request.user.grade.grade %}
+    <div>
+        <div class = "question-container">
+            <h4 class="text-danger">Q) </h4>
+            <h4>How can you raise your digital awareness?</h4>
+        </div>
+        <select class="form-select answer-fields" id = "digital-security" aria-label="Default select example">
+            <option>Talk to your pet</option>
+            <option>Speak to a stranger on the internet</option>
+            <option id = "correct-answer">Ask a professional or your trusted adult</option>
+            <option>The digital awareness I have is enough</option>
+        </select>
+    </div>
+    <div>
+        <div class = "question-container">
+            <h4 class="text-danger">Q) </h4>
+            <h4>How do you share your values with people online?</h4>
+        </div>
+        <select class="form-select answer-fields" id = "digital-security" aria-label="Default select example">
+            <option>Be rude to someone if they disagree with your thoughts or values</option>
+            <option id = "correct-answer">Be empathetic and friendly with people on the internet, while being careful about who you are talking to</option>
+            <option>Speak to strangers about wellbeing online while sharing personal stories and information</option>
+            <option>Be empathetic with people on the internet but only if you like them and they agree with your thoughts</option>
+        </select>
+    </div>
+         
+    {% else %}
+        <div class = "question-container">
+            <h4 class="text-danger">Q) </h4>
+            <h4>When online, from whom should you accept friend requests?</h4>
+        </div>
+        <select class="form-select answer-fields" id = "digital-security" aria-label="Default select example">
+            <option>Someone you think you’ve met before.</option>
+            <option id = "correct-answer">Only from people you definitely know.</option>
+            <option>Anyone</option>
+        </select>
+    {% endif %}
     <br>
     <br>
     <button onclick="verifyAnswer('digital-wellbeing')" class = "btn btn-secondary confetti">Verify Answer</button>
     <div class="alert alert-danger" role="alert" id = "invalid-input-msg">
-        Invalid Input!
+        Everyone should be treated with kindness and respect, even in the digital world. Not everyone will share the same views as you but it is important to be polite. Always be careful about personal information (like your name, age, where you live etc.) and avoid sharing it, even if you may think it's harmless! 
     </div>
-</div> -->
+</div>

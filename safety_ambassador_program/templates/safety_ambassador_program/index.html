@@ -10,7 +10,42 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="index-test-containers d-block">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfHm23gUuDwYCzfM_8egUpl41gV7mhpAJw6Fq2QowEg3_bqng/viewform?embedded=true" width="800" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    <div>
+                        <div class = "question-container">
+                            <h4 class="text-danger">Q.1) </h4>
+                            <h4>What do you think is cyber safety?</h4>
+                        </div>
+                        <select class="form-select answer-fields" id = "digital-security" aria-label="Default select example">
+                            <option id = "correct-answer">Protecting yourself on the internet from people who might want to harm you</option>
+                            <option>Protecting your internet.</option>
+                            <option>Protecting the viruses on the internet from the hackers.</option>
+                            <option>Ensuring the safety of the hackers on the internet and protecting them from viruses.</option>
+                        </select>
+                    </div>
+                    <div>
+                        <div class = "question-container">
+                            <h4 class="text-danger">Q.2) </h4>
+                            <h4>Why should you keep your passwords private?</h4>
+                        </div>
+                        <select class="form-select answer-fields" id = "digital-security" aria-label="Default select example">
+                            <option>So that you don’t get hacked.</option>
+                            <option>So that others don’t use your account (and spend your V-bucks on fortnite.</option>
+                            <option>So that someone else doesn’t gain access to your account and change its password and log you out.</option>
+                            <option id = "correct-answer">All of the above.</option>
+                        </select>
+                    </div>
+                    <div>
+                        <div class = "question-container">
+                            <h4 class="text-danger">Q.3) </h4>
+                            <h4>What is a digital footprint?</h4>
+                        </div>
+                        <select class="form-select answer-fields" id = "digital-security" aria-label="Default select example">
+                            <option>A scan of your foot on google.</option>
+                            <option id = "correct-answer">Every single action of yours on the internet which can be traced back to you.</option>
+                            <option>Only your search history.</option>
+                            <option>All your activity on social media platforms.</option>
+                        </select>
+                    </div>
                 </div>          
             </div>
             <div class="carousel-item">
@@ -23,7 +58,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                {% include "safety_ambassador_program/digital-segments/digital-use.html" %}
+                {% include "safety_ambassador_program/digital-segments/digital-wellbeing.html" %}
             </div>
             <!-- <div class = "carousel-item">
                 <div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'>
@@ -53,12 +88,15 @@
                     {% endif %}
                 </div>
             </div>
+            <div class = "carousel-item">
+                <a href = "{% url 'intro_completed' %}"><button class="btn btn-success">Complete Introduction</button></a>
+            </div>
         </div>
         <div class = "carousel-controls">
-            <button class="btn btn-primary" onclick="enableNext()" type="button" data-bs-target="#quiz-div" data-bs-slide="prev">
+            <button class="btn btn-primary" onclick="prevSlide()" type="button" data-bs-target="#quiz-div" data-bs-slide="prev">
                 Previous
             </button>
-            <button id = "next-button" class="btn btn-primary" type="button" data-bs-target="#quiz-div" data-bs-slide="next">
+            <button id = "next-button" onclick="nextSlide()" class="btn btn-primary" type="button" data-bs-target="#quiz-div" data-bs-slide="next">
                 Next
             </button>
         </div>
@@ -67,8 +105,26 @@
     <br>
     <hr>
     <script>  
-        function enableNext() {
+        let currentSlideNumber = localStorage.getItem('current-slide')?localStorage.getItem('current-slide'):0;
+        document.addEventListener("DOMContentLoaded", () => {
+            const carousel = new bootstrap.Carousel(document.getElementById("quiz-div"));
+            carousel.to(currentSlideNumber);
+            if(currentSlideNumber == carousel._items.length) {
+                const finishIntroDiv = document.createElement('div');
+                const finishIntroButton = document.createElement('button');
+                finishIntroButton.className += "btn btn-success";
+                finishIntroButton.innerHTML = "Finish Introduction";
+                finishIntroDiv.appendChild(finishIntroButton);
+            }
+        })
+        function prevSlide() {
+            currentSlideNumber--;
+            localStorage.setItem('current-slide', currentSlideNumber);
             document.getElementById("next-button").disabled = false;
+        }
+        function nextSlide() {
+            currentSlideNumber++;
+            localStorage.setItem('current-slide', currentSlideNumber);
         }
     </script>
 {% endblock %}

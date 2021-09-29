@@ -31,6 +31,11 @@ def gamesPage(request):
 def archive(request):
     return render(request, "safety_ambassador_program/archive.html")
 
+def introCompleted(request):
+    request.user.intro_completed = True
+    request.user.save()
+    return HttpResponseRedirect(reverse('index'))
+
 def authenticationPage(request):
     # if request.user.is_authenticated: # prevents user from going to login page if already logged in
     #     return HttpResponseRedirect(reverse("index"))

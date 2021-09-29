@@ -17,8 +17,8 @@
 
     </head>
     <body class = "light">
-        {% if request.path == "/about" %}
-        <div class = "about-page" style="background-color: crimson; position: fixed; height: 58vh; width: 100%; z-index: -10;"></div>
+        {% if request.path == "/about" or request.path == "/archive" %}
+        <div class = "about-page" style="background: linear-gradient(180deg, rgba(167,120,21,1) 33%, rgba(244,247,247,1) 100%); position: fixed; height: 58vh; width: 100%; z-index: -10 !important;"></div>
         {% endif %}
         <!-- <h1>Safety Ambassador Program</h1> -->
         <header class="cd-header">

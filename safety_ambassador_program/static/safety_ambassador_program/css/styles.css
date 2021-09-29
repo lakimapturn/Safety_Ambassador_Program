@@ -424,7 +424,10 @@ body.nav-active .nav__list-item:nth-child(10) {
 ================================================== */
 
 body.light{
-	background-color: #fff;
+	/* background-color: #374785; */
+	/* background-color: #F76C6C; */
+	/* background-color: #F8E9A1; */
+	background-color: white
 }
 body.light .cursor,
 body.light .cursor2,
@@ -714,21 +717,76 @@ hr {
 }
 
 .poster {
-	height: 400px;
+	height: 360px;
 	margin: auto;
 }
 
 .poster:hover {
     color: #424242; 
-	-webkit-transition: all .3s ease-in;
-	-moz-transition: all .3s ease-in;
-	-ms-transition: all .3s ease-in;
-	-o-transition: all .3s ease-in;
-	transition: all .3s ease-in;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
 	opacity: 1;
-	transform: scale(2.15);
-	-ms-transform: scale(2.15); /* IE 9 */
-	-webkit-transform: scale(2.15); /* Safari and Chrome */
+	transform: scale(2.4);
+	-ms-transform: scale(2.4); /* IE 9 */
+	-webkit-transform: scale(2.4); /* Safari and Chrome */
+	z-index: 100 !important;
+}
+
+.about-div, 
+.archive-div {
+	text-align: center;
+	margin: 4rem auto;
+}
+
+.archive-div {
+	background-color: white;
+	padding: 1.5rem;
+	border-radius: 1rem;
+	width: fit-content;
+}
+
+.archive-div:hover {
+	z-index: 100;
+}
+
+.about-title {
+	position: relative;
+	margin: 2rem 1rem;
+}
+
+.about-title:before {
+	content: "";
+	width: 100%;
+	display: block;
+	height: 0.5rem;
+	background-color: white;
+	position: absolute;
+	z-index: -10;
+	top: 50%;
+	border-radius: 0.25rem;
+}
+
+.about-title > span {
+	background-color: white;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	margin: 1rem;
+}
+
+.about-info {
+	background: white; 
+	margin: 1rem auto; 
+	width: fit-content; 
+	padding: 1rem; 
+	border-radius: 1rem;
+}
+
+.testimonial-designation {
+	text-align: right;
+	padding: 0.5rem;
 }
 
 /* FADE AND SCROLL IN STYLES 
@@ -774,6 +832,7 @@ hr {
 
 .carousel-item {
 	text-align: center;
+	padding: 2rem;
 }
 
 .carousel-controls {
@@ -820,6 +879,11 @@ hr {
 .section-questions {
 	text-align: center;
 	margin: 1rem;
+}
+
+.question-container {
+	display: flex;
+	justify-content: center;
 }
 
 .alert-danger {

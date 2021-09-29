@@ -7,8 +7,6 @@
         <div class = "digital-use-body">
             <p>
                 <b>Digital Identity</b> refers to any personal information - a digital profile - that helps the internet identify you as a unique individual. It consists of your name, address, age, profession, email, photos you have uploaded to social media, posts you have commented on or liked and much more. The digital world increases its knowledge about you with every click of your keyboard, every website you visit, every person you interact with and every item you shop online. Take a moment to think about what your current digital identity would comprise of. Have you been a mindful digital citizen?
-
- 
             </p>
             <p>
                 <main>
@@ -31,3 +29,34 @@
     </div>
 </div>
 <hr>
+<div class = "section-questions">
+    {% if request.user.grade.grade >= 3 and 5 <= request.user.grade.grade %}
+        <div class = "question-container">
+            <h4 class="text-danger">Q) </h4>
+            <h4> A log-in website asks you for your name, email, parent's mobile number, and address. What should you do here?</h4>
+        </div>
+        <select class="form-select answer-fields" id = "digital-security" aria-label="Default select example">
+            <option>Enter in all the information</option>
+            <option>Message your friends what they did.</option>
+            <option id = "correct-answer">Ask a teacher or adult whether you should enter your details. </option>
+            <option>Refuse to enter any information at all.</option>
+        </select>
+         
+    {% else %}
+        <div class = "question-container">
+            <h4 class="text-danger">Q) </h4>
+            <h4>Let's say you got into an argument with a stranger online. What must you do in this situation?</h4>
+        </div>
+        <select class="form-select answer-fields" id = "digital-security" aria-label="Default select example">
+            <option id = "correct-answer">Stay as calm as possible and avoid any further conflict.</option>
+            <option>Talk back to the stranger and insult them.</option>
+            <option>Post about the argument on social media and create further issues.</option>
+        </select>
+    {% endif %}
+    <br>
+    <br>
+    <button onclick="verifyAnswer('digital-identity')" class = "btn btn-secondary confetti">Verify Answer</button>
+    <div class="alert alert-danger" role="alert" id = "invalid-input-msg">
+        Wrong Answer!
+    </div>
+</div>

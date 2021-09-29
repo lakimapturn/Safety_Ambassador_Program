@@ -12,7 +12,7 @@ urlpatterns = [
     path('authentication-page', views.authenticationPage, name="authentication_page"),
     path('games', views.gamesPage, name="games_page"),
     path('authentication', views.authenticationPage, name="authentication"),
+    path('intro-completed', views.introCompleted, name="intro_completed"),
     path('logout', views.logoutPage, name="logout"),
-
     url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
