@@ -82,15 +82,6 @@
                 </div>
             </div>
             <div class = "carousel-item">
-                <div class = "index-test-containers">
-                    {% if request.user.grade.grade >= 3 and 5 <= request.user.grade.grade %}
-                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSePNjJZ2HLHd0dM0vRRYrsNSsIVIMaPlSZ4Rx7DDeZRT53H9A/viewform?embedded=true" width="800" height="500" frameborder="0" marginheight="0" marginwidth="0" >Posttest - Middle School</iframe>
-                    {% else %}
-                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdX9OjKp77sWZjRciIxTjH2OlAcYGpG76rEss_aPWxtpHpp4w/viewform?embedded=true" width = "800" height="500" frameborder="0" marginheight="0" marginwidth="0">Pretest</iframe>
-                    {% endif %}
-                </div>
-            </div>
-            <div class = "carousel-item">
                 <a href = "{% url 'intro_completed' %}"><button class="btn btn-success">Complete Introduction</button></a>
             </div>
         </div>
@@ -127,6 +118,10 @@
         function nextSlide() {
             currentSlideNumber++;
             localStorage.setItem('current-slide', currentSlideNumber);
+            const confetti = document.getElementById("quiz-div").getElementsByClassName("confetti");
+            for(let i = 1; i < 15; i++) {
+                confetti[i].remove();
+            }
         }
     </script>
 {% endblock %}

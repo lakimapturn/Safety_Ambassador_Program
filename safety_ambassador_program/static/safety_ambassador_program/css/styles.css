@@ -900,195 +900,54 @@ hr {
 
 /* LIST ITEM CSS
 ======================================================================= */
-@import url(https://fonts.googleapis.com/css?family=Montserrat:900|Raleway:400,400i,700,700i);
-.gradient-list {
-    font-family: "Raleway", sans-serif;
-}
-ol.gradient-list > li::before, ol.gradient-list > li {
-  box-shadow: 0.25rem 0.25rem 0.6rem rgba(0, 0, 0, 0.05), 0 0.5rem 1.125rem rgba(75, 0, 0, 0.05);
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-ol.gradient-list {
-  counter-reset: gradient-counter;
-  list-style: none;
-  margin: 1.75rem 0;
-  padding-left: 1rem;
-}
-ol.gradient-list > li {
-  background: white;
-  border-radius: 0 0.5rem 0.5rem 0.5rem;
-  counter-increment: gradient-counter;
-  min-height: 3rem;
-  padding: 1rem 1rem 1rem 3rem;
-  position: relative;
-}
-ol.gradient-list > li::before, ol.gradient-list > li::after {
-  background: linear-gradient(135deg, #83e4e2 0%, #a2ed56 100%);
-  border-radius: 1rem 1rem 0 1rem;
-  content: "";
-  height: 3rem;
-  left: -1rem;
-  overflow: hidden;
-  position: absolute;
-  top: -1rem;
-  width: 3rem;
-}
-ol.gradient-list > li::before {
-  align-items: flex-end;
-  content: counter(gradient-counter);
-  color: #1d1f20;
-  display: flex;
-  font: 900 1.5em/1 "Montserrat";
-  justify-content: flex-end;
-  padding: 0.125em 0.25em;
-  z-index: 1;
-  background: linear-gradient(135deg, rgba(162, 237, 86, 0.2) 0%, rgba(253, 220, 50, 0.2) 100%);
-}
-
-.modal-dialogue {
-	text-align: center;
-	margin: 1.75rem 2rem;
-	max-width: 100% !important;
-	width: 90% !important;
-}
-
-.modal-body {
-	text-align: center;
-}
-
-/* ARCHIVE CSS
-============================================================= */
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.timeline-container {
-  font: normal 16px/1.5 "Titillium Web", sans-serif;
-  background: linear-gradient(54deg, #9164ff, #8bfff4);
-  color: #3c3f64;
-  overflow-x: hidden;
-  padding-bottom: 50px;
-}
-
-.timeline ul li {
-	list-style-type: none;
-	position: relative;
-	width: 6px;
-	margin: 0 auto;
-	padding-top: 50px;
-	background: #fff;
-}
-.timeline ul li::after {
-	content: "";
+.confetti {
+	width: 15px;
+	height: 15px;
+	background-color: #f2d74e;
 	position: absolute;
 	left: 50%;
-	bottom: 0;
-	transform: translateX(-50%) rotate(45deg);
-	width: 20px;
-	height: 20px;
-	z-index: 2;
-	background: #eee;
-}
-.timeline ul li div {
-	position: relative;
-	bottom: 0;
-	width: 400px;
-	padding: 20px;
-	background: #fff;
-	box-shadow: 4px 13px 30px 1px rgba(252, 56, 56, 0.2);
-	border-radius: 5px;
-	display: flex;
-	align-items: center;
-}
-.timeline ul li div time {
-  position: absolute;
-  background: #f5af19;
-  width: 80px;
-  height: 30px;
-  top: -15px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  letter-spacing: 2px;
-}
-.timeline ul li div div {
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.timeline ul li div div p {
-  text-align: center;
-}
-.timeline ul li div .discovery {
-  margin-right: 10px;
-}
-.timeline ul li:nth-of-type(odd) > div {
-  left: 45px;
-}
-.timeline ul li:nth-of-type(even) > div {
-  left: -439px;
+	animation: confetti 5s ease-in-out -2s infinite;
+	transform-origin: left top;
+  }
+  .confetti:nth-child(1) {
+	background-color: #f2d74e; left: 10%; animation-delay: 0;
+  }
+  .confetti:nth-child(2) {
+	background-color: #95c3de; left: 20%; animation-delay: -5s;
+  }
+  .confetti:nth-child(3) {
+	background-color: #ff9a91; left: 30%; animation-delay: -3s;
+  }
+  .confetti:nth-child(4) {
+	background-color: #f2d74e; left: 40%; animation-delay: -2.5s;
+  }
+  .confetti:nth-child(5) {
+	background-color: #95c3de; left: 50%; animation-delay: -4s;
+  }
+  .confetti:nth-child(6) {
+	background-color: #ff9a91; left: 60%; animation-delay: -6s;
+  }
+  .confetti:nth-child(7) {
+	background-color: #f2d74e; left: 70%; animation-delay: -1.5s;
+  }
+  .confetti:nth-child(8) {
+	background-color: #95c3de; left: 80%; animation-delay: -2s;
+  }
+  .confetti:nth-child(9) {
+	background-color: #ff9a91; left: 90%; animation-delay: -3.5s;
+  }
+.confetti:nth-child(10) {
+	background-color: #f2d74e; left: 100%; animation-delay: -2.5s;
 }
 
-.timeline ul li div {
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
-}
-.timeline ul li:nth-of-type(odd) div {
-  transform: translate3d(100px, -10px, 0) rotate(10deg);
-}
-.timeline ul li:nth-of-type(even) div {
-  transform: translate3d(-100px, -10px, 0) rotate(10deg);
-}
-.timeline ul li.in-view div {
-  transform: none;
-  visibility: visible;
-  opacity: 1;
-  z-index: 10;
+@keyframes confetti {
+	0% { transform: rotateZ(15deg) rotateY(0deg) translate(0,0); }
+	25% { transform: rotateZ(5deg) rotateY(360deg) translate(-5vw,20vh); }
+	50% { transform: rotateZ(15deg) rotateY(720deg) translate(5vw,60vh); }
+	75% { transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw,80vh); }
+	100% { transform: rotateZ(15deg) rotateY(1440deg) translate(10vw,110vh); }
 }
 
-@media screen and (max-width: 900px) {
-  .timeline ul li div {
-    width: 250px;
-    flex-direction: column;
-  }
-  .timeline ul li div div {
-    width: 80%;
-    margin: 10px;
-  }
-  .timeline ul li:nth-of-type(even) > div {
-    left: -289px;
-  }
-}
-@media screen and (max-width: 600px) {
-  body {
-    background: #8bfff4;
-  }
-
-  .timeline ul li {
-    margin-left: 20px;
-  }
-  .timeline ul li div {
-    width: calc(100vw - 91px);
-  }
-  .timeline ul li:nth-of-type(even) > div {
-    left: 45px;
-  }
-}
 
 /* 
 #F8E9A1

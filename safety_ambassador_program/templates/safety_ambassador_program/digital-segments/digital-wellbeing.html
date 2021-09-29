@@ -66,14 +66,14 @@
         </div>
         <select class="form-select answer-fields" id = "digital-wellbeing" aria-label="Default select example">
             <option>Get to know the person and who they really are.</option>
-            <option id = "correct-answer">Be rude and ill-mannered to them because they are strangers</option>
+            <option>Be rude and ill-mannered to them because they are strangers</option>
             <option>Play unfairly to win</option>
-            <option>Be aware of your surroundings, who you’re talking to, and the information you are sharing.</option>
+            <option id = "correct-answer">Be aware of your surroundings, who you’re talking to, and the information you are sharing.</option>
         </select>
     {% endif %}
     <br>
     <br>
-    <button onclick="verifyAnswer('digital-wellbeing')" class = "btn btn-secondary confetti">Verify Answer</button>
+    <button onclick="verifyAnswer('digital-wellbeing')" class = "btn btn-secondary">Verify Answer</button>
     <div class="alert alert-danger" role="alert" id = "invalid-input-msg">
         It is important to note that you must be cautious while playing games with strangers online, while also maintaining a competitive and friendly environment. 
     </div>
