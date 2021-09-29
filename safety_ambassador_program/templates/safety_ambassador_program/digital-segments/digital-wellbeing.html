@@ -39,14 +39,14 @@
             <h4 class="text-danger">Q) </h4>
             <h4>How can you raise your digital awareness?</h4>
         </div>
-        <select class="form-select answer-fields" id = "digital-security" aria-label="Default select example">
+        <select class="form-select answer-fields" id = "digital-wellbeing" aria-label="Default select example">
             <option>Talk to your pet</option>
             <option>Speak to a stranger on the internet</option>
             <option id = "correct-answer">Ask a professional or your trusted adult</option>
             <option>The digital awareness I have is enough</option>
         </select>
     </div>
-    <div>
+    <!-- <div>
         <div class = "question-container">
             <h4 class="text-danger">Q) </h4>
             <h4>How do you share your values with people online?</h4>
@@ -57,23 +57,24 @@
             <option>Speak to strangers about wellbeing online while sharing personal stories and information</option>
             <option>Be empathetic with people on the internet but only if you like them and they agree with your thoughts</option>
         </select>
-    </div>
+    </div> -->
          
     {% else %}
         <div class = "question-container">
             <h4 class="text-danger">Q) </h4>
-            <h4>When online, from whom should you accept friend requests?</h4>
+            <h4>You’re playing video games with a stranger online. How do you interact and respond to them?</h4>
         </div>
-        <select class="form-select answer-fields" id = "digital-security" aria-label="Default select example">
-            <option>Someone you think you’ve met before.</option>
-            <option id = "correct-answer">Only from people you definitely know.</option>
-            <option>Anyone</option>
+        <select class="form-select answer-fields" id = "digital-wellbeing" aria-label="Default select example">
+            <option>Get to know the person and who they really are.</option>
+            <option id = "correct-answer">Be rude and ill-mannered to them because they are strangers</option>
+            <option>Play unfairly to win</option>
+            <option>Be aware of your surroundings, who you’re talking to, and the information you are sharing.</option>
         </select>
     {% endif %}
     <br>
     <br>
     <button onclick="verifyAnswer('digital-wellbeing')" class = "btn btn-secondary confetti">Verify Answer</button>
     <div class="alert alert-danger" role="alert" id = "invalid-input-msg">
-        Everyone should be treated with kindness and respect, even in the digital world. Not everyone will share the same views as you but it is important to be polite. Always be careful about personal information (like your name, age, where you live etc.) and avoid sharing it, even if you may think it's harmless! 
+        It is important to note that you must be cautious while playing games with strangers online, while also maintaining a competitive and friendly environment. 
     </div>
 </div>
