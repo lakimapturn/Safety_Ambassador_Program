@@ -73,8 +73,12 @@
     {% endif %}
     <br>
     <br>
-    <button onclick="verifyAnswer('digital-wellbeing')" class = "btn btn-secondary">Verify Answer</button>
+    <button onclick="verifyAnswer(this)" class = "btn btn-secondary">Verify Answer</button>
     <div class="alert alert-danger" role="alert" id = "invalid-input-msg">
+        {% if request.user.grade.grade >= 3 and 5 <= request.user.grade.grade %}
+        Your parents are your closest family. They must be involved in your online activities so they can keep a track of things in case anything goes wrong. 
+        {% else %}
         It is important to note that you must be cautious while playing games with strangers online, while also maintaining a competitive and friendly environment. 
+        {% endif %}
     </div>
 </div>

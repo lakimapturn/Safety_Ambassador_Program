@@ -10,36 +10,24 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 function verifyAnswer(question) {
-    const questionDiv = document.getElementById(question);
-    const val = questionDiv.value;
-    let correctAnswer = "";
-    // if (val.length > 3 && val.length < 20) {
-    //     document.getElementById("next-button").disabled = false;
-    //     document.getElementById("invalid-input-msg").style.opacity = 0;
-    // }
-    // else {
-    //     document.getElementById("invalid-input-msg").style.opacity = 1;
-    //     document.getElementById("next-button").disabled = true;
-    // }
-    for (let i = 0; i < questionDiv.children.length; i++) {
-        if (questionDiv.children[i].id == "correct-answer") {
-            correctAnswer = questionDiv.children[i].innerHTML;
-            break;
-        }
-    }
-    if (val == correctAnswer) {
+    const questionParent = question.parentNode.querySelector('select');
+    const correctAnswer = questionParent.querySelector('#correct-answer').value;
+    const inputValue = questionParent.value;
+    const questionDiv = document.querySelector('#correct-answer');
+    if (inputValue == correctAnswer) {
         document.getElementById("invalid-input-msg").style.opacity = 0;
         const carouselInner = document.getElementById("quiz-div").getElementsByClassName("carousel-inner")[0];
         for(let i = 1; i < 20; i++) {
             let confetti = document.createElement('div');
             confetti.className += "confetti";
-            questionDiv.parentNode.insertBefore(confetti, questionDiv)
+            questionParent.parentNode.insertBefore(confetti, questionParent);
         }
     }
     // fix the wrong answer error and the archives page
     else {
-        document.getElementById("invalid-input-msg").style.opacity = 1;
+        console.log(questionParent.parentNode)
+        questionParent.parentNode.querySelector('#invalid-input-msg').style.opacity = 1;
     }
     document.getElementById("next-button").disabled = false;
-    document.getElementById(question).disabled = true;
+    questionParent.parentNode.querySelector('select').disabled = true;
 }

@@ -16,7 +16,7 @@
   </div>
   <div style="padding: 1rem;">
       <div class = "archive-div slide-in from-right">
-        <img src = "/media/posters/image0.png" class="poster">
+        <img onmouseover="enlarge(this)" src = "/media/posters/image0.png" class="poster">
       </div> 
       <div class = "archive-div slide-in from-left">
         <img src = "/media/posters/image1.png" class="poster">
@@ -47,4 +47,9 @@
       </div>
   </div>
 </div>
+<script>
+  function enlarge(img) {
+    img.className += "poster-enlarge";
+  }
+</script>
 {% endblock %}

@@ -118,9 +118,11 @@
         function nextSlide() {
             currentSlideNumber++;
             localStorage.setItem('current-slide', currentSlideNumber);
-            const confetti = document.getElementById("quiz-div").getElementsByClassName("confetti");
-            for(let i = 1; i < 15; i++) {
-                confetti[i].remove();
+            if (document.getElementById("quiz-div").getElementsByClassName("confetti")) {
+                const confetti = document.getElementById("quiz-div").getElementsByClassName("confetti");
+                for(let i = 1; i < 20; i++) {
+                    confetti[i].remove();
+                }
             }
         }
     </script>

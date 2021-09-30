@@ -735,6 +735,20 @@ hr {
 	z-index: 100 !important;
 }
 
+.poster-enlarge {
+	color: #424242; 
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+	opacity: 1;
+	transform: scale(2.4);
+	-ms-transform: scale(2.4); /* IE 9 */
+	-webkit-transform: scale(2.4); /* Safari and Chrome */
+	z-index: 100 !important;
+}
+
 .about-div, 
 .archive-div {
 	text-align: center;
@@ -787,6 +801,10 @@ hr {
 .testimonial-designation {
 	text-align: right;
 	padding: 0.5rem;
+}
+
+.testimonial-div {
+	max-width: 30%;
 }
 
 /* FADE AND SCROLL IN STYLES 
@@ -887,10 +905,9 @@ hr {
 }
 
 .alert-danger {
-	margin: 1rem 0rem;
+	margin: 1rem auto;
 	opacity: 0;
-	width: 20%;
-	left: 40%;
+	width: 50%;
 }
 
 .answer-fields {
