@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.db import IntegrityError
-from .models import Game, Grade, User, Article, Section
+from .models import Game, Grade, User, Article
 
 # Create your views here.
 

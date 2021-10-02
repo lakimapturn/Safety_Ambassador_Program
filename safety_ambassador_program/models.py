@@ -13,12 +13,6 @@ class Grade(models.Model):
     class Meta:
         	ordering = ('-grade',)
 
-class Section(models.Model):
-    name = models.CharField(max_length=120)
-
-    def __str__(self):
-        return self.name
-
 class User(AbstractUser, models.Model):
     grade = models.ForeignKey(Grade, on_delete=models.CASCADE, null = True)
     start_time = models.DateTimeField(auto_now=True, editable=False)
@@ -33,7 +27,6 @@ class Game(models.Model):
     title = models.CharField(blank=False, null=False, max_length=120)
     url = models.URLField(blank=False, null=False)
     description = models.TextField(null=True, blank=True)
-    section = models.ForeignKey(Section, on_delete= models.CASCADE, null = True)
     image = models.FileField(blank=True, null=True)
     grade = models.ManyToManyField(Grade, related_name="allocated_grade", blank=False, default = "")
 
