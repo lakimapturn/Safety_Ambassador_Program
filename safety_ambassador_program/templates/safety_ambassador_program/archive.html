@@ -8,48 +8,99 @@
     <h1 class = "display-4" style="text-align: center; font-weight: 700;">The SAP Journey:</h1>
   </div>
   <div style="position: absolute; z-index: -10;">
-    <div style="background-image: url(/media/archive-yellow-template.png); height: 1080px; width: 1920px; margin: auto;"></div>
-    <div style="background-image: url(/media/archive-darkblue-template.png); height: 1080px; width: 1920px;"></div>
-    <div style="background-image: url(/media/archive-red-template.png); height: 1080px; width: 1920px;"></div>
-    <div style="background-image: url(/media/archive-navy-template.png); height: 1080px; width: 1920px;"></div>
-    <div style="background-image: url(/media/archive-skyblue-template.png); height: 1080px; width: 1920px; margin-bottom: 42vh;"></div>
+    <div style="background-image: url(/media/templates/archive-yellow-template.png); height: 1080px; width: 1920px; margin: auto;"></div>
+    <div style="background-image: url(/media/templates/archive-darkblue-template.png); height: 1080px; width: 1920px;"></div>
+    <div style="background-image: url(/media/templates/archive-red-template.png); height: 1080px; width: 1920px;"></div>
+    <div style="background-image: url(/media/templates/archive-navy-template.png); height: 1080px; width: 1920px;"></div>
+    <div style="background-image: url(/media/templates/archive-skyblue-template.png); height: 1080px; width: 1920px; margin-bottom: 42vh;"></div>
   </div>
-  <div style="padding: 1rem;">
-      <div class = "archive-div slide-in from-right">
-        <img onmouseover="enlarge(this)" src = "/media/posters/image0.png" class="poster">
-      </div> 
+  <div class = "archive-section">
+    <h2>Posters:</h2>
       <div class = "archive-div slide-in from-left">
-        <img src = "/media/posters/image1.png" class="poster">
-      </div>
-      <div class = "archive-div slide-in from-right">
-        <img src = "/media/posters/image2.png" class="poster">
-      </div>
-      <div class = "archive-div slide-in from-left">
-          <img src = "/media/posters/image3.png" class="poster">
-      </div>
-      <div class = "archive-div slide-in from-right">
-          <img src = "/media/posters/image4.png" class="poster">
-      </div>
-      <div class = "archive-div slide-in from-left">
-          <img src = "/media/posters/image5.png" class="poster">
+        <div class = "poster-background">
+          <img onclick="enlargePoster(this)" src = "/media/posters/image0.png" class="poster">   
+        </div>
+        <div class = "poster-background">
+          <img onclick="enlargePoster(this)" src = "/media/posters/image1.png" class="poster">
+        </div>
+        <div class = "poster-background">
+          <img onclick="enlargePoster(this)" src = "/media/posters/image2.png" class="poster">
+        </div>
       </div>
       <div class = "archive-div slide-in from-right">
-          <img src = "/media/posters/image6.png" class="poster">
+        <div class = "poster-background">
+          <img onclick="enlargePoster(this)" src = "/media/posters/image3.png" class="poster">
+        </div>
+        <div class = "poster-background">
+          <img onclick="enlargePoster(this)" src = "/media/posters/image4.png" class="poster">
+        </div>
       </div>
       <div class = "archive-div slide-in from-left">
-        <img src = "/media/posters/image7.png" class="poster">
+        <div class = "poster-background">
+          <img onclick="enlargePoster(this)" src = "/media/posters/image5.png" class="poster">
+        </div>
+        <div class = "poster-background">
+          <img onclick="enlargePoster(this)" src = "/media/posters/image6.png" class="poster">
+        </div>
+        <div class = "poster-background">
+          <img onclick="enlargePoster(this)" src = "/media/posters/image7.png" class="poster">
+        </div>
       </div>
       <div class = "archive-div slide-in from-right">
-          <img src = "/media/posters/image8.png" class="poster">
+        <div class = "poster-background">
+          <img onclick="enlargePoster(this)" src = "/media/posters/image8.png" class="poster">
+        </div>
+        <div class = "poster-background">
+          <img onclick="enlargePoster(this)" src = "/media/posters/image9.png" class="poster">
+        </div>
       </div>
-      <div class = "archive-div slide-in from-left">
-          <img src = "/media/posters/image9.png" class="poster">
+  </div>
+  <div class = "archive-section fade-in" style="background-color: white; margin: auto;">
+    <h2 style="margin: 0.5rem 0rem 1rem 0rem;">SecureU Bracelet</h2>
+    <div style = "margin: auto; display: flex; justify-content: space-evenly;">
+      <img class = "digital-image" style = "width: 90vh; height: 60vh; object-fit: cover;" src = "https://www.periodicodigitalgratis.com/gratis/img/27148/27148_0216334001569993846.jpg">
+      <img class = "digital-image" style = "width: 90vh; height: 60vh; object-fit:contain;" src = "/media/files/SecureU-flowchart.png">
+    </div>
+    <div style = "margin: 1rem">
+      <div class = "digital-body">
+        <p>
+          <b>Purpose: </b>To alert the police authorities and the families of the bracelet’s wearer about their location even when in remote places through security, communication and innovation, the ideals of the Dubai Police. 
+        </p>
+        <p>
+          <b>Audience: </b>Targeting specifically women, children, and those with special needs. 
+        </p>
+        <p>
+          <b>Description: </b>
+          <main>
+            <ol class = "gradient-list">
+                <li>A GPS integrated model, disguised as a bracelet since it is a commonly used accessory and can be hidden in plain sight.</li>
+                <li>When a minimum amount of pressure is exerted on the sensor for 3 seconds then the GPS location will be sent to the 3 favourite contacts stored on the SecureU database. </li>
+                <li>When the same amount of pressure is applied 2 times continuously then the location is sent to the central police authorities via the SecureU app.</li>
+                <li>Can be adapted to multiple contexts by using the cuboid (as shown in the image) in other accessories like necklaces and armlets. </li>
+            </ol>
+          </main>
+        </p>
       </div>
+    </div>
+  </div>
+  <div class = "archive-section">
+    <h2>Other Work:</h2>
+    <div class = "archive-div slide-in from-left">
+      <div class = "poster-background">
+        <a href = "https://docs.google.com/document/d/e/2PACX-1vSzI5GoNWcA0x0ngvX39nagdKZInER-wmwZ5tFMhSkaI_iZSnDQh47cTLR8ET9p_w/pub">
+          <iframe style = "height: 18rem; width: 15rem" src="https://docs.google.com/document/d/e/2PACX-1vSzI5GoNWcA0x0ngvX39nagdKZInER-wmwZ5tFMhSkaI_iZSnDQh47cTLR8ET9p_w/pub?embedded=true"></iframe>
+        </a>
+      </div>
+      <div class = "poster-background">
+      </div>
+      <div class = "poster-background">
+      </div>
+    </div>
   </div>
 </div>
 <script>
-  function enlarge(img) {
-    img.className += "poster-enlarge";
+  function enlargePoster(poster) {
+    location.href = poster.src;
   }
 </script>
 {% endblock %}

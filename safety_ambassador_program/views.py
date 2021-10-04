@@ -51,7 +51,7 @@ def authenticationPage(request):
         else: # telling the user that the credentials entered are invalid
             return render(request, "safety_ambassador_program/authentication.html", {
                 "purpose": "login", 
-                "message": "Invalid username and/or password!"
+                "loginMessage": "Invalid username and/or password!"
             })
     elif(request.method == 'POST' and request.POST['purpose'] == "register"): # if the user has submitted data this function runs
         enteredUsername = request.POST["loguname"]
@@ -67,7 +67,7 @@ def authenticationPage(request):
         except IntegrityError:
             return render(request, "safety_ambassador_program/authentication.html", {
                 "purpose": "registration",
-                "message": "Username already taken!"
+                "registerMessage": "Username already taken!"
             })
         login(request, user)
         return HttpResponseRedirect(reverse("index"))

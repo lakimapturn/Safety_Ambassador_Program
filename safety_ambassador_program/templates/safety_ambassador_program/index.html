@@ -89,7 +89,7 @@
                 </div>
             </div>
             <div class = "carousel-item">
-                <a href = "{% url 'intro_completed' %}"><button class="btn btn-success">Complete Introduction</button></a>
+                <a onclick="completeIntro()" href = "{% url 'intro_completed' %}"><button class="btn btn-success">Complete Introduction</button></a>
             </div>
         </div>
         <div class = "carousel-controls">
@@ -131,6 +131,10 @@
                     confetti[i].remove();
                 }
             }
+        }
+        function completeIntro() {
+            currentSlideNumber = 0;
+            localStorage.setItem('current-slide', 0)
         }
     </script>
 {% endblock %}

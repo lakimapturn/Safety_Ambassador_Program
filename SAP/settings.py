@@ -85,6 +85,8 @@ DATABASES = {
         'PORT': 5432,
         'PASSWORD': 'e6916d8905fba8c2bf407b72bed9333aa928623f021425eb306509eda62100b0',
         'USER': 'pcionpsylzbeti',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 

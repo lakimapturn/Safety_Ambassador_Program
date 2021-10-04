@@ -17,11 +17,20 @@ function verifyAnswer(question) {
     if (inputValue == correctAnswer) {
         document.getElementById("invalid-input-msg").style.opacity = 0;
         const carouselInner = document.getElementById("quiz-div").getElementsByClassName("carousel-inner")[0];
-        for(let i = 1; i < 20; i++) {
-            let confetti = document.createElement('div');
-            confetti.className += "confetti";
-            questionParent.parentNode.insertBefore(confetti, questionParent);
+        if (questionParent.parentNode.getElementsByClassName('confetti'))
+        {
+            for(let i = 1; i < 20; i++) {
+                let confetti = document.createElement('div');
+                confetti.className += "confetti";
+                confetti.style.left = Math.random() * 99 + "%";
+                confetti.style.animationDelay = Math.random() * 4 + 's';
+                questionParent.parentNode.insertBefore(confetti, questionParent);
+            }
         }
+        let correctMsg = document.createElement('div');
+        correctMsg.className += "alert alert-success";
+        correctMsg.innerHTML = "Correct Answer!";
+        questionParent.parentNode.appendChild(correctMsg);
     }
     // fix the wrong answer error and the archives page
     else {
