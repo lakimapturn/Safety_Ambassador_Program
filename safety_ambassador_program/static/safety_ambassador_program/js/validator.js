@@ -35,7 +35,6 @@ function verifyAnswer(question) {
         questionParent.parentNode.appendChild(correctMsg);
     }
     else {
-        console.log(questionParent.parentNode)
         questionParent.parentNode.querySelector('#invalid-input-msg').style.opacity = 1;
     }
     question.disabled = true;
