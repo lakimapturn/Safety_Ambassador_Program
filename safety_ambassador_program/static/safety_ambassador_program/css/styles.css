@@ -19,6 +19,15 @@ a {
 a:hover {
 	text-decoration: none;
 }
+footer {
+	background-color: #374785; 
+	text-align: center; 
+	padding: 1rem;
+	margin: 2rem 0rem 0rem;
+}
+u {
+	color: white;
+}
 
 /* #Primary style
 ================================================== */
@@ -821,6 +830,13 @@ hr {
 
 .testimonial-div {
 	max-width: 30%;
+}
+
+.footer-display {
+	display: flex;
+	margin: 1rem;
+	width: 95%;
+	justify-content: space-around;
 }
 
 /* FADE AND SCROLL IN STYLES 

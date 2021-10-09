@@ -34,7 +34,6 @@
 <hr>
 <div class = "section-questions">
     {% if request.user.grade.grade >= 3 and 5 <= request.user.grade.grade %}
-    <div>
         <div class = "question-container">
             <h4 class="text-danger">Q) </h4>
             <h4>How can you raise your digital awareness?</h4>
@@ -44,21 +43,7 @@
             <option>Speak to a stranger on the internet</option>
             <option id = "correct-answer">Ask a professional or your trusted adult</option>
             <option>The digital awareness I have is enough</option>
-        </select>
-    </div>
-    <!-- <div>
-        <div class = "question-container">
-            <h4 class="text-danger">Q) </h4>
-            <h4>How do you share your values with people online?</h4>
-        </div>
-        <select class="form-select answer-fields" id = "digital-security" aria-label="Default select example">
-            <option>Be rude to someone if they disagree with your thoughts or values</option>
-            <option id = "correct-answer">Be empathetic and friendly with people on the internet, while being careful about who you are talking to</option>
-            <option>Speak to strangers about wellbeing online while sharing personal stories and information</option>
-            <option>Be empathetic with people on the internet but only if you like them and they agree with your thoughts</option>
-        </select>
-    </div> -->
-         
+        </select>         
     {% else %}
         <div class = "question-container">
             <h4 class="text-danger">Q) </h4>
@@ -80,7 +65,7 @@
         {% if request.user.grade.grade >= 3 and 5 <= request.user.grade.grade %}
             Your parents are your closest family. They must be involved in your online activities so they can keep a track of things in case anything goes wrong. 
         {% else %}
-        It is important to note that you must be cautious while playing games with strangers online, while also maintaining a competitive and friendly environment. 
-            {% endif %}
+            It is important to note that you must be cautious while playing games with strangers online, while also maintaining a competitive and friendly environment. 
+        {% endif %}
     </div>
 </div>

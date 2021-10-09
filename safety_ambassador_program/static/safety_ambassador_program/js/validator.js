@@ -13,6 +13,8 @@ function verifyAnswer(question) {
     const questionParent = question.parentNode.querySelector('select');
     const correctAnswer = questionParent.querySelector('#correct-answer').value;
     const inputValue = questionParent.value;
+    console.log(questionParent.parentNode)
+
     if (inputValue == correctAnswer) {
         document.getElementById("invalid-input-msg").style.opacity = 0;
         const sound = new Audio();
@@ -32,8 +34,8 @@ function verifyAnswer(question) {
         correctMsg.innerHTML = "Correct Answer!";
         questionParent.parentNode.appendChild(correctMsg);
     }
-    // fix the wrong answer error and the archives page
     else {
+        console.log(questionParent.parentNode)
         questionParent.parentNode.querySelector('#invalid-input-msg').style.opacity = 1;
     }
     question.disabled = true;
