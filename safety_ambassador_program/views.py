@@ -23,7 +23,7 @@ def gamesPage(request):
     for game in Game.objects.all(): 
         if request.user.grade in game.grade.all():
             gradeGames.append(game)
-    return render(request, "safety_ambassador_program/test.html", {
+    return render(request, "safety_ambassador_program/games.html", {
         "Digital": gradeGames
     })
 

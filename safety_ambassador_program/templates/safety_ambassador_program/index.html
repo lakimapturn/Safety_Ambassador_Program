@@ -11,12 +11,16 @@
             <div class="carousel-item active">
                 <div class="index-test-containers d-block">
                     <h1>Welcome to the Safety Ambassadors Program</h1>
-                    <p>The Safety Ambassador Program is a program that was initiated by the Dubai Police which aims to spread awareness about Child Rights and foster a safe and secure environment for the students in each school. </p>
+                    <p>The Safety Ambassadors Program (SAP) is an evidence-based program that harnesses the power of students delivering children rights, to prevent and stop violence and mistreatment. It is considered a social-emotional learning program and has been approved by many schools.</p>
+                    <p>Initiated by the Dubai Police, in collaboration with the Knowledge and Human Development Authority (KHDA), SAP is a student-centered model that educates diverse social leaders with the skills to prevent and reduce violence delivering children rights . It is the nation’s most effective student-led bullying & violence prevention program. </p>
+                    <p>This program relies on the “inside-out” approach to improving school climate. Student bystanders see, hear, and know things adults don’t, can intervene in ways adults can’t and are often on the scene of an incident before an adult. They are a critical and necessary resource for positively impacting the crisis of bullying, violence in schools.</p>
+                    <p>We conducted sessions for the students of middle school (grades 6-8) educating them about the UN Child Rights. More information about these sessions is listed in detail below. Along with these sessions, three of our mentors had the enthralling opportunity to host a webinar with the Dubai Police and the founder of the successful anti-cyberbullying app GoBubble - Henry Platten. Around 400 individuals across different age groups were present at this webinar. Our presentation on the theme ‘Children in the Digital World’ was met with a lot of positive feedback, and our mentors sincerely hope they were able to leave a lasting impact on the attendees.</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="index-test-containers d-block">
-                    <h1>Check In Questions</h1>
+                    <h1>Check In Questions | Let's See What You Already Know!</h1>
+                    <br>
                     <div>
                         <div class = "question-container">
                             <h4 class="text-danger">Q.1) </h4>
@@ -30,6 +34,7 @@
                         </select>
                     </div>
                     <br>
+                    <br>
                     <div>
                         <div class = "question-container">
                             <h4 class="text-danger">Q.2) </h4>
@@ -42,6 +47,7 @@
                             <option id = "correct-answer">All of the above.</option>
                         </select>
                     </div>
+                    <br>
                     <br>
                     <div>
                         <div class = "question-container">
@@ -89,6 +95,9 @@
                 </div>
             </div>
             <div class = "carousel-item">
+                <h2>Certificate Of Completion:</h2>
+                <canvas id = "canvas" height="90%" width="50%"></canvas>
+                <button onclick="downloadCertificate()" class="btn btn-success">Download Certificate</button>
                 <a onclick="completeIntro()" href = "{% url 'intro_completed' %}"><button class="btn btn-success">Complete Introduction</button></a>
             </div>
         </div>
@@ -106,9 +115,12 @@
     <hr>
     <script>  
         let currentSlideNumber = localStorage.getItem('current-slide')?localStorage.getItem('current-slide'):0;
+        let carouselLength = 0;
         document.addEventListener("DOMContentLoaded", () => {
             const carousel = new bootstrap.Carousel(document.getElementById("quiz-div"));
             carousel.to(currentSlideNumber);
+            carouselLength = carousel._items.length;
+            console.log(carouselLength);
             if(currentSlideNumber == carousel._items.length) {
                 const finishIntroDiv = document.createElement('div');
                 const finishIntroButton = document.createElement('button');
@@ -118,14 +130,12 @@
             }
         })
         function prevSlide() {
-            currentSlideNumber--;
-            localStorage.setItem('current-slide', currentSlideNumber);
-            document.getElementById("next-button").disabled = false;
+            setTimeout(() => document.getElementById("next-button").disabled = false, 1100)
         }
-        function nextSlide() {
-            currentSlideNumber++;
+        function nextSlide(carouselItem) {
+            currentSlideNumber = Math.min(currentSlideNumber+1, carouselLength);
             localStorage.setItem('current-slide', currentSlideNumber);
-            if (document.getElementById("quiz-div").getElementsByClassName("confetti")) {
+            if (document.getElementById("quiz-div").getElementsByClassName("confetti") != null) {
                 const confetti = document.getElementById("quiz-div").getElementsByClassName("confetti");
                 for(let i = 1; i < 20; i++) {
                     confetti[i].remove();

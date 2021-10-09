@@ -3,93 +3,67 @@
 {% block title %} Safety Ambassador Program {% endblock %}
 
 {% block body %}
-<div class = "slide-in from-right index-section-container">
-    <h2>Recommended Games</h2>
-    <div class = "carousel-containers">
-      <div class = "update-title">
-        <h3>Check these out!</h3>
-      </div>
-        <div>
-          <div id="firstCarousel" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#firstCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#firstCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#firstCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              </div>
-                <div class="carousel-inner">
-                  {% for item in Digital %}
-                    {% if forloop.counter == 1 %}
-                      <div class="carousel-item active">
-                    {% else %}
-                      <div class="carousel-item">
-                    {% endif %}
-                      <img src="{{item.image.url}}" style = "height: 60vh; object-fit: cover; width: 115vh;" class="d-block" alt="...">
-                      <div style = "background-color: rgba(0, 0, 0, 0.74);" class="carousel-caption d-none d-md-block">
-                        <a style = "color: white;" href = "{{item.url}}">
-                          <h5>{{item.title}}</h5>
-                        </a>
-                        <p>{{item.description}}</p>
-                      </div>
-                  </div>
-                {% endfor %} 
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#firstCarousel" data-bs-slide="prev">
-                <span class="" style="color: black; font-size: 5rem;" aria-hidden="true">&#8249;</span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#firstCarousel" data-bs-slide="next">
-                <span class="" style="color: black; font-size: 5rem;" aria-hidden="true">&#8250;</span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-          </div>
-      </div>
-  </div>
-
-    <div class = "slide-in from-left index-section-container">
-      <h2>Recommended Games</h2>
-      <div class = "carousel-containers">
-          <div>
-            <div id="secondCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#secondCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#secondCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#secondCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                  <div class="carousel-inner">
-                    {% for item in Digital|slice:"3:6" %}
-                      {% if forloop.counter == 1 %}
-                        <div class="carousel-item active">
-                      {% else %}
-                        <div class="carousel-item">
-                      {% endif %}
-                        <img src="{{item.image.url}}" class="d-block" style = "height: 60vh; object-fit: cover; width: 115vh;" alt="...">
-                        <div style = "background-color: rgba(0, 0, 0, 0.74);" class="carousel-caption d-none d-md-block">
-                          <a style = "color: white;" href = "{{item.url}}">
-                            <h5>{{item.title}}</h5>
-                          </a>
-                          <p>{{item.description}}</p>
-                        </div>
+    {% load static %}
+    <script src = "{% static 'safety_ambassador_program/js/balloon.js' %}"></script>
+    <div class="games-container">
+        {% for game in Digital %}
+            <div 
+            {% if forloop.counter|divisibleby:2 %} 
+            class = "slide-in from-right right-game game-div" 
+            {% else %} 
+            class = "slide-in from-left left-game game-div" 
+            {% endif %}
+            >
+                <a href="{{game.url}}">
+                    <h2>{{game.title}}</h2>
+                    <hr>
+                    <div style="display: flex;">
+                        {% if forloop.counter|divisibleby:2 %} 
+                            <div style="margin-right: 5rem;">
+                                <img src="{{game.image.url}}" class="d-block game-img" alt="...">
+                            </div>
+                            <div style="display: block; margin: auto;">
+                                <h4>{{game.description}}</h4>
+                            </div>
+                            <div style="margin-right: 5rem;">
+                                <img class="d-block game-img" alt="...">
+                            </div>
+                            <!-- https://media3.giphy.com/media/Ri98Ht4Q9hczOeHC1E/giphy.gif -->
+                            <!-- https://i.gifer.com/WME8.gif -->
+                            <!-- https://c.tenor.com/lNtmoshuUI8AAAAj/bahroo-hacker.gif -->
+                        {% else %} 
+                            <div>
+                                <img class="d-block game-img" alt="...">
+                            </div>
+                            <div style="display: block; margin: auto;">
+                                <h5>{{game.description}}</h5>
+                            </div> 
+                            <div style="margin-right: 5rem;">
+                                <img src="{{game.image.url}}" class="d-block game-img" alt="...">
+                            </div>
+                        {% endif %}
                     </div>
-                  {% endfor %} 
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#secondCarousel" data-bs-slide="prev">
-                  <span class="" style="color: black; font-size: 5rem;" aria-hidden="true">&#8249;</span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#secondCarousel" data-bs-slide="next">
-                  <span class="" style="color: black; font-size: 5rem;" aria-hidden="true">&#8250;</span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
+                </a>
             </div>
-            <div class = "update-title">
-              <h3>Games For All Grades!</h3>
-          </div>
-        </div>
+        {% endfor %}
     </div>
-  </div>
-  <script>
+    <script>
+        const gifs = ['reddude.gif', 'octo.gif', 'glitch.gif', 'batman.gif', 'rocket.gif'];
+        const basePath = '/media/gifs/';
+        document.addEventListener("DOMContentLoaded", function() {
+            let gifsCopy = gifs.slice(0); //make a copy of the array.
+            for (let i = 0; i < document.getElementsByClassName('game-img').length; i++) {
+                let rNumber = Math.floor(Math.random() * gifsCopy.length);
+                let img = document.getElementsByClassName('game-img')[i];
+                if(!img.src) {
+                    let rand = gifsCopy.splice(rNumber, 1); //deletes the img from the array and returns it;
+                    img.src = basePath+rand;
+                }
+            }
+        })
+    </script>
+    <!-- 
+      <script>
     function isVisibleInViewport(elem)
     {
         var y = elem.offsetTop;
@@ -115,4 +89,5 @@
       }, 5000);
     })
   </script>
+     -->
 {% endblock %}

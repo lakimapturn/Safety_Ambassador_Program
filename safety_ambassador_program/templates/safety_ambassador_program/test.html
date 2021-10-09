@@ -1,69 +1,183 @@
-{% extends "safety_ambassador_program/layout.html" %}
+<header class="cd-header">
+    <div class="header-wrapper">
+        <div class="logo-wrap">
+            <img class = "logo-img" src = "/media/SAP-logo.png" height = 95px>
+            <img class = "logo-img" src = "https://i2.wp.com/dxbmodern.com/wp-content/uploads/2020/10/1564693423_LOGO-1.png?fit=200%2C200" height = "80px">
+        </div>
+        <div class="nav-but-wrap">
+            <div class="menu-icon hover-target">
+                <span class="menu-icon__line menu-icon__line-left"></span>
+                <span class="menu-icon__line"></span>
+                <span class="menu-icon__line menu-icon__line-right"></span>
+            </div>					
+        </div>					
+    </div>				
+</header>
 
-{% block title %} Safety Ambassador Program {% endblock %}
-
-{% block body %}
-    {% load static %}
-    <script src = "{% static 'safety_ambassador_program/js/balloon.js' %}"></script>
-    <div class="games-container">
-        {% for game in Digital %}
-            <div 
-            {% if forloop.counter|divisibleby:2 %} 
-            class = "slide-in from-right right-game game-div" 
-            {% else %} 
-            class = "slide-in from-left left-game game-div" 
-            {% endif %}
-            >
-                <a href="{{game.url}}">
-                    <h2>{{game.title}}</h2>
-                    <hr>
-                    <div style="display: flex;">
-                        {% if forloop.counter|divisibleby:2 %} 
-                            <div style="margin-right: 5rem;">
-                                <img src="{{game.image.url}}" class="d-block game-img" alt="...">
-                            </div>
-                            <div style="display: block; margin: auto;">
-                                <h4>{{game.description}}</h4>
-                            </div>
-                            <div style="margin-right: 5rem;">
-                                <img class="d-block game-img" alt="...">
-                            </div>
-                            <!-- https://media3.giphy.com/media/Ri98Ht4Q9hczOeHC1E/giphy.gif -->
-                            <!-- https://i.gifer.com/WME8.gif -->
-                            <!-- https://c.tenor.com/lNtmoshuUI8AAAAj/bahroo-hacker.gif -->
-                        {% else %} 
-                            <div>
-                                <img class="d-block game-img" alt="...">
-                            </div>
-                            <div style="display: block; margin: auto;">
-                                <h5>{{game.description}}</h5>
-                            </div> 
-                            <div style="margin-right: 5rem;">
-                                <img src="{{game.image.url}}" class="d-block game-img" alt="...">
-                            </div>
-                        {% endif %}
-                    </div>
-                </a>
-            </div>
-        {% endfor %}
+<div class="nav">
+    <div class="nav__content">
+        <ul class="nav__list">
+            <li class="nav__list-item active-nav"><a href="#" class="hover-target">Home</a></li>
+            <li class="nav__list-item"><a href="#" class="hover-target">Portfolio</a></li>
+            <li class="nav__list-item"><a href="#" class="hover-target">Studio</a></li>
+            <li class="nav__list-item"><a href="#" class="hover-target">News</a></li>
+            <li class="nav__list-item"><a href="#" class="hover-target">Contact</a></li>
+        </ul>
     </div>
-    <script>
-        const gifs = ['reddude.gif', 'octo.gif', 'glitch.gif', 'batman.gif'];
-        const basePath = '/media/gifs/';
-        document.addEventListener("DOMContentLoaded", function() {
-            let gifsCopy = gifs.slice(0); //make a copy of the array.
-            for (let i = 0; i < document.getElementsByClassName('game-img').length; i++) {
-                console.log(gifsCopy);
-                let rNumber = Math.floor(Math.random() * gifsCopy.length);
-                let img = document.getElementsByClassName('game-img')[i];
-                if(!img.src) {
-                    let rand = gifsCopy.splice(rNumber, 1); //deletes the img from the array and returns it;
-                    img.src = basePath+rand;
-                }
+</div>		
+
+<div class="section full-height over-hide">	
+    <div class="switch-wrap">
+        <h1 style = "color: white;" class = "display-3">{% block title %}{% endblock %}</h1>
+    </div>
+</div>	
+{% load static %}
+{% load SAP_tags %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% check_about_url request as url %}
+        <title>Safety Ambassador Program</title>
+        <!-- <link rel="shortcut icon" href = "https://www.safetyandhealthmagazine.com/ext/resources/images/news/NSC/Safety-Ambassador-logo.jpg?1532462257" type="image/x-icon"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href = "{% static 'safety_ambassador_program/css/styles.css' %}">
+
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+        <!-- Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"rel="stylesheet"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    </head>
+    <body class = "light">
+        {% if request.path == "/about" or request.path == "/archive" %}
+        <div class = "about-page" style="background: linear-gradient(180deg, rgba(167,120,21,1) 33%, rgba(244,247,247,1) 100%); position: fixed; height: 58vh; width: 100%; z-index: -10 !important;"></div>
+        {% endif %}
+        <!-- <h1>Safety Ambassador Program</h1> -->
+        <header class="cd-header">
+            <div class="header-wrapper">
+                <div class="logo-wrap">
+                    <img class = "logo-img" src = "/media/SAP-logo.png" height = 95px>
+                    <img class = "logo-img" src = "https://i2.wp.com/dxbmodern.com/wp-content/uploads/2020/10/1564693423_LOGO-1.png?fit=200%2C200" height = "80px">
+                </div>
+                {% if request.user.intro_completed %}
+                    <div class="nav-but-wrap">
+                        <div class="menu-icon hover-target">
+                            <span class="menu-icon__line menu-icon__line-left"></span>
+                            <span class="menu-icon__line"></span>
+                            <span class="menu-icon__line menu-icon__line-right"></span>
+                        </div>					
+                    </div>	
+                {% endif %}				
+            </div>				
+        </header>
+    
+        <div class="nav">
+            <div class="nav__content">
+                <ul class="nav__list">
+                    <div class = "nav__list-item">
+                        <h6 style = "color: black;">Welcome Back {{request.user.first_name}} {{request.user.last_name}}!</h6>
+                        <h6 id = "coins-score" style = "color: black; font-size: 1rem;">Coins Collected: </h6>
+                    </div>
+                    <li class="nav__list-item"><a href="{% url 'index' %}" class="hover-target">Home</a></li>
+                    <li class="nav__list-item"><a href="{% url 'games_page' %}" class="hover-target">Games</a></li>
+                    <li class="nav__list-item"><a href="{% url 'about' %}" class="hover-target">About</a></li>
+                    <li class="nav__list-item"><a href="{% url 'archive' %}" class="hover-target">Archives</a></li>
+                    <li class="nav__list-item"><a href="{% url 'logout' %}" class="hover-target">Log Out</a></li>
+                </ul>
+            </div>
+        </div>		
+    
+        <div class = "layout-header">
+            <div class="section full-height over-hide">	
+                <div class="switch-wrap">
+                    <h1 style = "color: white;" class = "display-3">{% block title %}{% endblock %}</h1>
+                </div>
+            </div>
+            {% if request.path == "/" and request.user.intro_completed %}
+            <a href = "{% url 'games_page' %}">
+                <div class = "header col fade-in">
+                    <button class = "btn btn-info btn-lg btn-radius">Play Games</button>
+                </div>
+            </a>
+            {% endif %}
+        </div>	
+
+        <div class = "page-content">
+            <div class = "logo-wrap" style="padding-left: 12rem; padding-top: 0.5rem;">
+                <img class = "logo-img" src = "https://www.ilearnme.com/wp-content/uploads/2020/05/dxbpolice_logo-3.png" height = 80px>
+                <img class = "logo-img" src = "https://iconape.com/wp-content/png_logo_vector/gems-education-logo.png" height = "80px">
+            </div>
+            {% block body %}
+            {% endblock %}
+        </div>
+
+    <script src="{% static 'safety_ambassador_program/js/observers.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    {% if request.user.intro_completed %}
+        <script>
+            for(let i = 1; i<=2; i++) {
+                const coin = document.createElement('div');
+                coin.classList += "coin";
+                coin.style.left = Math.random() * 99 + "%";
+                coin.style.top = Math.random() * document.body.scrollHeight + "px";
+                coin.addEventListener('click', () => {
+                    let currentCoins = localStorage.getItem("coins-collected")?localStorage.getItem("coins-collected"):0;
+                    localStorage.setItem("coins-collected", ++currentCoins);
+                    if(currentCoins == 1) {
+                        alert("Congratulations! You just collected a coin. You can find more as you explore the website!")
+                    }
+                    document.getElementById('coins-score').innerHTML = "Coins Collected: " + currentCoins;
+                    document.querySelector('body').removeChild(coin);
+                })
+                document.querySelector('body').appendChild(coin);
             }
-        })
-        function imgRandom() {
+        </script>
+    {% endif %}
+    <script>
+        (function($) { "use strict";
+                
+                //Navigation
+                const currentCoins = localStorage.getItem("coins-collected")?localStorage.getItem("coins-collected"):0;
+                document.getElementById('coins-score').innerHTML = "Coins Collected: " + currentCoins;
+                let app = function () {
+                    let body = undefined;
+                    let menu = undefined;
+                    let menuItems = undefined;
+                    let init = function init() {
+                        body = document.querySelector('body');
+                        menu = document.querySelector('.menu-icon');
+                        menuItems = document.querySelectorAll('.nav__list-item');
+                        applyListeners();
+                    };
+                    let applyListeners = function applyListeners() {
+                        menu.addEventListener('click', function () {
+                            return toggleClass(body, 'nav-active');
+                        });
+                    };
+                    let toggleClass = function toggleClass(element, stringClass) {
+                        if (element.classList.contains(stringClass)) element.classList.remove(stringClass);else element.classList.add(stringClass);
+                    };
+                    init();
+                }();
             
-        }
-    </script>
-{% endblock %}
+                
+                // //Switch light/dark
+                
+                // $("#switch").on('click', function () {
+                //     if ($("body").hasClass("light")) {
+                //         $("body").removeClass("light");
+                //         $("#switch").removeClass("switched");
+                //     }
+                //     else {
+                //         $("body").addClass("light");
+                //         $("#switch").addClass("switched");
+                //     }
+                // });
+                
+            })(jQuery); 
+        </script>
+
+    </body>
+</html>

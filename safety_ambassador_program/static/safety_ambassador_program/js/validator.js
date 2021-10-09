@@ -13,12 +13,12 @@ function verifyAnswer(question) {
     const questionParent = question.parentNode.querySelector('select');
     const correctAnswer = questionParent.querySelector('#correct-answer').value;
     const inputValue = questionParent.value;
-    const questionDiv = document.querySelector('#correct-answer');
     if (inputValue == correctAnswer) {
         document.getElementById("invalid-input-msg").style.opacity = 0;
-        const carouselInner = document.getElementById("quiz-div").getElementsByClassName("carousel-inner")[0];
-        if (questionParent.parentNode.getElementsByClassName('confetti'))
-        {
+        const sound = new Audio();
+        sound.src = "/media/sounds/applause.wav";
+        sound.play();
+        if (questionParent.parentNode.getElementsByClassName('confetti')) {
             for(let i = 1; i < 20; i++) {
                 let confetti = document.createElement('div');
                 confetti.className += "confetti";
@@ -34,9 +34,9 @@ function verifyAnswer(question) {
     }
     // fix the wrong answer error and the archives page
     else {
-        console.log(questionParent.parentNode)
         questionParent.parentNode.querySelector('#invalid-input-msg').style.opacity = 1;
     }
+    question.disabled = true;
     document.getElementById("next-button").disabled = false;
     questionParent.parentNode.querySelector('select').disabled = true;
 }

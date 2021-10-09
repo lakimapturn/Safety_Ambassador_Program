@@ -55,8 +55,9 @@ a:hover {
 	position: absolute;
 	display:block;
 	left:0;
-	top: 40px;
+	top: 20px;
 	cursor: pointer;
+	transition: opacity 500ms ease-in-out;
 }
 .logo-wrap a {
 	cursor: pointer;
@@ -638,6 +639,21 @@ body.light .switch-wrap p span:nth-child(1):before {
 	}
   }
 
+/* Collectable Coins CSS 
+================================================== */
+.coin {
+	z-index: 96;
+	position: absolute;
+	background-image: url(/media/gifs/coin.gif);
+	width: 200px;
+	height: 200px;
+	background-size: contain;
+}
+
+.coin:hover {
+	cursor: pointer;
+}
+
 /* Custom CSS
 ================================================== */
 
@@ -678,6 +694,10 @@ hr {
 	width: 80%;
 	background-color: #374785;
 	display: flex;
+}
+
+.carousel-inner {
+	width: 95% !important;
 }
 
 .update-title {
@@ -762,14 +782,14 @@ hr {
 	border-radius: 1rem;
 }
 
-.about-title {
+.section-title {
 	position: relative;
 	margin: 2rem 1rem;
 }
 
-.about-title:before {
+.section-title:before {
 	content: "";
-	width: 100%;
+	width: 105%;
 	display: block;
 	height: 0.5rem;
 	background-color: white;
@@ -779,7 +799,7 @@ hr {
 	border-radius: 0.25rem;
 }
 
-.about-title > span {
+.section-title > span {
 	background-color: white;
 	padding: 0.5rem;
 	border-radius: 0.5rem;
