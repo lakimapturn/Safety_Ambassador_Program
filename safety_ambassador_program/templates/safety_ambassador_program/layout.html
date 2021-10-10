@@ -87,37 +87,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     {% if request.user.intro_completed %}
-        <script>
-            setTimeout(() => {
-                for(let i = 1; i<=2; i++) {
-                const coin = document.createElement('div');
-                coin.classList += "coin";
-                coin.style.left = Math.random() * 99 + "%";
-                coin.style.top = Math.random() * document.body.scrollHeight + "px";
-                coin.addEventListener('click', () => {
-                    let currentCoins = localStorage.getItem("coins-collected")?localStorage.getItem("coins-collected"):0;
-                    localStorage.setItem("coins-collected", ++currentCoins);
-                    if(currentCoins == 1) {
-                        // alert("");
-                        const speechBubble = document.createElement('p');
-                        speechBubble.innerHTML = "Congratulations! You just collected a coin. You can find more as you explore the website!";
-                        speechBubble.id = "speech-bubble";
-                        speechBubble.style.position = "absolute";
-                        speechBubble.style.left = coin.style.left;
-                        speechBubble.style.top = (coin.style.top.substring(0, coin.style.top.indexOf('p')) - 100) + "px";
-                        console.log(speechBubble)
-                        document.querySelector('body').appendChild(speechBubble);
-                    }
-                    const sound = new Audio();
-                    sound.src = "/media/sounds/coin.wav";
-                    sound.play();
-                    document.getElementById('coins-score').innerHTML = "Coins Collected: " + currentCoins;
-                    document.querySelector('body').removeChild(coin);
-                })
-                document.querySelector('body').appendChild(coin);
-            }
-            }, 1000)
-        </script>
+        <script src = "{% static 'safety_ambassador_program/js/coins.js' %}"></script>
     {% endif %}
     <script>
         (function($) { "use strict";

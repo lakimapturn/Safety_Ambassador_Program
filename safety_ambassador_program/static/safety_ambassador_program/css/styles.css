@@ -1072,12 +1072,12 @@ ol.gradient-list > li:nth-child(10n+10):before {
 #speech-bubble {
 	line-height: 1.5;
 	font-weight: 300;
-	position: relative;
+	position: absolute;
 	max-width: 30em;
-	color: white;
-	background-color: grey;
+	color: black;
+	background-color: whitesmoke;
 	padding: 1.125em 1.5em;
-	font-size: 1.25em;
+	font-size: 0.9em;
 	border-radius: 1rem;
   	box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
 }
