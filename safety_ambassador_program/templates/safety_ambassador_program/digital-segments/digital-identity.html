@@ -45,18 +45,24 @@
     {% else %}
         <div class = "question-container">
             <h4 class="text-danger">Q) </h4>
-            <h4>Let's say you got into an argument with a stranger online. What must you do in this situation?</h4>
+            <h4>You post a comment on a YouTube video. Someone disagrees with your comment and replies angrily and irrationally, using harsh language. How do you respond? </h4>
         </div>
         <select class="form-select answer-fields" id = "digital-identity" aria-label="Default select example">
-            <option id = "correct-answer">Stay as calm as possible and avoid any further conflict.</option>
-            <option>Talk back to the stranger and insult them.</option>
-            <option>Post about the argument on social media and create further issues.</option>
+            <option id = "correct-answer">You ignore the comment.</option>
+            <option>You argue back, stating why you are right.</option>
+            <option>You type a heated reply to make the commenter feel worse.</option>
         </select>
     {% endif %}
     <br>
     <br>
     <button onclick="verifyAnswer(this)" class = "btn btn-secondary">Verify Answer</button>
     <div class="alert alert-danger" role="alert" id = "invalid-input-msg">
-        Wrong Answer!
+        <b>Oops!</b>
+        <br>
+        {% if request.user.grade.grade >= 3 and 5 <= request.user.grade.grade %}
+            While for reliable websites it is pretty obvious that you have to put in all the necessary information required, when in doubt, ask a trusted adult.
+        {% else %}
+            Most hackers use information such as your nickname or the name of your first pet. etc to hack into accounts. This is why websites suggest a random combination of characters to make a strong password.       
+        {% endif %}    
     </div>
 </div>

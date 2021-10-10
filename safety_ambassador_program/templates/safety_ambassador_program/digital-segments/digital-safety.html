@@ -39,7 +39,7 @@
     {% else %}
         <h4>Which of the following is the strongest password?</h4>
         <select class="form-select answer-fields" id = "digital-safety" aria-label="Default select example">
-            <option selected>A nickname that your friends call you (e.g. jumpingjacks)</option>
+            <option selected>A nickname that your friends call you (e.g. vihuChong)</option>
             <option>Your full name (e.g. jacksmith)</option>
             <option id = "correct-answer">A random word, number and punctuation combination (e.g. 1cecr3am!)</option>
             <option>Part of your name and a number (e.g. jack123)</option>
@@ -49,6 +49,12 @@
     <br>
     <button onclick="verifyAnswer(this)" class = "btn btn-secondary">Verify Answer</button>
     <div class="alert alert-danger" role="alert" id = "invalid-input-msg">
-        Wrong Answer!
+        <b>Oops!</b>
+        <br>
+        {% if request.user.grade.grade >= 3 and 5 <= request.user.grade.grade %}
+            Prevention is better than cure, which is why it is better to ask a trusted adult   whether or not the link will be safe to download.
+        {% else %}
+            Most hackers use information such as your nickname or the name of your first pet. etc to hack into accounts. This is why websites suggest a random combination of characters to make a strong password.       
+        {% endif %}
     </div>
 </div>

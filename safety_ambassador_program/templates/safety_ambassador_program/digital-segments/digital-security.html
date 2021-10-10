@@ -52,6 +52,12 @@
     <br>
     <button onclick="verifyAnswer(this)" class = "btn btn-secondary">Verify Answer</button>
     <div class="alert alert-danger" role="alert" id = "invalid-input-msg">
-        Wrong Answer!
+        <b>Oops!</b>
+        <br>
+        {% if request.user.grade.grade >= 3 and 5 <= request.user.grade.grade %}
+            Your parents are your closest family. They must be involved in your online activities so they can keep a track of things in case anything goes wrong. 
+        {% else %}
+            The people that follow you on social media will have access to all your personal information and pictures, which is why you should be careful when you accept friend requests. Only those you know personally, and those you trust with your private information should have access to it.
+        {% endif %}
     </div>
 </div>

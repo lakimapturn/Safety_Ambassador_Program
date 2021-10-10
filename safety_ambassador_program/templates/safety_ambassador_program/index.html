@@ -8,8 +8,8 @@
     <div id="quiz-div" class="carousel slide" data-bs-interval="false" data-bs-wrap="false">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <div class="index-test-containers d-block">
-                    <h1>Welcome to the Safety Ambassadors Program</h1>
+                <h1>Welcome to the Safety Ambassadors Program</h1>
+                <div class="index-test-containers d-block" style="text-align: justify; padding-left: 4rem;">
                     <p>The Safety Ambassadors Program (SAP) is an evidence-based program that harnesses the power of students delivering children rights, to prevent and stop violence and mistreatment. It is considered a social-emotional learning program and has been approved by many schools.</p>
                     <p>Initiated by the Dubai Police, in collaboration with the Knowledge and Human Development Authority (KHDA), SAP is a student-centered model that educates diverse social leaders with the skills to prevent and reduce violence delivering children rights . It is the nation’s most effective student-led bullying & violence prevention program. </p>
                     <p>This program relies on the “inside-out” approach to improving school climate. Student bystanders see, hear, and know things adults don’t, can intervene in ways adults can’t and are often on the scene of an incident before an adult. They are a critical and necessary resource for positively impacting the crisis of bullying, violence in schools.</p>
@@ -18,19 +18,21 @@
             </div>
             <div class="carousel-item">
                 <div class="index-test-containers d-block">
-                    <h1>Check In Questions | Let's See What You Already Know!</h1>
+                    <h1>Let's See What You Already Know!</h1>
                     <br>
                     <div>
                         <div class = "question-container">
                             <h4 class="text-danger">Q.1) </h4>
                             <h4>What do you think is cyber safety?</h4>
                         </div>
-                        <select class="form-select answer-fields" aria-label="Default select example">
-                            <option id = "correct-answer">Protecting yourself on the internet from people who might want to harm you</option>
-                            <option>Protecting your internet.</option>
-                            <option>Protecting the viruses on the internet from the hackers.</option>
-                            <option>Ensuring the safety of the hackers on the internet and protecting them from viruses.</option>
-                        </select>
+                        <div>
+                            <select class="form-select answer-fields" aria-label="Default select example">
+                                <option id = "correct-answer">Protecting yourself on the internet from people who might want to harm you</option>
+                                <option>Protecting your internet.</option>
+                                <option>Protecting the viruses on the internet from the hackers.</option>
+                                <option>Ensuring the safety of the hackers on the internet and protecting them from viruses.</option>
+                            </select>
+                        </div>
                     </div>
                     <br>
                     <br>
@@ -99,7 +101,7 @@
                     <div style="margin: auto;">
                         <canvas id = "canvas" width="1056" height="816"></canvas>
                     </div>
-                    <button onclick="downloadCertificate(this)" class="btn btn-success">Download Certificate</button>
+                    <a style="color: white !important;" onclick="downloadCertificate(this)" class="btn btn-success">Download Certificate</a>
                 </div>
                 <a onclick="completeIntro()" href = "{% url 'intro_completed' %}"><button class="btn btn-success">Complete Introduction</button></a>
             </div>
@@ -149,6 +151,7 @@
             localStorage.setItem('current-slide', 0)
         }
 
+        // CERTIFICATE DOWNLOAD JS
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
         const nameInput = "{{request.user.first_name}} {{request.user.last_name}}";
@@ -164,9 +167,9 @@
             
         })
 
-        function downloadCertificate(button) {
-            button.href = canvas.toDataURL();
-            button.download = true;
+        function downloadCertificate(a) {
+            a.href = canvas.toDataURL();
+            a.download = 'certificate.png';
         }
 
         const image = new Image();
@@ -183,5 +186,4 @@
         }
     </script>
     <script src="{% static 'safety_ambassador_program/js/validator.js' %}"></script>
-    <!-- <script src="{% static 'safety_ambassador_program/js/certificate.js' %}"></script> -->
 {% endblock %}
