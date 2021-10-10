@@ -13,7 +13,6 @@ function verifyAnswer(question) {
     const questionParent = question.parentNode.querySelector('select');
     const correctAnswer = questionParent.querySelector('#correct-answer').value;
     const inputValue = questionParent.value;
-    console.log(questionParent.parentNode)
 
     if (inputValue == correctAnswer) {
         document.getElementById("invalid-input-msg").style.opacity = 0;

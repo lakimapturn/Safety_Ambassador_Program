@@ -4,7 +4,6 @@
 
 {% block body %}
 {% load static %}
-    <script src="{% static 'safety_ambassador_program/js/validator.js' %}"></script>
     <hr>
     <div id="quiz-div" class="carousel slide" data-bs-interval="false" data-bs-wrap="false">
         <div class="carousel-inner">
@@ -96,8 +95,12 @@
             </div>
             <div class = "carousel-item">
                 <h2>Certificate Of Completion:</h2>
-                <canvas id = "canvas" height="90%" width="50%"></canvas>
-                <button onclick="downloadCertificate()" class="btn btn-success">Download Certificate</button>
+                <div style="margin: 1rem; padding: 1rem;">
+                    <div style="margin: auto;">
+                        <canvas id = "canvas" width="1056" height="816"></canvas>
+                    </div>
+                    <button onclick="downloadCertificate(this)" class="btn btn-success">Download Certificate</button>
+                </div>
                 <a onclick="completeIntro()" href = "{% url 'intro_completed' %}"><button class="btn btn-success">Complete Introduction</button></a>
             </div>
         </div>
@@ -120,7 +123,6 @@
             const carousel = new bootstrap.Carousel(document.getElementById("quiz-div"));
             carousel.to(currentSlideNumber);
             carouselLength = carousel._items.length;
-            console.log(carouselLength);
             if(currentSlideNumber == carousel._items.length) {
                 const finishIntroDiv = document.createElement('div');
                 const finishIntroButton = document.createElement('button');
@@ -133,7 +135,7 @@
             setTimeout(() => document.getElementById("next-button").disabled = false, 1100)
         }
         function nextSlide(carouselItem) {
-            currentSlideNumber = Math.min(currentSlideNumber+1, carouselLength);
+            currentSlideNumber = Math.min(currentSlideNumber+1, carouselLength-1);
             localStorage.setItem('current-slide', currentSlideNumber);
             if (document.getElementById("quiz-div").getElementsByClassName("confetti") != null) {
                 const confetti = document.getElementById("quiz-div").getElementsByClassName("confetti");
@@ -147,4 +149,6 @@
             localStorage.setItem('current-slide', 0)
         }
     </script>
+    <script src="{% static 'safety_ambassador_program/js/validator.js' %}"></script>
+    <script src="{% static 'safety_ambassador_program/js/certificate.js' %}"></script>
 {% endblock %}
