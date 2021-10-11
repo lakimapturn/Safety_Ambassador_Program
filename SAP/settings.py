@@ -79,14 +79,14 @@ WSGI_APPLICATION = 'SAP.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'd6t9rqdrg369o',
-        # 'HOST': 'ec2-34-233-114-40.compute-1.amazonaws.com',
-        # 'PORT': 5432,
-        # 'PASSWORD': 'e6916d8905fba8c2bf407b72bed9333aa928623f021425eb306509eda62100b0',
-        # 'USER': 'pcionpsylzbeti',
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd6t9rqdrg369o',
+        'HOST': 'ec2-34-233-114-40.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'PASSWORD': 'e6916d8905fba8c2bf407b72bed9333aa928623f021425eb306509eda62100b0',
+        'USER': 'pcionpsylzbeti',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -130,7 +130,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-MEDIA_URL = '/media/games-images/'
+MEDIA_URL = '/media/'
 
 # User Model
 AUTH_USER_MODEL = 'safety_ambassador_program.User'
