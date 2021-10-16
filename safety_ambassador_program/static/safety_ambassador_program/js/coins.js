@@ -9,7 +9,7 @@ setTimeout(() => {
         localStorage.setItem("coins-collected", ++currentCoins);
         if(currentCoins == 1) {
             const speechBubble = document.createElement('p');
-            speechBubble.innerHTML = "Congratulations! You just collected a coin. You can find more as you explore the website!";
+            speechBubble.innerHTML = "Congratulations! You just collected a digital breadcrumb. You can find more as you explore the website! Make sure to stay on a page for atleast 20 seconds to ensure that the digital breadcrumbs spawn in!";
             speechBubble.id = "speech-bubble";
             speechBubble.style.left = coin.style.left;
             speechBubble.style.top = (parseFloat(coin.style.top.substring(0, coin.style.top.indexOf('p'))) + 150) + "px";

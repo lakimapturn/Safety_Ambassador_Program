@@ -16,11 +16,32 @@
     </div>
     <div style="padding: 1rem;">
       <div class="about-div fade-in">
-        <h1 class = "section-title"><span>Meet The Team</span></h1>
+        <div class = "about-info" style="width: 80%;">
+          <div>
+            Current Users: <span class= "countup">{{totalUsers}}</span>
+          </div>
+        </div> 
+      </div>
+      <div class="about-div fade-in">
+        <div class = "about-info" style="width: 80%;">
+          <div>
+            <p>The Safety Ambassadors conducted sessions for the students of middle school (grades 6-8) educating them about the UN Child Rights. More information about these sessions is listed in detail below. Along with these sessions, three of our mentors had the enthralling opportunity to host a webinar with the Dubai Police and the founder of the successful anti-cyberbullying app GoBubble - Henry Platten. Around 400 individuals across different age groups were present at this webinar. Our presentation on the theme ‘Children in the Digital World’ was met with a lot of positive feedback, and our mentors sincerely hope they were able to leave a lasting impact on the attendees.</p>
+          </div>
+        </div> 
+      </div>
+      <div class="about-div fade-in">
+        <h1 class = "section-title"><span>Meet The Team/Our Safety Ambassadors</span></h1>
         <img src = "/media/team/SAP-team.JPG" style="width: 50%;">
         <div class = "about-info">
           <div>
             <p>GEMS Modern Safety Ambassadors 2021/2022</p>
+            <p>Left To Right: Pratyush Sharma, Siya Gokhale, Meghna Praveen, Rachael Jijo, Laksh Makhija, Annika Jisu</p>
+          </div>
+        </div>
+        <img src = "/media/team/SAP-team-2020.jpg" style="width: 50%;">
+        <div class = "about-info">
+          <div>
+            <p>GEMS Modern Safety Ambassadors 2020/2021</p>
             <p>Left To Right: Pratyush Sharma, Siya Gokhale, Meghna Praveen, Rachael Jijo, Laksh Makhija, Annika Jisu</p>
           </div>
         </div> 
@@ -46,11 +67,38 @@
           <div class = "about-info testimonial-div">
             <h3>Annika Jisu</h3>
             <img src = "/media/team/Annika-Jisu.jpg" style="height: 10rem; border-radius: 50%; ">
-            <div class="testimonial-designation">-Head of the Safety Ambassador Program</div>
+            <div class="testimonial-designation">-Teacher in Charge of the Safety Ambassador Program</div>
             <p><i>“The Safety Ambassadors Program has given us a platform that made it possible to be empowered and to empower. It has been a pertinent pathway which encouraged my students to develop leadership skills, be accountable, empathetic and flexible as they took on the role of GEMS Modern Safety Ambassadors.”</i></p>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const countupEls = document.querySelectorAll( '.countup' );
+      countupEls.forEach( animateCountUp );
+    })
+    const animationDuration = 1500;
+    const frameDuration = 1000 / 60;
+    const totalFrames = Math.round( animationDuration / frameDuration );
+    const easeOutQuad = t => t * ( 2 - t );
+
+    const animateCountUp = el => {
+      let frame = 0;
+      const countTo = parseInt( el.innerHTML, 10 );
+      const counter = setInterval( () => {
+        frame++;
+        const progress = easeOutQuad( frame / totalFrames );
+        const currentCount = Math.round( countTo * progress );
+        if ( parseInt( el.innerHTML, 10 ) !== currentCount ) {
+          el.innerHTML = currentCount;
+        }
+
+        if ( frame === totalFrames ) {
+          clearInterval( counter );
+        }
+      }, frameDuration );
+    };
+  </script>
 {% endblock %}

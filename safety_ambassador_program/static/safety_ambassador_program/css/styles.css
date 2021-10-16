@@ -95,8 +95,8 @@ u {
 	transition : all 0.3s ease-out;
 }
 .menu-icon {
-	height: 30px;
-	width: 40px;
+	height: 45px;
+	width: 45px;
 	position: relative;
 	z-index: 2;
 	cursor: pointer;
@@ -529,7 +529,7 @@ body.light .switch-wrap p span:nth-child(1):before {
     font-weight: bold;
     letter-spacing: 0px; /* change to 1px */
 	border-radius: 2px;
-    padding: 13px 28px;
+    padding: 15px 30px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.14);
     text-transform: uppercase;
     box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.2);
@@ -678,10 +678,7 @@ hr {
 }
 
 .header {
-	margin-left: 70%;
-	width: 100%;
-	margin-bottom: 2rem;
-	margin-top: 2rem;
+	margin: 2rem 0rem 2rem 70%;
 }
 
 .index-body {
@@ -837,6 +834,30 @@ hr {
 	margin: 1rem;
 	width: 95%;
 	justify-content: space-around;
+}
+.footer-display>div {
+	display: grid;
+	color: white;
+	text-align: center;
+	font-size: 0.9rem;
+}
+.footer-section-heading {
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+.footer-link {
+	color: white !important;
+}
+.footer-link:hover {
+	text-decoration: underline !important;
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .1s ease-in-out;
+	-ms-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+	transition: all .1s ease-in-out;
+	transform: scale(1.1);
+	-ms-transform: scale(1.1); /* IE 9 */
+	-webkit-transform: scale(1.1); /* Safari and Chrome */
 }
 
 /* FADE AND SCROLL IN STYLES 

@@ -15,7 +15,9 @@ def index(request):
 
 @login_required
 def aboutPage(request):
-    return render(request, "safety_ambassador_program/about.html")
+    return render(request, "safety_ambassador_program/about.html", {
+        "totalUsers": User.objects.all().count()
+    })
 
 @login_required
 def gamesPage(request):
