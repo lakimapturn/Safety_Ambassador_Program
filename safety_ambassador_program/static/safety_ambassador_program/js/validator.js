@@ -40,3 +40,21 @@ function verifyAnswer(question) {
     document.getElementById("next-button").disabled = false;
     questionParent.parentNode.querySelector('select').disabled = true;
 }
+
+// Working patch request
+// const data = { section: 'We', answer: 'a' };
+// fetch('http://localhost:8000/student-responses', {
+//   method: 'PATCH',
+//   headers: {
+//     'Content-Type': 'application/json',
+//     'X-CSRFToken': csrftoken,
+//   },
+//   body: JSON.stringify(data),
+// })
+// .then((response) => response.json())
+// .then((data) => {
+//   console.log('Success:', data);
+// })
+// .catch((error) => {
+//   console.error('Error:', error);
+// });

@@ -14,5 +14,6 @@ urlpatterns = [
     path('authentication', views.authenticationPage, name="authentication"),
     path('intro-completed', views.introCompleted, name="intro_completed"),
     path('logout', views.logoutPage, name="logout"),
+    path('student-responses', views.answersAPI.as_view(), name = "student_responses"),
     url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

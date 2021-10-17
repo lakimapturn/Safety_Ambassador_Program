@@ -4,9 +4,40 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.db import IntegrityError
-from .models import Game, Grade, User, Article
+
+from .models import Answer, Game, Grade, User
+from .serializers import PostSerializer
+
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 # Create your views here.
+
+class answersAPI(APIView):
+    def get(self, request, *args, **kwargs):
+        qs = Answer.objects.all()
+        serializer = PostSerializer(qs, many=True)
+        return Response(serializer.data)
+
+    def patch(self, request, *args, **kwargs):
+        # qs = Answer.objects.filter()
+        # print(request.data)
+        # serializer = PostSerializer(data = request.data)
+        data = request.data
+        print(data["section"])
+        answer = Answer.objects.get(section = data["section"])
+        print(answer)
+        if data["answer"] == 'a':
+            answer.a = answer.a + 1
+        elif data["answer"] == 'b':
+            answer.b = answer.b + 1
+        elif data["answer"] == 'c':
+            answer.c = answer.c + 1
+        elif data["answer"] == 'd':
+            answer.d = answer.d + 1
+        answer.save()
+        serializer = PostSerializer(answer)
+        return Response(serializer.data)
 
 @login_required
 def index(request):
