@@ -41,6 +41,11 @@ function verifyAnswer(question) {
     questionParent.parentNode.querySelector('select').disabled = true;
 }
 
+const fetchData = async () => {
+    const result = await fetch('http://localhost:8000/student-responses');
+    const response = await result.json();
+    console.log(response);
+}
 // Working patch request
 // const data = { section: 'We', answer: 'a' };
 // fetch('http://localhost:8000/student-responses', {
