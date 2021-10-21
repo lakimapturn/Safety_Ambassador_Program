@@ -12,14 +12,14 @@
             <p>
                 <main>
                     <ol class = "gradient-list">
-                        <li>Do not give your password, name, address, school name, or any other personal information about yourself or your family, to anyone, no matter how genuine the person might be. You are entitled to keep this important information to yourself – It is your own secret.</li>
-                        <li>On the internet, avoid chatting with strangers, no matter how safe the other person makes you feel. It could be a trap.</li>
-                        <li>If a profile asks for your name and address, don't fill it out. Check the authenticity of the form. It would be better to run it by an adult.</li>
+                        <li>Do not give your password, name, address, school name, or any other personal information about yourself or your family, <b>to anyone</b>, no matter how genuine the person might be. You are entitled to keep this important information to yourself – It is your own secret.</li>
+                        <li>On the internet, <b>avoid chatting with strangers</b>, no matter how safe the other person makes you feel. It could be a trap.</li>
+                        <li>If a profile asks for your name and address, don't fill it out. <b>Check the authenticity</b> of the form. It would be better to run it by an adult.</li>
                         <li>Without the approval of an adult / parent, do not enter a chat room.</li>
                         <li>If a profile asks for your name and address, don't fill it out.</li>
                         <li>If you see something you believe your parents won't like, don't stay on that page/link and move to another.</li>
-                        <li>If you don't have your parents' consent, don't upload images of yourself online.</li>
-                        <li>Ask your parents, guardian or any trusted adult, if you have any questions regarding something you've read. You are not alone and the sooner you reach out with a concern, the better chances of resolving it before it gets worse.</li>
+                        <li>If you don't have your <b>parents' consent</b>, don't upload images of yourself online.</li>
+                        <li><b>Ask your parents, guardian or any trusted adult</b>, if you have any questions regarding something you've read. You are not alone and the sooner you reach out with a concern, the better chances of resolving it before it gets worse.</li>
                     </ol>
                 </main>
             </p>
@@ -30,19 +30,20 @@
 <hr>
 <div class = "section-questions">
     {% if request.user.grade.grade >= 3 and 5 <= request.user.grade.grade %}
-        <h4>You’ve gone on a gaming website and it asks you to download a link before you play. What should you do?</h4>
-        <select class="form-select answer-fields" id = "digital-safety" aria-label="Default select example">
-            <option id = "correct-answer" selected>Show the link to an adult and ask them if it’s safe.</option>
-            <option>Download it anyway.</option>
-            <option>Ask your friends what to do.</option>
+        <h4>You’ve gone on a gaming website and it asks you to download a file before you play. What should you do?</h4>
+        <select class="form-select answer-fields" id = "Sa" aria-label="Default select example">
+            <option id = "correct-answer" selected>A) Show the website to an adult and ask them if it’s safe.</option>
+            <option>B) Download it anyway.</option>
+            <option>C) Ask your friends what to do.</option>
+            <option>D) Close your laptop and pretend you never saw anything.</option>
         </select>
     {% else %}
         <h4>Which of the following is the strongest password?</h4>
-        <select class="form-select answer-fields" id = "digital-safety" aria-label="Default select example">
-            <option selected>A nickname that your friends call you (e.g. vihuChong)</option>
-            <option>Your full name (e.g. jacksmith)</option>
-            <option id = "correct-answer">A random word, number and punctuation combination (e.g. 1cecr3am!)</option>
-            <option>Part of your name and a number (e.g. jack123)</option>
+        <select class="form-select answer-fields" id = "Sa" aria-label="Default select example">
+            <option selected>A) A nickname that your friends call you (e.g. vihuChong)</option>
+            <option>B) Your full name (e.g. jacksmith)</option>
+            <option id = "correct-answer">C) A random word, number and punctuation combination (e.g. 1cecr3am!)</option>
+            <option>D) Part of your name and a number (e.g. jack123)</option>
         </select>
     {% endif %}
     <br>

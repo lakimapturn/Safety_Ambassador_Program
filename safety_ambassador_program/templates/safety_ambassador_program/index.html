@@ -16,52 +16,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="index-test-containers d-block">
-                    <h1>Let's See What You Already Know!</h1>
-                    <br>
-                    <div>
-                        <div class = "question-container">
-                            <h4 class="text-danger">Q.1) </h4>
-                            <h4>What do you think is cyber safety?</h4>
-                        </div>
-                        <div>
-                            <select class="form-select answer-fields" aria-label="Default select example">
-                                <option id = "correct-answer">Protecting yourself on the internet from people who might want to harm you</option>
-                                <option>Protecting your internet.</option>
-                                <option>Protecting the viruses on the internet from the hackers.</option>
-                                <option>Ensuring the safety of the hackers on the internet and protecting them from viruses.</option>
-                            </select>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <div>
-                        <div class = "question-container">
-                            <h4 class="text-danger">Q.2) </h4>
-                            <h4>Why should you keep your passwords private?</h4>
-                        </div>
-                        <select class="form-select answer-fields" aria-label="Default select example">
-                            <option>So that you don’t get hacked.</option>
-                            <option>So that others don’t use your account (and spend your V-bucks on fortnite.</option>
-                            <option>So that someone else doesn’t gain access to your account and change its password and log you out.</option>
-                            <option id = "correct-answer">All of the above.</option>
-                        </select>
-                    </div>
-                    <br>
-                    <br>
-                    <div>
-                        <div class = "question-container">
-                            <h4 class="text-danger">Q.3) </h4>
-                            <h4>What is a digital footprint?</h4>
-                        </div>
-                        <select class="form-select answer-fields" aria-label="Default select example">
-                            <option>A scan of your foot on google.</option>
-                            <option id = "correct-answer">Every single action of yours on the internet which can be traced back to you.</option>
-                            <option>Only your search history.</option>
-                            <option>All your activity on social media platforms.</option>
-                        </select>
-                    </div>
-                </div>          
+                {% include "safety_ambassador_program/carousel-slides/pretest.html" %}          
             </div>
             <div class="carousel-item">
                 <div class="index-test-containers d-block">
@@ -75,6 +30,11 @@
             <div class="carousel-item">
                 {% include "safety_ambassador_program/digital-segments/digital-wellbeing.html" %}
             </div>
+            <div class="wellbeing carousel-item">
+                <div class = "graph-container">
+                    <canvas id="wellbeing" width="50" height="50"></canvas>
+                </div>
+            </div>
             <!-- <div class = "carousel-item">
                 <div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'>
                     <iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/92785c847df8749f641365ed823ac987/fe42adbf3a38' style='position: absolute; top: 0; left: 0; width: 90%; height: 50%;' width='420'></iframe>
@@ -83,11 +43,26 @@
             <div class = "carousel-item">
                 {% include "safety_ambassador_program/digital-segments/digital-identity.html" %}
             </div>
+            <div class="identity carousel-item">
+                <div class = "graph-container">
+                    <canvas id="identity" width="400" height="400"></canvas>
+                </div>
+            </div>
             <div class = "carousel-item">
                 {% include "safety_ambassador_program/digital-segments/digital-safety.html" %}
             </div>
+            <div class="safety carousel-item">
+                <div class = "graph-container">
+                    <canvas id="safety" width="400" height="400"></canvas>
+                </div>
+            </div>
             <div class = "carousel-item">
                 {% include "safety_ambassador_program/digital-segments/digital-security.html" %}
+            </div>
+            <div class="security carousel-item">
+                <div class = "graph-container">
+                    <canvas id="security" width="400" height="400"></canvas>
+                </div>
             </div>
             <div class = "carousel-item">
                 <div style = "justify-content: space-around; display: flex;">
@@ -138,12 +113,6 @@
         function nextSlide(carouselItem) {
             currentSlideNumber = Math.min(currentSlideNumber+1, carouselLength-1);
             localStorage.setItem('current-slide', currentSlideNumber);
-            if (document.getElementById("quiz-div").getElementsByClassName("confetti") != null) {
-                const confetti = document.getElementById("quiz-div").getElementsByClassName("confetti");
-                for(let i = 1; i < 20; i++) {
-                    confetti[i].remove();
-                }
-            }
         }
         function completeIntro() {
             currentSlideNumber = 0;

@@ -15,25 +15,20 @@ from rest_framework.response import Response
 
 class answersAPI(APIView):
     def get(self, request, *args, **kwargs):
-        qs = Answer.objects.all()
+        qs = Answer.objects.all().filter(section = request.query_params['section'])
         serializer = PostSerializer(qs, many=True)
         return Response(serializer.data)
 
     def patch(self, request, *args, **kwargs):
-        # qs = Answer.objects.filter()
-        # print(request.data)
-        # serializer = PostSerializer(data = request.data)
         data = request.data
-        print(data["section"])
         answer = Answer.objects.get(section = data["section"])
-        print(answer)
-        if data["answer"] == 'a':
+        if data["answer"] == 'A':
             answer.a = answer.a + 1
-        elif data["answer"] == 'b':
+        elif data["answer"] == 'B':
             answer.b = answer.b + 1
-        elif data["answer"] == 'c':
+        elif data["answer"] == 'C':
             answer.c = answer.c + 1
-        elif data["answer"] == 'd':
+        elif data["answer"] == 'D':
             answer.d = answer.d + 1
         answer.save()
         serializer = PostSerializer(answer)

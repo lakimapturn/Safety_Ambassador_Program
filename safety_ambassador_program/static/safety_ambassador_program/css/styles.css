@@ -343,7 +343,7 @@ body.nav-active .nav__list-item:nth-child(10) {
 
 .switch-wrap {
 	position: absolute;
-	top: 50%;
+	top: 60%;
 	left: 0;
 	z-index: 10;
     transform: translateY(-50%);
@@ -858,6 +858,12 @@ hr {
 	transform: scale(1.1);
 	-ms-transform: scale(1.1); /* IE 9 */
 	-webkit-transform: scale(1.1); /* Safari and Chrome */
+}
+
+.graph-container {
+	display: inline-table;
+	width: 45%;
+	object-fit: contain;
 }
 
 /* FADE AND SCROLL IN STYLES 
