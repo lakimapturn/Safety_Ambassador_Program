@@ -1,9 +1,7 @@
-from django.urls import path
-from django.urls.conf import re_path
+from django.urls import path, re_path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
-from django.conf.urls import url
 from django.views.static import serve
 
 urlpatterns = [
@@ -13,8 +11,10 @@ urlpatterns = [
     path('authentication-page', views.authenticationPage, name="authentication_page"),
     path('games', views.gamesPage, name="games_page"),
     path('authentication', views.authenticationPage, name="authentication"),
+    path('leaderboard', views.leaderboard, name="leaderboard"),
     path('intro-completed', views.introCompleted, name="intro_completed"),
     path('logout', views.logoutPage, name="logout"),
-    path('student-responses', views.answersAPI.as_view(), name = "student_responses"),
-    url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 
+    path('user/responses', views.answersAPI.as_view(), name = "student_responses"),
+    path('user/score', views.scoreAPI.as_view(), name = "student_score"),
+    re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

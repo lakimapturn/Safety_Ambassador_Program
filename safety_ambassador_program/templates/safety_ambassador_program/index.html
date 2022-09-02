@@ -1,157 +1,232 @@
-{% extends "safety_ambassador_program/layout.html" %}
+{% extends "safety_ambassador_program/layout.html" %} {% block title %} Safety
+Ambassador Program {% endblock %} {% block body %} {% load static %}
+<div id="carousel-start"></div>
+<hr />
+<div
+  id="quiz-div"
+  class="carousel slide"
+  data-bs-interval="false"
+  data-bs-wrap="false"
+>
+  <div class="sid-header">
+    <div class="sid-progress-bar" id="progressBar"></div>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <!-- prettier-ignore -->
+      {% include "safety_ambassador_program/carousel-slides/intro.html" %}
+    </div>
+    <div class="carousel-item">
+      <div class="index-test-containers d-block">
+        <div
+          class="digital"
+          style="justify-content: space-around; display: block"
+        >
+          <h2>The Digital Intelligence Framework</h2>
+          <img
+            src="https://www.dqinstitute.org/wp-content/uploads/2019/02/DQFrameworkWheel.png"
+            height="600px"
+          />
+          <p class="lead">
+            The colourful wheel you see here, is the Wheel of Digital
+            Intelligence (DQ). It is made up of 8 areas and 24 sections,
+            collectively known as digital competences. This wheel covers all
+            different sections of the Internet and Digital Technology.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      {% include "safety_ambassador_program/carousel-slides/pretest.html" %}
+    </div>
 
-{% block title %} Safety Ambassador Program {% endblock %}
+    <div class="carousel-item">
+      <!-- prettier-ignore -->
+      {% include "safety_ambassador_program/digital-segments/age-inappropriate-intro.html" %}
+    </div>
 
-{% block body %}
-{% load static %}
-    <hr>
-    <div id="quiz-div" class="carousel slide" data-bs-interval="false" data-bs-wrap="false">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <h1>Welcome to the Safety Ambassadors Program</h1>
-                <div class="index-test-containers d-block" style="text-align: justify; padding-left: 4rem;">
-                    <p>The Safety Ambassadors Program (SAP) is an evidence-based program that harnesses the power of students delivering children rights, to prevent and stop violence and mistreatment. It is considered a social-emotional learning program and has been approved by many schools.</p>
-                    <p>Initiated by the Dubai Police, in collaboration with the Knowledge and Human Development Authority (KHDA), SAP is a student-centered model that educates diverse social leaders with the skills to prevent and reduce violence delivering children rights . It is the nation’s most effective student-led bullying & violence prevention program. </p>
-                    <p>This program relies on the “inside-out” approach to improving school climate. Student bystanders see, hear, and know things adults don’t, can intervene in ways adults can’t and are often on the scene of an incident before an adult. They are a critical and necessary resource for positively impacting the crisis of bullying, violence in schools.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                {% include "safety_ambassador_program/carousel-slides/pretest.html" %}          
-            </div>
-            <div class="carousel-item">
-                <div class="index-test-containers d-block">
-                    <div class = "digital" style = "justify-content: space-around; display: block;">
-                        <h2>The Digital Intelligence Framework</h2>
-                        <img src = "https://www.dqinstitute.org/wp-content/uploads/2019/02/DQFrameworkWheel.png" height="600px">
-                        <p>The colourful wheel you see here, is the Wheel of Digital Intelligence (DQ). It is made up of 8 areas and 24 sections, collectively known as digital competences. This wheel covers all different sections of the Internet and Digital Technology.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                {% include "safety_ambassador_program/digital-segments/digital-wellbeing.html" %}
-            </div>
-            <div class="wellbeing carousel-item">
-                <div class = "graph-container">
-                    <canvas id="wellbeing" width="50" height="50"></canvas>
-                </div>
-            </div>
-            <!-- <div class = "carousel-item">
+    <!-- <div class="literacy carousel-item">
+      <div class="graph-container">
+        <canvas id="literacy" width="50" height="50"></canvas>
+      </div>
+    </div> -->
+
+    <!-- <div class = "carousel-item">
                 <div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'>
                     <iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/92785c847df8749f641365ed823ac987/fe42adbf3a38' style='position: absolute; top: 0; left: 0; width: 90%; height: 50%;' width='420'></iframe>
                 </div>
             </div> -->
-            <div class = "carousel-item">
-                {% include "safety_ambassador_program/digital-segments/digital-identity.html" %}
-            </div>
-            <div class="identity carousel-item">
-                <div class = "graph-container">
-                    <canvas id="identity" width="400" height="400"></canvas>
-                </div>
-            </div>
-            <div class = "carousel-item">
-                {% include "safety_ambassador_program/digital-segments/digital-safety.html" %}
-            </div>
-            <div class="safety carousel-item">
-                <div class = "graph-container">
-                    <canvas id="safety" width="400" height="400"></canvas>
-                </div>
-            </div>
-            <div class = "carousel-item">
-                {% include "safety_ambassador_program/digital-segments/digital-security.html" %}
-            </div>
-            <div class="security carousel-item">
-                <div class = "graph-container">
-                    <canvas id="security" width="400" height="400"></canvas>
-                </div>
-            </div>
-            <div class = "carousel-item">
-                <div style = "justify-content: space-around; display: flex;">
-                    <iframe src="https://padlet.com/sharmapratyush2005/9gxlvqsac9zocrha" width="1200" height="900" frameborder="0" marginheight="0" marginwidth="0" >Padlet</iframe>
-                </div>
-            </div>
-            <div class = "carousel-item">
-                <h2>Certificate Of Completion:</h2>
-                <div style="margin: 1rem; padding: 1rem;">
-                    <div style="margin: auto;">
-                        <canvas id = "canvas" width="1056" height="816"></canvas>
-                    </div>
-                    <a style="color: white !important;" onclick="downloadCertificate(this)" class="btn btn-success">Download Certificate</a>
-                </div>
-                <a onclick="completeIntro()" href = "{% url 'intro_completed' %}"><button class="btn btn-success">Complete Introduction</button></a>
-            </div>
-        </div>
-        <div class = "carousel-controls">
-            <button class="btn btn-primary" onclick="prevSlide()" type="button" data-bs-target="#quiz-div" data-bs-slide="prev">
-                Previous
-            </button>
-            <button id = "next-button" onclick="nextSlide()" class="btn btn-primary" type="button" data-bs-target="#quiz-div" data-bs-slide="next">
-                Next
-            </button>
-        </div>
-    <div>
+    <div class="carousel-item">
+      <!-- prettier-ignore -->
+      {% include "safety_ambassador_program/digital-segments/age-inappropriate-sources.html" %}
     </div>
-    <br>
-    <hr>
-    <script>  
-        let currentSlideNumber = localStorage.getItem('current-slide')?localStorage.getItem('current-slide'):0;
-        let carouselLength = 0;
-        document.addEventListener("DOMContentLoaded", () => {
-            const carousel = new bootstrap.Carousel(document.getElementById("quiz-div"));
-            carousel.to(currentSlideNumber);
-            carouselLength = carousel._items.length;
-            if(currentSlideNumber == carousel._items.length) {
-                const finishIntroDiv = document.createElement('div');
-                const finishIntroButton = document.createElement('button');
-                finishIntroButton.className += "btn btn-success";
-                finishIntroButton.innerHTML = "Finish Introduction";
-                finishIntroDiv.appendChild(finishIntroButton);
-            }
-        })
-        function prevSlide() {
-            setTimeout(() => document.getElementById("next-button").disabled = false, 1100)
-        }
-        function nextSlide(carouselItem) {
-            currentSlideNumber = Math.min(currentSlideNumber+1, carouselLength-1);
-            localStorage.setItem('current-slide', currentSlideNumber);
-        }
-        function completeIntro() {
-            currentSlideNumber = 0;
-            localStorage.setItem('current-slide', 0)
-        }
+    <!-- <div class="communication carousel-item">
+      <div class="graph-container">
+        <canvas id="communication" width="400" height="400"></canvas>
+      </div>
+    </div> -->
 
-        // CERTIFICATE DOWNLOAD JS
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
-        const nameInput = "{{request.user.first_name}} {{request.user.last_name}}";
-        function displayTextWidth(text, font) {
-            let canvas1 = displayTextWidth.canvas1 || (displayTextWidth.canvas1 = document.createElement("canvas"));
-            let context = canvas1.getContext("2d");
-            context.font = font;
-            let metrics = context.measureText(text);
-            return metrics.width;
-        }
+    <div class="carousel-item">
+      <!-- prettier-ignore -->
+      {% include "safety_ambassador_program/digital-segments/age-inappropriate-response.html" %}
+    </div>
 
-        canvas.addEventListener('click', () => {
-            
-        })
+    <div class="carousel-item">
+      <!-- prettier-ignore -->
+      {% include "safety_ambassador_program/digital-segments/google-privacy-settings.html" %}
+    </div>
+    <!-- <div class="safety carousel-item">
+      <div class="graph-container">
+        <canvas id="safety" width="400" height="400"></canvas>
+      </div>
+    </div> -->
+    {% if request.user.grade.grade > 5 %}
+    <div class="carousel-item">
+      <!-- prettier-ignore -->
+      {% include "safety_ambassador_program/digital-segments/age-inappropriate-generate.html" %}
+    </div>
+    {% endif %}
+    <div class="carousel-item">
+      <h2>Our Padlet Wall</h2>
+      <br />
+      <div style="margin: 0 auto">
+        <iframe
+          src="https://padlet.com/sharmapratyush2005/xkaglasjou95x8y7"
+          frameborder="0"
+          allow="camera;microphone;geolocation"
+          width="1200"
+          height="1000"
+          >Padlet</iframe
+        >
+      </div>
+    </div>
+    <div class="carousel-item">
+      <h2>Certificate Of Completion:</h2>
+      <div style="margin: 1rem; padding: 1rem">
+        <div style="margin: auto">
+          <canvas id="canvas" width="1056" height="816"></canvas>
+        </div>
+        <a
+          style="color: white !important"
+          onclick="downloadCertificate(this)"
+          class="btn btn-success"
+          >Download Certificate</a
+        >
+      </div>
+      <a onclick="completeIntro()" href="{% url 'intro_completed' %}"
+        ><button class="btn btn-fancy-success btn-radius btn-md">
+          Complete Introduction
+        </button></a
+      >
+    </div>
+  </div>
+  <div class="carousel-controls">
+    <button
+      id="prev-button"
+      class="btn btn-primary"
+      onclick="changeSlide('prev')"
+      type="button"
+      data-bs-target="#quiz-div"
+      data-bs-slide="prev"
+    >
+      Previous
+    </button>
+    <button
+      id="next-button"
+      onclick="changeSlide('next')"
+      class="btn btn-primary"
+      type="button"
+      data-bs-target="#quiz-div"
+      data-bs-slide="next"
+    >
+      Next
+    </button>
+  </div>
+  <div></div>
+  <br />
+  <hr />
+  <script>
+    const studentGrade = "{{request.user.grade.grade}}" <= 5 ? "P" : "M";
+    // let currentSlideNumber = localStorage.getItem("current-slide")
+    //   ? localStorage.getItem("current-slide")
+    //   : 0;
+    let currentSlideNumber = 0;
+    let carouselLength = 0;
+    document.addEventListener("DOMContentLoaded", () => {
+      const carousel = new bootstrap.Carousel(
+        document.getElementById("quiz-div")
+      );
+      carousel.to(currentSlideNumber);
+      carouselLength = carousel._items.length;
+    });
 
-        function downloadCertificate(a) {
-            a.href = canvas.toDataURL();
-            a.download = 'certificate.png';
-        }
+    const changeSlide = (pos) => {
+      currentSlideNumber =
+        pos === "prev"
+          ? Math.max(currentSlideNumber - 1, 0)
+          : Math.min(currentSlideNumber + 1, carouselLength - 1);
+      localStorage.setItem("current-slide", currentSlideNumber);
+      document
+        .getElementById("carousel-start")
+        .scrollIntoView({ behavior: "smooth" });
+    };
 
-        const image = new Image();
-        image.src = "/media/files/certificate.png"; //give the file source here
-        image.onload = () => {
-            drawImage();
-        }
+    function completeIntro() {
+      currentSlideNumber = 0;
+      localStorage.setItem("current-slide", 0);
+    }
 
-        function drawImage() {
-            ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-            ctx.font = '50px monotype corsiva';
-            ctx.fillStyle = '#000';
-            ctx.fillText(nameInput, (canvas.width - displayTextWidth(nameInput, ctx.font))/2, 400); // 2nd and 3rd arguments are x and y values 
-        }
-    </script>
-    <script src="{% static 'safety_ambassador_program/js/validator.js' %}"></script>
-{% endblock %}
+    // CERTIFICATE DOWNLOAD JS
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    const nameInput = "{{request.user.first_name}} {{request.user.last_name}}";
+    function displayTextWidth(text, font) {
+      let canvas1 =
+        displayTextWidth.canvas1 ||
+        (displayTextWidth.canvas1 = document.createElement("canvas"));
+      let context = canvas1.getContext("2d");
+      context.font = font;
+      let metrics = context.measureText(text);
+      return metrics.width;
+    }
+
+    function downloadCertificate(a) {
+      a.href = canvas.toDataURL();
+      a.download = "certificate.png";
+    }
+
+    const image = new Image();
+    image.src = "/media/files/certificate.png"; //give the file source here
+    image.onload = () => {
+      drawImage();
+    };
+
+    function drawImage() {
+      ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+      ctx.font = "50px monotype corsiva";
+      ctx.fillStyle = "#000";
+      ctx.fillText(
+        nameInput,
+        (canvas.width - displayTextWidth(nameInput, ctx.font)) / 2,
+        400
+      ); // 2nd and 3rd arguments are x and y values
+    }
+  </script>
+  <script>
+    window.onscroll = () => {
+      fillProgressBar();
+    };
+
+    function fillProgressBar() {
+      var winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      var height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    }
+  </script>
+  <script src="{% static 'safety_ambassador_program/js/validator.js' %}"></script>
+  {% endblock %}
+</div>

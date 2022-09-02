@@ -1,0 +1,73 @@
+<div class = "digital">
+    <!-- Update this page -->
+    <div style = "margin: 1rem">
+        <div class = "digital-title">
+            <h2>Digital Literacy</h2>
+        </div>
+        <div class = "digital-body">
+            <p>
+                Digital Literacy is the ability to navigate through the digital world using our skills of reading, writing, technical and critical thinking. This involves finding and evaluating methods to have effective communication and cruise through the Internet.
+            </p>
+            <div style = "margin: auto; display: flex; justify-content: space-evenly;">
+                <div>
+                    <img style = "width: 70vh; object-fit: cover;" src = "https://www.mindforest.com/wp-content/uploads/2020/11/PARCC-Results_R1.jpg">
+                </div>
+                <div >
+                    <iframe width="600" height="100%" src="https://www.youtube.com/embed/8o96ey4jCgE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <p>
+                <main>
+                Here is how you can develop effective Digital Literacy:
+                    <ol class = "gradient-list">
+                        <li>Make sure that any information you take from the Internet is from reliable sources</li>
+                        <li>Try engaging in developing your critical thinking skills. Try questioning the purpose of a website, the information provided, and always find proof of how reliable it is.</li>
+                        <li>Stick to the ethics and morals we learnt in term 1. This will keep you safe on the internet and help avoid unnecessary arguments online.</li>
+                        <li>Don’t be afraid to try new things online. However, make sure you have the guidance of a trusted adult)</li>
+                    </ol>
+                </main>
+            </p>
+        </div>
+    </div>
+    
+</div>
+<hr>
+<div class = "section-questions">
+    {% if 5 < request.user.grade.grade %}
+        <div class = "question-container">
+            <h4 class="text-danger">Q) </h4>
+            <h4>You post a comment on a YouTube video. Someone disagrees with your comment and replies angrily and irrationally, using harsh language. How do you respond? </h4>
+        </div>
+        <br>
+        <select onclick="startTimer()" class="form-select answer-fields" id = "Li" aria-label="Default select example">
+            <option id = "correct-answer">A) You ignore the comment.</option>
+            <option>B) You argue back, stating why you are right.</option>
+            <option>C) You type a heated reply to make the commenter feel worse.</option>
+        </select>
+         
+    {% else %}
+        <div class = "question-container">
+            <h4 class="text-danger">Q) </h4>
+            <h4>Which of these is a reliable website?</h4>
+        </div>
+        <br>
+        <select onclick="startTimer()" class="form-select answer-fields" id = "Li" aria-label="Default select example">
+            <option selected>A) Youtube</option>
+            <option>B) Wikipedia</option>
+            <option id = "correct-answer">C) Google Scholar</option>
+            <option>D) Twitter</option>
+        </select>
+    {% endif %}
+    <br>
+    <br>
+    <button onclick="verifyAnswer(this)" class = "btn btn-secondary">Verify Answer</button>
+    <div class="alert alert-danger" role="alert" id = "output-msg">
+        <br>
+        {% if request.user.grade.grade >= 3 and 5 <= request.user.grade.grade %}
+            Most hackers use information such as your nickname or the name of your first pet. etc to hack into accounts. This is why websites suggest a random combination of characters to make a strong password.       
+        {% else %}
+        Google scholar is a reliable website which will only give you verified information
+        Unlike that, anyone can write a tweet and a comment on youtube, so it isn't always reliable. We are not saying that everyone on the internet is a liar, but not everyone on the internet is correct all the time either. 
+                {% endif %}    
+    </div>
+</div>

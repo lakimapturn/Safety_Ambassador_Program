@@ -1,0 +1,143 @@
+<div class="digital-title">
+  <h2 class="fade-in">Think Before You Post!</h2>
+  <hr class="underline" />
+</div>
+<div class="digital">
+  <div class="my-auto mx-3">
+    <div class="digital-body text-start">
+      <p>
+        Now that we know what inappropriate content is, and how to tackle it, it
+        is also important for us to check if we ourselves are generating
+        inappropriate content. A good rule of thumb is - don't create any
+        content or share anything on the internet that you wouldn't be
+        comfortable sharing with your parents.
+      </p>
+      <p>
+        Here are a few questions you can ask yourself before posting anything on
+        social media: (Hint: Click a point to read more!)
+      </p>
+      <main>
+        <ol class="gradient-list">
+          <li>
+            <button
+              class="btn btn-link"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse1"
+              aria-expanded="false"
+              aria-controls="collapse1"
+            >
+              <p style="text-transform: capitalize" class="text-dark m-0 fs-6">
+                Am I comfortable making this information public?
+              </p>
+            </button>
+            <div class="collapse" id="collapse1">
+              <div class="card card-body">
+                Remember, even if you have a private account, things on the
+                internet stay there permanently. There is a chance that people
+                may share your content without your permission.
+              </div>
+            </div>
+          </li>
+          <li>
+            <button
+              class="btn btn-link"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse2"
+              aria-expanded="false"
+              aria-controls="collapse2"
+            >
+              <p style="text-transform: capitalize" class="text-dark m-0 fs-6">
+                Will this information harm anyone's sentiments/feelings
+                (including my own)?
+              </p>
+            </button>
+            <div class="collapse" id="collapse2">
+              <div class="card card-body">
+                You might post a picture or a post that may hurt someone else's
+                beliefs or feelings (such as an anti-CSK story on Instagram).
+                Before posting anything, take a minute and think about what
+                others may feel. Every action has a consequence!
+              </div>
+            </div>
+          </li>
+          <li>
+            <button
+              class="btn btn-link"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse3"
+              aria-expanded="false"
+              aria-controls="collapse3"
+            >
+              <p style="text-transform: capitalize" class="text-dark m-0 fs-6">
+                How will I feel if this information is shared with people I
+                don't know?
+              </p>
+            </button>
+            <div class="collapse" id="collapse3">
+              <div class="card card-body">
+                The content you post privately may still circulate to people you
+                don't know, without your consent. People could show others, take
+                screenshots etc., so it's important to think about how this may
+                affect you and whether you are comfortable with it.
+              </div>
+            </div>
+          </li>
+          <li>
+            <button
+              class="btn btn-link"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse4"
+              aria-expanded="false"
+              aria-controls="collapse4"
+            >
+              <p style="text-transform: capitalize" class="text-dark m-0 fs-6">
+                Is this something I might regret in the future?
+              </p>
+            </button>
+            <div class="collapse" id="collapse4">
+              <div class="card card-body">
+                Remember, everything you post on the internet will remain there
+                - even if you delete it. All of this makes up your digital
+                footprint and might affect you in the future.
+              </div>
+            </div>
+          </li>
+        </ol>
+      </main>
+    </div>
+  </div>
+  <div class="my-auto mx-3">
+    <div>
+      <img
+        style="width: 70vh; object-fit: cover"
+        src="https://images.theconversation.com/files/423323/original/file-20210927-15-198cxfc.jpeg"
+      />
+    </div>
+  </div>
+  <br />
+</div>
+<script>
+  const popUpContent = [
+    {
+      content:
+        "Remember, even if you have a private account, things on the internet stay there permanently. There is a chance that people may share your content without your permission.",
+    },
+    {
+      content:
+        "The content you post privately may still circulate to people you don't know, without your consent. People could show others, take screenshots etc., so it's important to think about how this may affect you and whether you are comfortable with it.",
+    },
+    {
+      content:
+        "Remember, everything you post on the internet will remain there - even if you delete it. All of this makes up your digital footprint and might affect you in the future.",
+    },
+  ];
+  const popUp = (type) => {
+    document.getElementById("ModalLabel").innerText = popUpContent[type].title;
+    document.getElementById("ModalContent").innerText =
+      popUpContent[type].content;
+  };
+</script>

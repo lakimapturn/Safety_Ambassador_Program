@@ -1,0 +1,103 @@
+<div class="digital">
+  <!-- Update this page -->
+  <div style="margin: 1rem">
+    <div class="digital-title">
+      <h2>Digital Rights</h2>
+    </div>
+    <div class="digital-body">
+      <p class="lead">
+        We all have fundamental rights which are protected by law, they are
+        necessary for all human beings to live a proper decent life. Some of
+        these are right to life and right to education. Just like that, we also
+        have digital rights, like a right to privacy in digital communities, a
+        right to freely express our ideas and opinions, and a right to report
+        anyone or anything that seems inappropriate. While our rights protect
+        us, it is also important for us to respect everyone else’s rights and
+        not to abuse our own.
+      </p>
+      <div style="margin: auto; display: flex; justify-content: space-evenly">
+        <div>
+          <img
+            style="width: 70vh; object-fit: cover"
+            src="https://i.pinimg.com/originals/d5/c0/7e/d5c07e57c1e52e3ab601922ef592d029.png"
+          />
+        </div>
+        <div>
+          <iframe
+            width="600"
+            height="100%"
+            src="https://www.youtube.com/embed/V1BFLitBkco"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr />
+<div class="section-questions">
+  {% if 5 < request.user.grade.grade %}
+  <div class="question-container">
+    <h4 class="text-danger">Q)</h4>
+    <h4>
+      You post a comment on a YouTube video. Someone disagrees with your comment
+      and replies angrily and irrationally, using harsh language. How do you
+      respond?
+    </h4>
+  </div>
+  <br />
+  <select
+    onclick="startTimer()"
+    class="form-select answer-fields"
+    id="Ri"
+    aria-label="Default select example"
+  >
+    <option id="correct-answer">A) You ignore the comment.</option>
+    <option>B) You argue back, stating why you are right.</option>
+    <option>
+      C) You type a heated reply to make the commenter feel worse.
+    </option>
+  </select>
+
+  {% else %}
+  <div class="question-container">
+    <h4 class="text-danger">Q)</h4>
+    <h4>
+      If you want to listen to music on the Internet, which of these should you
+      <b>NOT</b> do?
+    </h4>
+  </div>
+  <br />
+  <select
+    onclick="startTimer()"
+    class="form-select answer-fields"
+    id="Ri"
+    aria-label="Default select example"
+  >
+    <option selected>A) Play it on a streaming platform.</option>
+    <option>B) Pay to download the song.</option>
+    <option>C) Download it from a subscription service.</option>
+    <option id="correct-answer">
+      D) Download it from a random website for free.
+    </option>
+  </select>
+  {% endif %}
+  <br />
+  <br />
+  <button onclick="verifyAnswer(this)" class="btn btn-secondary">
+    Verify Answer
+  </button>
+  <div class="alert alert-danger" role="alert" id="output-msg">
+    <br />
+    {% if 5 < request.user.grade.grade %} Most hackers use information such as
+    your nickname or the name of your first pet. etc to hack into accounts. This
+    is why websites suggest a random combination of characters to make a strong
+    password. {% else %} When you download a song illegally without paying for
+    it, you are breaching the artist’s Intellectual Property Rights. This means
+    that people can own what they create and earn from it, and its people aren’t
+    allowed to copy it! {% endif %}
+  </div>
+</div>

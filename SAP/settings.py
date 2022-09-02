@@ -38,14 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tracking',
     'safety_ambassador_program',
     'rest_framework',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'tracking.middleware.VisitorTrackingMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -136,8 +134,8 @@ MEDIA_URL = '/media/'
 # User Model
 AUTH_USER_MODEL = 'safety_ambassador_program.User'
 
-# Tracking settings
-TRACK_IGNORE_STATUS_CODES = [400, 404, 403, 405, 410, 500]
-
 # Login Settings
 LOGIN_URL = 'authentication_page'
+
+# Default Auto Field
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'

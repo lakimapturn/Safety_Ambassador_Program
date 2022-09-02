@@ -1,179 +1,440 @@
-{% load static %}
-{% load SAP_tags %}
+{% load static %} {% load SAP_tags %}
 <!DOCTYPE html>
 <html>
-    <head>
-        {% check_about_url request as url %}
-        <title>Safety Ambassador Program</title>
-        <!-- <link rel="shortcut icon" href = "https://www.safetyandhealthmagazine.com/ext/resources/images/news/NSC/Safety-Ambassador-logo.jpg?1532462257" type="image/x-icon"> -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href = "{% static 'safety_ambassador_program/css/styles.css' %}">
-        <link rel = "icon" href = "/media/SAP-logo.png">
+  <head>
+    {% check_about_url request as url %}
+    <title>Safety Ambassador Program</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="{% static 'safety_ambassador_program/css/styles.css' %}"
+    />
+    <link rel="icon" href="/media/SAP-logo.png" />
 
-        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link
+      href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
 
-        <!-- Bootstrap -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"rel="stylesheet"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
 
-    </head>
-    <body class = "light">
-        {% if request.path == "/about" or request.path == "/archive" %}
-        <div class = "following-background" style="background: linear-gradient(180deg, rgba(167,120,21,1) 33%, rgba(244,247,247,1) 100%); position: fixed; height: 58vh; width: 100%; z-index: -30 !important;"></div>
-        {% endif %}
-        <!-- <h1>Safety Ambassador Program</h1> -->
-        <header class="cd-header">
-            <div class="header-wrapper">
-                <div class="logo-wrap" style="opacity: 0;">
-                    <img class = "logo-img" src = "/media/SAP-logo.png" height = 95px>
-                    <img class = "logo-img" src = "https://i2.wp.com/dxbmodern.com/wp-content/uploads/2020/10/1564693423_LOGO-1.png?fit=200%2C200" height = "80px">
-                    <img class = "logo-img" src = "https://www.ilearnme.com/wp-content/uploads/2020/05/dxbpolice_logo-3.png" height = 80px>
-                    <img class = "logo-img" src = "https://iconape.com/wp-content/png_logo_vector/gems-education-logo.png" height = "80px">
-                </div>
-                {% if request.user.intro_completed %}
-                    <div class="nav-but-wrap">
-                        <div class="menu-icon hover-target">
-                            <span class="menu-icon__line menu-icon__line-left"></span>
-                            <span class="menu-icon__line"></span>
-                            <span class="menu-icon__line menu-icon__line-right"></span>
-                        </div>					
-                    </div>	
-                {% endif %}				
-            </div>				
-        </header>
-    
-        <div class="nav">
-            <div class="nav__content">
-                <ul class="nav__list">
-                    <div class = "nav__list-item">
-                        <h6 style = "color: black;">Welcome Back {{request.user.first_name}} {{request.user.last_name}}!</h6>
-                        <h6 id = "coins-score" style = "color: black; font-size: 1rem;">Digital Breadcrumbs Collected: </h6>
-                    </div>
-                    <li class="nav__list-item"><a href="{% url 'index' %}" class="hover-target">Home</a></li>
-                    <li class="nav__list-item"><a href="{% url 'games_page' %}" class="hover-target">Games</a></li>
-                    <li class="nav__list-item"><a href="{% url 'about' %}" class="hover-target">About</a></li>
-                    <li class="nav__list-item"><a href="{% url 'archive' %}" class="hover-target">Archives</a></li>
-                    <li class="nav__list-item"><a href="{% url 'logout' %}" class="hover-target">Log Out</a></li>
-                </ul>
-            </div>
-        </div>		
-    
-        <div class = "layout-header">
-            <div class="section full-height over-hide">	
-                <div class="switch-wrap">
-                    <h1 style = "color: white;" class = "display-3">{% block title %}{% endblock %}</h1>
-                </div>
-            </div>
-            {% if request.path == "/" and request.user.intro_completed %}
-            <a href = "{% url 'games_page' %}">
-                <div class = "header col fade-in">
-                    <button class = "btn btn-info btn-lg btn-radius">Play Games</button>
-                </div>
-            </a>
-            {% endif %}
-        </div>	
+    <!-- Bootstrap -->
 
-        <div class = "page-content">
-            <div class = "logo-wrap" style="padding-left: 1rem;">
-                <img class = "logo-img" src = "/media/SAP-logo.png" height = 95px>
-                <img class = "logo-img" src = "https://i2.wp.com/dxbmodern.com/wp-content/uploads/2020/10/1564693423_LOGO-1.png?fit=200%2C200" height = "80px">
-                <img class = "logo-img" src = "https://www.ilearnme.com/wp-content/uploads/2020/05/dxbpolice_logo-3.png" height = 80px>
-                <img class = "logo-img" src = "https://iconape.com/wp-content/png_logo_vector/gems-education-logo.png" height = "80px">
-            </div>
-            {% block body %}
-            {% endblock %}
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="light container-fluid p-0">
+    {% if request.path == "/about" or request.path == "/archive" %}
+    <div
+      class="following-background"
+      style="
+        background: linear-gradient(
+          180deg,
+          rgba(167, 120, 21, 1) 33%,
+          rgba(244, 247, 247, 1) 100%
+        );
+        position: fixed;
+        height: 58vh;
+        width: 100%;
+        z-index: -30 !important;
+      "
+    ></div>
+    {% endif %}
+    <!-- <h1>Safety Ambassador Program</h1> -->
+    <header class="cd-header">
+      <div class="header-wrapper">
+        <div class="logo-wrap" style="opacity: 0">
+          <img class="logo-img" src="/media/SAP-logo.png" height="95px" />
+          <img
+            class="logo-img"
+            src="https://i2.wp.com/dxbmodern.com/wp-content/uploads/2020/10/1564693423_LOGO-1.png?fit=200%2C200"
+            height="80px"
+          />
+          <img
+            class="logo-img"
+            src="https://www.ilearnme.com/wp-content/uploads/2020/05/dxbpolice_logo-3.png"
+            height="80px"
+          />
+          <img
+            class="logo-img"
+            src="https://iconape.com/wp-content/png_logo_vector/gems-education-logo.png"
+            height="80px"
+          />
         </div>
+        {% if request.user.intro_completed %}
+        <div class="nav-but-wrap">
+          <div class="menu-icon hover-target">
+            <span class="menu-icon__line menu-icon__line-left"></span>
+            <span class="menu-icon__line"></span>
+            <span class="menu-icon__line menu-icon__line-right"></span>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </header>
+
+    <div class="nav">
+      <div class="nav__content">
+        <ul class="nav__list">
+          <div class="nav__list-item">
+            <h6 style="color: black">
+              Welcome Back {{request.user.first_name}}
+              {{request.user.last_name}}!
+            </h6>
+            <h6 id="coins-score" style="color: black; font-size: 1rem"></h6>
+          </div>
+          <li class="nav__list-item">
+            <a href="{% url 'index' %}" class="hover-target">Home</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="{% url 'games_page' %}" class="hover-target">Games</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="{% url 'leaderboard' %}" class="hover-target"
+              >Leaderboard</a
+            >
+          </li>
+          <li class="nav__list-item">
+            <a href="{% url 'about' %}" class="hover-target">About</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="{% url 'archive' %}" class="hover-target">Archives</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="{% url 'logout' %}" class="hover-target">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="layout-header">
+      <div class="section full-height over-hide">
+        <div class="switch-wrap">
+          <h1 style="color: white" class="display-3 bounceInLeft">
+            {% block title %}{% endblock %}
+          </h1>
+        </div>
+      </div>
+      {% if request.path == "/" and request.user.intro_completed %}
+      <div class="justify-content-end" style="margin: 2rem 0 2rem 70%;">
+        <a href="{% url 'games_page' %}" class="fade-in">
+          <button class="btn btn-info btn-lg btn-radius">Play Games</button>
+        </a>
+      </div>
+
+      {% endif %}
+    </div>
+
+    <div class="page-content">
+      <div class="logo-wrap" style="padding-left: 1rem">
+        <img class="logo-img" src="/media/SAP-logo.png" height="95px" />
+        <img
+          class="logo-img"
+          src="https://i2.wp.com/dxbmodern.com/wp-content/uploads/2020/10/1564693423_LOGO-1.png?fit=200%2C200"
+          height="80px"
+        />
+        <img
+          class="logo-img"
+          src="https://www.ilearnme.com/wp-content/uploads/2020/05/dxbpolice_logo-3.png"
+          height="80px"
+        />
+        <img
+          class="logo-img"
+          src="https://iconape.com/wp-content/png_logo_vector/gems-education-logo.png"
+          height="80px"
+        />
+      </div>
+      {% block body %} {% endblock %}
+    </div>
 
     <script src="{% static 'safety_ambassador_program/js/observers.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    {% if request.user.intro_completed %}
-        <script src = "{% static 'safety_ambassador_program/js/coins.js' %}"></script>
-    {% endif %}
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"
+    ></script>
     <script>
-        (function($) { "use strict";
-                
-                //Navigation
-                const currentCoins = localStorage.getItem("coins-collected")?localStorage.getItem("coins-collected"):0;
-                document.getElementById('coins-score').innerHTML = "Digital Breadcrumbs Collected: " + currentCoins;
-                let app = function () {
-                    let body = undefined;
-                    let menu = undefined;
-                    let menuItems = undefined;
-                    let init = function init() {
-                        body = document.querySelector('body');
-                        menu = document.querySelector('.menu-icon');
-                        menuItems = document.querySelectorAll('.nav__list-item');
-                        applyListeners();
-                    };
-                    let toggleLogos = function toggleLogos() {
-                        let menuLogos =  document.getElementsByClassName('logo-wrap')[0];
-                        if (menuLogos.style.opacity == 0) {
-                            setTimeout(() => {
-                                menuLogos.style.opacity = 1;
-                            }, 1000)
-                        }
-                        else {
-                            menuLogos.style.opacity = 0;
-                        }
-                    }
-                    let applyListeners = function applyListeners() {
-                        menu.addEventListener('click', function () {
-                            toggleLogos();
-                            return toggleClass(body, 'nav-active');
-                        });
-                    };
-                    let toggleClass = function toggleClass(element, stringClass) {
-                        if (element.classList.contains(stringClass)) element.classList.remove(stringClass);else element.classList.add(stringClass);
-                    };
-                    init();
-                }();
-            
-                
-                // //Switch light/dark
-                
-                // $("#switch").on('click', function () {
-                //     if ($("body").hasClass("light")) {
-                //         $("body").removeClass("light");
-                //         $("#switch").removeClass("switched");
-                //     }
-                //     else {
-                //         $("body").addClass("light");
-                //         $("#switch").addClass("switched");
-                //     }
-                // });
-                
-            })(jQuery); 
-        </script>
+      const userIntroCompleted = "{{ request.user.intro_completed }}";
+    </script>
+    <script src="{% static 'safety_ambassador_program/js/coins.js' %}"></script>
 
-    </body>
-    {% if request.path == "/" %}
-        <footer>
-            <p style="color: white;"><span>&#169 </span>All Rights Reserved (Not Really)</p>
-            <div class = "footer-display">
-                <div>
-                    <p class = "footer-section-heading">In Collaboration With:</p>
-                    <img style="margin: 1rem auto;" class = "logo-img" src = "https://www.ilearnme.com/wp-content/uploads/2020/05/dxbpolice_logo-3.png" height = 150px>
-                </div>
-                <div>
+    <script>
+      (function ($) {
+        "use strict";
 
-                </div>
-                <div>
-                </div>
-                <div>
-                    <p class = "footer-section-heading">Sources:</p>
-                    <a class = "footer-link" href="https://www.dubaipolice.gov.ae/wps/portal/home/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zi_T29HQ2NvA183U28nQwCXUMt_EJ8_I0MDIz0w_Wj9KOASgxwAEcD_YLsbEUAsrAWaw!!/?1dmy&urile=wcm%3apath%3a/wps/wcm/connect/DubaiPolice_en/DubaiPolice/Media-Center/News/2419">Safety Ambassador Program</a>
-                    <a class = "footer-link" href = "https://www.dqinstitute.org/dq-framework/">DQ-Framework</a>
-                    <a class = "footer-link" href = "https://www.today.com/parenting-guides/kindergarten-social-awareness-skills-t178778
-                    https://ggie.berkeley.edu/student-well-being/sel-for-students-social-awareness-and-relationship-skills/">Today</a>
-                    <a class = "footer-link" href = "https://kidshealth.org/en/teens/online-id.html">KidsHealth</a>
-                    <a class = "footer-link" href = "https://transformingeducation.org/resources/introduction-to-social-awareness">TransformingEducation</a>
-                    <a class = "footer-link" href = "https://www.scholastic.com/parents/family-life/parent-child/teach-kids-to-manage-time.html">Scholastic</a>
-                    <a class = "footer-link" href = "https://www.greatschools.org/gk/articles/time-management-for-kids/">GreatSchools</a>
-                    <a class = "footer-link" href = "https://www.sussexgreenliving.co.uk/4776/">SussexGreenLiving</a>
-                </div>
-            </div>
-        </footer>
-    {% endif %}
+        //Navigation
+        // const currentCoins = localStorage.getItem("coins-collected")?localStorage.getItem("coins-collected"):0;
+
+        // when page loads up
+        let app = (function () {
+          let body = undefined;
+          let menu = undefined;
+          let menuItems = undefined;
+          let init = function init() {
+            body = document.querySelector("body");
+            menu = document.querySelector(".menu-icon");
+            menuItems = document.querySelectorAll(".nav__list-item");
+            applyListeners();
+          };
+          let toggleLogos = function toggleLogos() {
+            let menuLogos = document.getElementsByClassName("logo-wrap")[0];
+            if (menuLogos.style.opacity == 0) {
+              setTimeout(() => {
+                menuLogos.style.opacity = 1;
+              }, 1000);
+            } else {
+              menuLogos.style.opacity = 0;
+            }
+          };
+          let applyListeners = function applyListeners() {
+            menu.addEventListener("click", function () {
+              toggleLogos();
+              return toggleClass(body, "nav-active");
+            });
+          };
+          let toggleClass = function toggleClass(element, stringClass) {
+            if (element.classList.contains(stringClass))
+              element.classList.remove(stringClass);
+            else element.classList.add(stringClass);
+          };
+          init();
+        })();
+      })(jQuery);
+    </script>
+  </body>
+  {% if request.path == "/" %}
+  <footer>
+    <!-- <p style="color: white;"><span>&#169 </span>All Rights Reserved (Not Really)</p> -->
+    <!-- <div class="footer-display">
+      <div></div>
+      <div>
+        <p class="footer-section-heading" style="margin-bottom: 0rem">
+          Our Mission:
+        </p>
+        <p style="max-width: 10rem; text-align: justify">
+          To raise awareness and educate students in our community about digital
+          skills.
+        </p>
+      </div>
+      <div>
+        <img class="logo-img" src="/media/SAP-logo.png" height="280px" />
+      </div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div>
+        <p class="footer-section-heading">Sources:</p>
+        <a
+          class="footer-link"
+          href="https://www.dubaipolice.gov.ae/wps/portal/home/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zi_T29HQ2NvA183U28nQwCXUMt_EJ8_I0MDIz0w_Wj9KOASgxwAEcD_YLsbEUAsrAWaw!!/?1dmy&urile=wcm%3apath%3a/wps/wcm/connect/DubaiPolice_en/DubaiPolice/Media-Center/News/2419"
+          >Safety Ambassador Program</a
+        >
+        <a class="footer-link" href="https://www.dqinstitute.org/dq-framework/"
+          >DQ-Framework</a
+        >
+        <a
+          class="footer-link"
+          href="https://www.today.com/parenting-guides/kindergarten-social-awareness-skills-t178778"
+          >Today</a
+        >
+        <a
+          class="footer-link"
+          href="https://kidshealth.org/en/teens/online-id.html"
+          >KidsHealth</a
+        >
+        <a
+          class="footer-link"
+          href="https://transformingeducation.org/resources/introduction-to-social-awareness"
+          >TransformingEducation</a
+        >
+        <a
+          class="footer-link"
+          href="https://www.scholastic.com/parents/family-life/parent-child/teach-kids-to-manage-time.html"
+          >Scholastic</a
+        >
+        <a
+          class="footer-link"
+          href="https://www.greatschools.org/gk/articles/time-management-for-kids/"
+          >GreatSchools</a
+        >
+        <a class="footer-link" href="https://www.sussexgreenliving.co.uk/4776/"
+          >SussexGreenLiving</a
+        >
+      </div>
+      <div>
+        <p class="footer-section-heading">In Collaboration With:</p>
+        <img
+          style="margin: 1rem auto"
+          class="logo-img"
+          src="https://www.ilearnme.com/wp-content/uploads/2020/05/dxbpolice_logo-3.png"
+          height="150px"
+        />
+      </div>
+    </div>
+    <p style="color: white">
+      <img height="30" src="/media/files/email-icon.png" />
+      <a class="footer-link" href="mailto:Modernsafetyambassador@gmail.com"
+        >Modernsafetyambassador@gmail.com</a
+      >
+    </p> </div>-->
+      <footer class="container text-white">
+        <div class="row">
+          <div class="col">
+            <img class="logo-img" src="/media/SAP-logo.png" height="200rem" />
+          </div>
+          <div class="col"></div>
+          <div class="col-3 position-relative">
+            <h5>Our Mission:</h5>
+            <hr />
+            <p class="text-start">
+              To raise awareness and educate students in our community about
+              digital skills.
+            </p>
+          </div>
+      <div class="col-3 position-relative">
+        <h5>Sources</h5>
+        <hr />
+        <ul class="list-unstyled flex-column position-relative">
+          <li class="nav-item mb-2">
+            <a
+              class="footer-link"
+              href="https://www.dubaipolice.gov.ae/wps/portal/home/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zi_T29HQ2NvA183U28nQwCXUMt_EJ8_I0MDIz0w_Wj9KOASgxwAEcD_YLsbEUAsrAWaw!!/?1dmy&urile=wcm%3apath%3a/wps/wcm/connect/DubaiPolice_en/DubaiPolice/Media-Center/News/2419"
+              >Safety Ambassador Program</a
+            >
+          </li>
+          <li class="nav-item mb-2">
+            <a
+              class="footer-link"
+              href="https://www.dqinstitute.org/dq-framework/"
+              >DQ-Framework</a
+            >
+          </li>
+          <li class="nav-item mb-2">
+            <a
+              class="footer-link"
+              href="https://www.today.com/parenting-guides/kindergarten-social-awareness-skills-t178778"
+              >Today</a
+            >
+          </li>
+          <li class="nav-item mb-2">
+            <a
+              class="footer-link"
+              href="https://kidshealth.org/en/teens/online-id.html"
+              >KidsHealth</a
+            >
+          </li>
+          <li class="nav-item mb-2">
+            <a
+              class="footer-link"
+              href="https://transformingeducation.org/resources/introduction-to-social-awareness"
+              >TransformingEducation</a
+            >
+          </li>
+          <li class="nav-item mb-2">
+            <a
+              class="footer-link"
+              href="https://www.scholastic.com/parents/family-life/parent-child/teach-kids-to-manage-time.html"
+              >Scholastic</a
+            >
+          </li>
+          <li class="nav-item mb-2">
+            <a
+              class="footer-link"
+              href="https://www.greatschools.org/gk/articles/time-management-for-kids/"
+              >GreatSchools</a
+            >
+          </li>
+          <li class="nav-item mb-2">
+            <a
+              class="footer-link"
+              href="https://www.sussexgreenliving.co.uk/4776/"
+              >SussexGreenLiving</a
+            >
+          </li>
+        </ul>
+      </div>
+
+          <!-- <div class="col-2">
+            <h5>Pages</h5>
+            <hr />
+            <ul class="nav flex-column position-relative">
+              <li class="nav-item mb-2">
+                <a href="{% url 'index' %}" class="footer-link">Home</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="{% url 'games_page' %}" class="footer-link">Games</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="{% url 'leaderboard' %}" class="footer-link"
+                  >Leaderboard</a
+                >
+              </li>
+              <li class="nav-item mb-2">
+                <a href="{% url 'about' %}" class="footer-link">About</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="{% url 'archive' %}" class="footer-link">Archives</a>
+              </li>
+            </ul>
+          </div> -->
+
+    <div class="col-3 position-relative">
+      <h5>In Collaboration With</h5>
+      <hr />
+      <div>
+        <img
+          style="margin: 1rem auto"
+          class="logo-img"
+          src="https://www.ilearnme.com/wp-content/uploads/2020/05/dxbpolice_logo-3.png"
+          height="120rem"
+        />
+      </div>
+    </div>
+    </div>
+
+    <div class="d-flex justify-content-between py-4 my-4 border-top">
+      <p>&copy; 2021 Company, Inc. All rights reserved.</p>
+      <ul class="list-unstyled d-flex">
+        <li>
+          <img height="30" src="/media/files/email-icon.png" />
+          <a
+            class="footer-link"
+            href="mailto:Modernsafetyambassador@gmail.com"
+            >
+            <!-- Modernsafetyambassador@gmail.com -->
+            </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+  {% endif %}
 </html>

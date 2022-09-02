@@ -1,0 +1,55 @@
+{% extends "safety_ambassador_program/layout.html" %} {% block title %} Safety
+Ambassador Program {% endblock %} {% block body %}
+
+<div class="leaderboard-background">
+  <div class="leaderboard-container one">
+    <div class="leaderboard-heading">
+      <h3 class="heading-title">Leaderboard</h3>
+    </div>
+    <div class="profile">
+      <div class="person second">
+        <div class="num">2</div>
+        <i class="fas fa-caret-up"></i>
+        <p class="link fullname">
+          {{leaderboardUsers.1.first_name}} {{leaderboardUsers.1.last_name}}
+        </p>
+        <p class="link">{{leaderboardUsers.1}}</p>
+        <p class="points">{{leaderboardUsers.1.score}}</p>
+      </div>
+      <div class="person first">
+        <div class="num">1</div>
+        <i class="fas fa-crown icon-large"></i>
+        <p class="link fullname">
+          {{leaderboardUsers.0.first_name}} {{leaderboardUsers.0.last_name}}
+        </p>
+        <p class="link">{{leaderboardUsers.0}}</p>
+        <p class="points">{{leaderboardUsers.0.score}}</p>
+      </div>
+      <div class="person third">
+        <div class="num">3</div>
+        <i class="fas fa-caret-up"></i>
+        <p class="link fullname">
+          {{leaderboardUsers.2.first_name}} {{leaderboardUsers.2.first_name}}
+        </p>
+        <p class="link">{{leaderboardUsers.2}}</p>
+        <p class="points">{{leaderboardUsers.2.score}}</p>
+      </div>
+    </div>
+    <div class="rest">
+      {% for user in leaderboardUsers %} {% if forloop.counter >= 4 %}
+      <div class="others flex">
+        <div class="rank">
+          <i class="fas fa-caret-up"></i>
+          <p class="num">{{forloop.counter}}</p>
+        </div>
+        <div class="info flex">
+          <p class="link">{{user.first_name}} {{user.last_name}}</p>
+          <p class="link">{{user.username}}</p>
+          <p class="points">{{user.score}}</p>
+        </div>
+      </div>
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

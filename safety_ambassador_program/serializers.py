@@ -7,5 +7,6 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Answer
         fields = (
-            'section', 'a', 'b', 'c', 'd'
+            'section', 'a', 'b', 'c', 'd', 'grade'
         )
+        depth=1

@@ -1,0 +1,89 @@
+{% extends "safety_ambassador_program/layout.html" %} {% block title %} Safety
+Ambassador Program {% endblock %} {% block body %} {% load static %}
+
+<style>
+  .hoverable {
+    position: relative;
+    transition: 0.25s all ease-in-out;
+    -webkit-transition: 0.25s all ease-in-out;
+  }
+
+  .hoverable:hover {
+    box-shadow: 0.1rem 0.2rem 1rem lightgray;
+    transform: translateY(0.4rem);
+    -webkit-transform: translateY(-0.4rem);
+  }
+</style>
+
+<div class="games-container p-4">
+  <h1 class="display-3 text-center" style="font-weight: 600">Games</h1>
+  <hr class="underline" />
+
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    {% for game in Digital %}
+    <div class="col">
+      <a href="{{game.url}}" target="_blank" rel="noopener noreferrer">
+        <div
+          class="card hoverable slide-in {% if forloop.counter|divisibleby:2 %} from-left {% else %} from-right {% endif %} mb-3"
+          style="height: 100%; background-color: #a8d0e6"
+        >
+          <div class="row m-auto">
+            <div class="col">
+              <img
+                src="{{game.image.url}}"
+                alt="Game Image"
+                class="img-fluid rounded-start"
+              />
+            </div>
+            <div class="col-6 m-auto">
+              <div class="card-body">
+                <h5 class="card-title">{{game.title}}</h5>
+                <p class="card-text">{{game.description}}</p>
+                <!-- <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<script>
+  const gifs = [
+    "reddude.gif",
+    "octo.gif",
+    "glitch.gif",
+    "batman.gif",
+    "rocket.gif",
+  ];
+  const colors = ["F8E9A1", "F76C6C", "A8D0E6"];
+  const basePath = "/media/gifs/";
+  document.addEventListener("DOMContentLoaded", function () {
+    let gifsCopy = gifs.slice(0); //make a copy of the array.
+    let colorsCopy = colors.slice(0);
+    for (
+      let i = 0;
+      i < document.getElementsByClassName("game-img").length;
+      i++
+    ) {
+      let rNumber = Math.floor(Math.random() * gifsCopy.length);
+      let img = document.getElementsByClassName("game-img")[i];
+      if (!img.src) {
+        let rand = gifsCopy.splice(rNumber, 1); //deletes the img from the array and returns it;
+        img.src = basePath + rand;
+      }
+      if (
+        i % 2 == 1 &&
+        i < document.getElementsByClassName("game-div").length
+      ) {
+        let rightGame = document.getElementsByClassName("game-div")[i];
+        let rColor = Math.floor(Math.random() * colorsCopy.length);
+        rightGame.style.backgroundColor = "#" + colorsCopy.splice(rColor, 1);
+      }
+    }
+  });
+</script>
+{% endblock %}

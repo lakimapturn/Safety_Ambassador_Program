@@ -1,0 +1,95 @@
+<div class="digital-title">
+  <h2 class="fade-in">What Is Age Inappropriate Content?</h2>
+  <hr class="underline" />
+</div>
+<div class="digital">
+  <div class="m-auto">
+    <div class="digital-body text-start">
+      {% if request.user.grade.grade < 6 %}
+      <p>
+        The internet is a large place with a huge variety of websites, pictures,
+        stories, and videos that you can access. While most of these are
+        educational and beneficial for us, there are certain things that are not
+        meant for us to see. Some things online may upset us and leave us in a
+        confused state. This happens because we don't have enough knowledge yet
+        to understand it.
+      </p>
+      <p>
+        While you may not be expecting to see it, if you do come across such
+        content, fear not! We will guide you on what to do, and how to cope with
+        it.
+      </p>
+      {% else %}
+      <p>
+        The internet is a large place with a huge variety of websites, pictures,
+        stories, and videos that you can access. While most of these are
+        educational and beneficial for us, there are certain things that are not
+        meant for us to see. Some things online may upset us and leave us in a
+        confused state. This happens because we don't have enough knowledge yet
+        to understand it.
+      </p>
+      <p>
+        There are few things online that we understand after reaching a certain
+        age as we become more mature and are able to rationally process what we
+        see. There is a high chance you unintentionally come across this content
+        while surfing the net. Such content is not made in your best interests,
+        which is why in this module, we will help support you as to how you can
+        go about it.
+      </p>
+      {% endif %}
+    </div>
+  </div>
+  <div class="m-auto">
+    <div>
+      {% if request.user.grade.grade < 6 %}
+      <img
+        style="width: 70vh; object-fit: cover"
+        src="https://blocksite.co/wp-content/uploads/2020/03/940x350-Blocksite-Cover-Inappropriate-2.png"
+      />
+      {% else %}
+      <img
+        style="width: 70vh; object-fit: cover"
+        src="https://blocksite.co/wp-content/uploads/2020/03/940x350-Blocksite-Cover-Inappropriate.png"
+      />
+      {% endif %}
+    </div>
+    <br />
+    <!-- <div class = "section-questions">
+    {% if 5 < request.user.grade.grade %}
+        <div class = "question-container">
+            <h4 class="text-danger">Q) </h4>
+            <h4>You post a comment on a YouTube video. Someone disagrees with your comment and replies angrily and irrationally, using harsh language. How do you respond? </h4>
+        </div>
+        <br>
+        <select onclick="startTimer()" class="form-select answer-fields" id = "Co" aria-label="Default select example">
+            <option id = "correct-answer">A) You ignore the comment.</option>
+            <option>B) You argue back, stating why you are right.</option>
+            <option>C) You type a heated reply to make the commenter feel worse.</option>
+        </select>
+         
+    {% else %}
+        <div class = "question-container">
+            <h4 class="text-danger">Q) </h4>
+            <h4>When talking to people online, what all is ok to share?</h4>
+        </div>
+        <br>
+        <select onclick="startTimer()" class="form-select answer-fields" id = "Co" aria-label="Default select example">
+            <option selected id = "correct-answer">A) Your favorite TV shows and cartoons.</option>
+            <option>B) Your daily routine.</option>
+            <option>C) Where you live and your parent’s phone numbers. </option>
+            <option>D) Birthday, School name and facts about you.</option>
+        </select>
+    {% endif %}
+    <br>
+    <br>
+    <button onclick="verifyAnswer(this)" class = "btn btn-secondary">Verify Answer</button>
+    <div class="alert alert-danger" role="alert" id = "output-msg">
+        <br>
+        {% if 5 < request.user.grade.grade %}
+            Most hackers use information such as your nickname or the name of your first pet. etc to hack into accounts. This is why websites suggest a random combination of characters to make a strong password.       
+        {% else %}
+            Do not share any other such information as in options b,c,d with strangers on the internet. If a stranger asks you for such information, please report it to a trusted adult immediately. 
+        {% endif %}    
+    </div> -->
+  </div>
+</div>

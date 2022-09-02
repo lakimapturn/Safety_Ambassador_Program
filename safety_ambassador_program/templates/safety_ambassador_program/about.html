@@ -1,104 +1,184 @@
-{% extends "safety_ambassador_program/layout.html" %}
-
-{% block title %} Safety Ambassador Program {% endblock %}
-
-{% block body %}
-  <div>
-    <div style="background-color: white; padding-bottom: 5%;">
-      <h1 class = "display-4" style="text-align: center; font-weight: 700;">About Us</h1>
-    </div>
-    <div style="position: absolute; z-index: -10;">
-      <div style="background-image: url(/media/templates/archive-yellow-template.png); height: 1080px; width: 1920px; margin: auto;"></div>
-      <div style="background-image: url(/media/templates/archive-darkblue-template.png); height: 1080px; width: 1920px;"></div>
-      <div style="background-image: url(/media/templates/archive-red-template.png); height: 1080px; width: 1920px;"></div>
-      <div style="background-image: url(/media/templates/archive-navy-template.png); height: 1080px; width: 1920px;"></div>
-      <div style="background-image: url(/media/templates/archive-skyblue-template.png); height: 1080px; width: 1920px; margin-bottom: 42vh;"></div>
-    </div>
-    <div style="padding: 1rem;">
-      <div class="about-div fade-in">
-        <div class = "about-info" style="width: 80%;">
-          <div>
-            Current Users: <span class= "countup">{{totalUsers}}</span>
-          </div>
-        </div> 
-      </div>
-      <div class="about-div fade-in">
-        <div class = "about-info" style="width: 80%;">
-          <div>
-            <p>The Safety Ambassadors conducted sessions for the students of middle school (grades 6-8) educating them about the UN Child Rights. More information about these sessions is listed in detail below. Along with these sessions, three of our mentors had the enthralling opportunity to host a webinar with the Dubai Police and the founder of the successful anti-cyberbullying app GoBubble - Henry Platten. Around 400 individuals across different age groups were present at this webinar. Our presentation on the theme ‘Children in the Digital World’ was met with a lot of positive feedback, and our mentors sincerely hope they were able to leave a lasting impact on the attendees.</p>
-          </div>
-        </div> 
-      </div>
-      <div class="about-div fade-in">
-        <h1 class = "section-title"><span>Meet The Team/Our Safety Ambassadors</span></h1>
-        <img src = "/media/team/SAP-team.JPG" style="width: 50%;">
-        <div class = "about-info">
-          <div>
-            <p>GEMS Modern Safety Ambassadors 2021/2022</p>
-            <p>Left To Right: Pratyush Sharma, Siya Gokhale, Meghna Praveen, Rachael Jijo, Laksh Makhija, Annika Jisu</p>
+{% extends "safety_ambassador_program/layout.html" %} {% block title %} Safety
+Ambassador Program {% endblock %} {% block body %}
+<div>
+  <div class="bg-white" style="padding: 2.5% 0">
+    <h1 class="display-3 text-center" style="font-weight: 600">About Us</h1>
+  </div>
+  <div style="position: absolute; z-index: -10; width: 100%">
+    <div
+      class="colored-background"
+      style="
+        background-image: url(/media/templates/archive-yellow-template.png);
+      "
+    ></div>
+    <div
+      class="colored-background"
+      style="
+        background-image: url(/media/templates/archive-darkblue-template.png);
+      "
+    ></div>
+    <div
+      class="colored-background"
+      style="background-image: url(/media/templates/archive-red-template.png)"
+    ></div>
+    <div
+      class="colored-background"
+      style="background-image: url(/media/templates/archive-navy-template.png)"
+    ></div>
+    <!-- <div class = "colored-background" style="background-image: url(/media/templates/archive-skyblue-template.png); margin-bottom: 42vh;"></div>  -->
+  </div>
+  <div style="padding: 1rem">
+    <div class="about-div fade-in">
+      <div class="about-counter">
+        <div class="stats-container">
+          <h3
+            style="
+              border-bottom: solid 0.2rem white;
+              width: 80%;
+              margin: 0rem auto 2rem auto;
+              border-radius: 0.1rem;
+            "
+          >
+            Statistics
+          </h3>
+          <div style="display: flex; justify-content: space-evenly">
+            <h2 style="margin: auto">
+              Current Users: <span class="countup">{{totalUsers}}</span>
+            </h2>
+            <!-- <h2 style="margin: auto;">Growth: <span class= "countup">1062</span></h2> -->
           </div>
         </div>
-        <img src = "/media/team/SAP-team-2020.jpg" style="width: 50%;">
-        <div class = "about-info">
-          <div>
-            <p>GEMS Modern Safety Ambassadors 2020/2021</p>
-            <p>Left To Right: Pratyush Sharma, Siya Gokhale, Meghna Praveen, Rachael Jijo, Laksh Makhija, Annika Jisu</p>
-          </div>
-        </div> 
       </div>
-      <div class="about-div fade-in">
-        <h1 class = "section-title"><span>Our Logo</span></h1>
-        <img src = "/media/SAP-logo.png" style="height: 75%">
-        <div class = "about-info">
-          <div>
-            <p>The sheild symbolizes protection and the microprocessor symbolizes the digital aspect of the SAP modules.</p>
-          </div>
-        </div> 
+    </div>
+    <div class="about-div fade-in">
+      <h1 class="section-title"><span>Our Safety Ambassadors</span></h1>
+      <img src="/media/team/SAP-team.JPG" style="width: 50%" />
+      <div class="about-info">
+        <div>
+          <p>GEMS Modern Safety Ambassadors 2021/2022</p>
+          <p>
+            Left To Right: Pratyush Sharma, Siya Gokhale, Meghna Praveen,
+            Rachael Jijo, Laksh Makhija, Annika Jisu
+          </p>
+        </div>
       </div>
-      <div class="about-div fade-in">
-        <h1 class = "section-title"><span>Testimonials</span></h1>
-        <div style="justify-content: space-evenly; display: flex;">
-          <div class = "about-info testimonial-div">
-            <h3>Neha Sancheti</h3>
-            <img src = "/media/team/Neha Sancheti.JPG" style="height: 10rem; border-radius: 50%; ">
-            <div class="testimonial-designation">-Safety Ambassador 2020/2021</div>
-            <p><i>“Through the Safety Ambassadors Program I was able to strengthen my public speaking skills, and become a more aware and confident person. I was able to connect with students of the middle school and help spread awareness of Child Rights to foster a more encouraging and nurturing environment.”</i></p>
+      <img src="/media/team/SAP-team-2020.jpg" style="width: 50%" />
+      <div class="about-info">
+        <div>
+          <p>GEMS Modern Safety Ambassadors 2020/2021</p>
+          <p>
+            Left To Right: Neha Sancheti, Avantika Saaish, Vishnumaya
+            Deepakchandran, Stuti Sawhney, Bianca Bhojwani
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="about-div fade-in">
+      <h1 class="section-title"><span>Our Cause</span></h1>
+      <div class="about-info" style="width: 80%">
+        <div>
+          <p>
+            We, the Safety Ambassadors, aim to raise awareness and ensure the
+            safety and security of children and to protect them from any
+            violations they may be exposed to. We educate the students on the
+            various laws of our land and make them aware of their rights and
+            duties. Through the SAP program, we hope to empower students to not
+            only stand up for their safety but also share any concerns
+            experienced by their peers.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="about-div fade-in">
+      <h1 class="section-title"><span>Our Logo</span></h1>
+      <img src="/media/SAP-logo.png" style="height: 75%" />
+      <div class="about-info">
+        <div style="width: 80%; margin: auto">
+          <p style="text-align: center">
+            Our SAP Logo symbolizes our dedication to protecting our students
+            online. The shield, which has been a symbol of protection from times
+            immemorial, is seen to be embossed with microprocessor, highlighting
+            our current topic of priority - protection of our students when they
+            are using their devices. Technology has immense power to shape the
+            world, but this very same power can be detrimental to us too, when
+            not used correctly. Thus for this year, our safety ambassadors are
+            channeling their efforts to equip the students with the skills to be
+            safe online and utilize the many possibilities of the technologies
+            which bring us all together.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="about-div fade-in">
+      <h1 class="section-title"><span>Testimonials</span></h1>
+      <div style="justify-content: space-evenly; display: flex">
+        <div class="about-info testimonial-div">
+          <h3>Neha Sancheti</h3>
+          <img
+            src="/media/team/Neha Sancheti.JPG"
+            style="height: 10rem; border-radius: 50%"
+          />
+          <div class="testimonial-designation">
+            -Safety Ambassador 2020/2021
           </div>
-          <div class = "about-info testimonial-div">
-            <h3>Annika Jisu</h3>
-            <img src = "/media/team/Annika-Jisu.jpg" style="height: 10rem; border-radius: 50%; ">
-            <div class="testimonial-designation">-Teacher in Charge of the Safety Ambassador Program</div>
-            <p><i>“The Safety Ambassadors Program has given us a platform that made it possible to be empowered and to empower. It has been a pertinent pathway which encouraged my students to develop leadership skills, be accountable, empathetic and flexible as they took on the role of GEMS Modern Safety Ambassadors.”</i></p>
+          <p>
+            <i
+              >“Through the Safety Ambassadors Program I was able to strengthen
+              my public speaking skills, and become a more aware and confident
+              person. I was able to connect with students of the middle school
+              and help spread awareness of Child Rights to foster a more
+              encouraging and nurturing environment.”</i
+            >
+          </p>
+        </div>
+        <div class="about-info testimonial-div">
+          <h3>Ms. Annika Jisu</h3>
+          <img
+            src="/media/team/Annika-Jisu.jpg"
+            style="height: 10rem; border-radius: 50%"
+          />
+          <div class="testimonial-designation">
+            -GEMS Modern SAP Coordinator
           </div>
+          <p>
+            <i
+              >“The Safety Ambassadors Program has given us a platform that made
+              it possible to be empowered and to empower. It has been a
+              pertinent pathway which encouraged my students to develop
+              leadership skills, be accountable, empathetic and flexible as they
+              took on the role of GEMS Modern Safety Ambassadors.”</i
+            >
+          </p>
         </div>
       </div>
     </div>
   </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const countupEls = document.querySelectorAll( '.countup' );
-      countupEls.forEach( animateCountUp );
-    })
-    const animationDuration = 1500;
-    const frameDuration = 1000 / 60;
-    const totalFrames = Math.round( animationDuration / frameDuration );
-    const easeOutQuad = t => t * ( 2 - t );
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const countupEls = document.querySelectorAll(".countup");
+    countupEls.forEach(animateCountUp);
+  });
+  const animationDuration = 1500;
+  const frameDuration = 1000 / 60;
+  const totalFrames = Math.round(animationDuration / frameDuration);
+  const easeOutQuad = (t) => t * (2 - t);
 
-    const animateCountUp = el => {
-      let frame = 0;
-      const countTo = parseInt( el.innerHTML, 10 );
-      const counter = setInterval( () => {
-        frame++;
-        const progress = easeOutQuad( frame / totalFrames );
-        const currentCount = Math.round( countTo * progress );
-        if ( parseInt( el.innerHTML, 10 ) !== currentCount ) {
-          el.innerHTML = currentCount;
-        }
+  const animateCountUp = (el) => {
+    let frame = 0;
+    const countTo = parseInt(el.innerHTML, 10);
+    const counter = setInterval(() => {
+      frame++;
+      const progress = easeOutQuad(frame / totalFrames);
+      const currentCount = Math.round(countTo * progress);
+      if (parseInt(el.innerHTML, 10) !== currentCount) {
+        el.innerHTML = currentCount;
+      }
 
-        if ( frame === totalFrames ) {
-          clearInterval( counter );
-        }
-      }, frameDuration );
-    };
-  </script>
+      if (frame === totalFrames) {
+        clearInterval(counter);
+      }
+    }, frameDuration);
+  };
+</script>
 {% endblock %}

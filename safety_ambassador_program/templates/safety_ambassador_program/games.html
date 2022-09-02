@@ -14,7 +14,7 @@
             class = "slide-in from-left left-game game-div" 
             {% endif %}
             >
-                <a href="{{game.url}}">
+                <a href="{{game.url}}" target="_blank" rel="noopener noreferrer">
                     <h2>{{game.title}}</h2>
                     <hr>
                     <div style="display: flex;">
@@ -49,9 +49,11 @@
     </div>
     <script>
         const gifs = ['reddude.gif', 'octo.gif', 'glitch.gif', 'batman.gif', 'rocket.gif'];
+        const colors = ["F8E9A1", "F76C6C", "A8D0E6"];
         const basePath = '/media/gifs/';
         document.addEventListener("DOMContentLoaded", function() {
             let gifsCopy = gifs.slice(0); //make a copy of the array.
+            let colorsCopy = colors.slice(0);
             for (let i = 0; i < document.getElementsByClassName('game-img').length; i++) {
                 let rNumber = Math.floor(Math.random() * gifsCopy.length);
                 let img = document.getElementsByClassName('game-img')[i];
@@ -59,8 +61,15 @@
                     let rand = gifsCopy.splice(rNumber, 1); //deletes the img from the array and returns it;
                     img.src = basePath+rand;
                 }
+                if(i%2 == 1 && i<document.getElementsByClassName('game-div').length) {
+                    let rightGame = document.getElementsByClassName('game-div')[i];
+                    let rColor = Math.floor(Math.random() * colorsCopy.length);
+                    rightGame.style.backgroundColor = "#" + colorsCopy.splice(rColor, 1);
+                }
             }
         })
+
+        
     </script>
     <!-- 
       <script>

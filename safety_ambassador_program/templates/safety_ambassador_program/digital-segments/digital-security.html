@@ -30,7 +30,8 @@
             <h4 class="text-danger">Q) </h4>
             <h4>Who can you share your passwords with?</h4>
         </div>
-        <select class="form-select answer-fields" id = "Se" aria-label="Default select example">
+        <br>
+        <select onclick="startTimer()" class="form-select answer-fields" id = "Se" aria-label="Default select example">
             <option>A) Your Teacher</option>
             <option id = "correct-answer">B) Your Family</option>
             <option>C) Your Friends</option>
@@ -42,7 +43,8 @@
             <h4 class="text-danger">Q) </h4>
             <h4>When online, from whom should you accept friend requests?</h4>
         </div>
-        <select class="form-select answer-fields" id = "Se" aria-label="Default select example">
+        <br>
+        <select onclick="startTimer()" class="form-select answer-fields" id = "Se" aria-label="Default select example">
             <option>A) Someone you think you’ve met before.</option>
             <option id = "correct-answer">B) Only from people you definitely know.</option>
             <option>C) Only strangers.</option>
@@ -52,11 +54,10 @@
     <br>
     <br>
     <button onclick="verifyAnswer(this)" class = "btn btn-secondary">Verify Answer</button>
-    <div class="alert alert-danger" role="alert" id = "invalid-input-msg">
-        <b>Oops!</b>
+    <div class="alert alert-danger" role="alert" id = "output-msg">
         <br>
         {% if request.user.grade.grade >= 3 and 5 <= request.user.grade.grade %}
-            Your parents are your closest family. They must be involved in your online activities so they can keep a track of things in case anything goes wrong. 
+            Your parents are your closest family. They must be involved in your online activities so they can keep a track of things in case anything goes wrong. <b>Remember</b>, Besides your family, do not share your password with anyone else, not even your friends.
         {% else %}
             The people that follow you on social media will have access to all your personal information and pictures, which is why you should be careful when you accept friend requests. Only those you know personally, and those you trust with your private information should have access to it.
         {% endif %}

@@ -30,16 +30,24 @@
 <hr>
 <div class = "section-questions">
     {% if request.user.grade.grade >= 3 and 5 <= request.user.grade.grade %}
-        <h4>You’ve gone on a gaming website and it asks you to download a file before you play. What should you do?</h4>
-        <select class="form-select answer-fields" id = "Sa" aria-label="Default select example">
+        <div class = "question-container">
+            <h4 class="text-danger">Q) </h4>
+            <h4>You've gone on a gaming website and it asks you to download a file before you play. What should you do?</h4>
+        </div>
+        <br>
+        <select onclick="startTimer()" class="form-select answer-fields" id = "Sa" aria-label="Default select example">
             <option id = "correct-answer" selected>A) Show the website to an adult and ask them if it’s safe.</option>
             <option>B) Download it anyway.</option>
             <option>C) Ask your friends what to do.</option>
             <option>D) Close your laptop and pretend you never saw anything.</option>
         </select>
     {% else %}
-        <h4>Which of the following is the strongest password?</h4>
-        <select class="form-select answer-fields" id = "Sa" aria-label="Default select example">
+        <div class = "question-container">
+            <h4 class="text-danger">Q) </h4>
+            <h4>Which of the following is the strongest password?</h4>
+        </div>
+        <br>
+        <select onclick="startTimer()" class="form-select answer-fields" id = "Sa" aria-label="Default select example">
             <option selected>A) A nickname that your friends call you (e.g. vihuChong)</option>
             <option>B) Your full name (e.g. jacksmith)</option>
             <option id = "correct-answer">C) A random word, number and punctuation combination (e.g. 1cecr3am!)</option>
@@ -49,8 +57,7 @@
     <br>
     <br>
     <button onclick="verifyAnswer(this)" class = "btn btn-secondary">Verify Answer</button>
-    <div class="alert alert-danger" role="alert" id = "invalid-input-msg">
-        <b>Oops!</b>
+    <div class="alert alert-danger" role="alert" id = "output-msg">
         <br>
         {% if request.user.grade.grade >= 3 and 5 <= request.user.grade.grade %}
             Prevention is better than cure, which is why it is better to ask a trusted adult   whether or not the link will be safe to download.

@@ -4,54 +4,74 @@
 
 {% block body %}
 <div>
-  <div style="background-color: white; padding-top: 5%;">
+  <div style="background-color: white; padding: 2.5% 0;">
     <h1 class = "display-4" style="text-align: center; font-weight: 700;">The SAP Journey:</h1>
   </div>
-  <div style="position: absolute; z-index: -10;">
-    <div style="background-image: url(/media/templates/archive-yellow-template.png); height: 1080px; width: 1920px; margin: auto;"></div>
-    <div style="background-image: url(/media/templates/archive-darkblue-template.png); height: 1080px; width: 1920px;"></div>
-    <div style="background-image: url(/media/templates/archive-red-template.png); height: 1080px; width: 1920px;"></div>
-    <div style="background-image: url(/media/templates/archive-navy-template.png); height: 1080px; width: 1920px;"></div>
-    <div style="background-image: url(/media/templates/archive-skyblue-template.png); height: 1080px; width: 1920px; margin-bottom: 42vh;"></div>
+  <div style="position: absolute; z-index: -10; width: 100%;">
+    <div class = "colored-background" style="background-image: url(/media/templates/archive-yellow-template.png);"></div>
+    <div class = "colored-background" style="background-image: url(/media/templates/archive-darkblue-template.png);"></div>
+    <div class = "colored-background" style="background-image: url(/media/templates/archive-red-template.png); "></div>
+    <div class = "colored-background" style="background-image: url(/media/templates/archive-navy-template.png);"></div>
+    <!-- <div class = "colored-background" style="background-image: url(/media/templates/archive-skyblue-template.png); margin-bottom: 42vh;"></div> -->
   </div>
   <div class = "archive-section">
     <h2 class="section-title"><span>Posters:</span></h2>
       <div class = "archive-div slide-in from-left">
         <div class = "poster-background">
-          <img onclick="enlargePoster(this)" src = "/media/posters/image0.png" class="poster">   
+          <img onclick="enlargePoster(this)" src = "/media/posters/image0.png" class="poster">  
+          <i class="uil uil-instagram"></i>
+          E-safety tips for middle school
         </div>
         <div class = "poster-background">
           <img onclick="enlargePoster(this)" src = "/media/posters/image1.png" class="poster">
+          <i><span class="iconify" data-icon="simple-icons:tiktok"></span></i>
+          E-safety tips for middle school
         </div>
         <div class = "poster-background">
           <img onclick="enlargePoster(this)" src = "/media/posters/image2.png" class="poster">
+          <i class="uil uil-snapchat-ghost"></i>
+          E-safety tips for middle school
         </div>
       </div>
       <div class = "archive-div slide-in from-right">
         <div class = "poster-background">
           <img onclick="enlargePoster(this)" src = "/media/posters/image3.png" class="poster">
+          <i class="uil uil-twitter"></i>
+          E-safety tips for middle school
         </div>
         <div class = "poster-background">
           <img onclick="enlargePoster(this)" src = "/media/posters/image4.png" class="poster">
+          <i><span class="iconify" data-icon="akar-icons:discord-fill"></span></i>
+          E-safety tips for middle school
         </div>
       </div>
       <div class = "archive-div slide-in from-left">
         <div class = "poster-background">
           <img onclick="enlargePoster(this)" src = "/media/posters/image5.png" class="poster">
+          <i class="uil uil-instagram"></i>
+          E-safety tips for senior school
         </div>
         <div class = "poster-background">
           <img onclick="enlargePoster(this)" src = "/media/posters/image6.png" class="poster">
+          <i><span class="iconify" data-icon="simple-icons:tiktok"></span></i>
+          E-safety tips for senior school
         </div>
         <div class = "poster-background">
           <img onclick="enlargePoster(this)" src = "/media/posters/image7.png" class="poster">
+          <i class="uil uil-snapchat-ghost"></i>
+          E-safety tips for senior school
         </div>
       </div>
       <div class = "archive-div slide-in from-right">
         <div class = "poster-background">
           <img onclick="enlargePoster(this)" src = "/media/posters/image8.png" class="poster">
+          <i class="uil uil-twitter"></i>
+          E-safety tips for senior school
         </div>
         <div class = "poster-background">
           <img onclick="enlargePoster(this)" src = "/media/posters/image9.png" class="poster">
+          <i><span class="iconify" data-icon="akar-icons:discord-fill"></span></i>
+          E-safety tips for senior school
         </div>
       </div>
   </div>
@@ -74,16 +94,21 @@
     <div class = "archive-div slide-in from-left">
       <div class = "poster-background">
         <img onclick="location.href = '/media/posters/Guide to staying safe online.pdf'" class="poster" src = "/media/posters/how-to-stay-safe-online-cover.png" style="height: 250px; width: auto;">
+        Student's Guide to Staying Safe Online
       </div>
       <div class = "poster-background">
         <img onclick="location.href = 'https://docs.google.com/presentation/d/e/2PACX-1vR2wvK8g_vRoXdA3QwppOH4_sukfXO2Rl591HM4BQvYaNqB7urBRtCsHxcBsq15P4XkpMs-d7r3rWox/pub?start=true&loop=true&delayms=60000&slide=id.g193b26f510_0_0'" class="poster" src = "/media/posters/identity-cover.JPG" style="height: 250px; width: auto;">
+        United Nations Convention on Identity
       </div>
     </div>
   </div>
 </div>
 <script>
   function enlargePoster(poster) {
-    location.href = poster.src;
+    // location.href = poster.src;
+    window.open(
+      poster.src, '_blank', 'noopener noreferrer'
+    )
   }
 </script>
 {% endblock %}

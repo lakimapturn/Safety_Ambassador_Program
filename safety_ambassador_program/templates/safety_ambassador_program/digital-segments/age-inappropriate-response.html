@@ -1,0 +1,128 @@
+<div class="digital-title">
+  <h2 class="fade-in">How Should We Respond?</h2>
+  <hr class="underline" />
+</div>
+<div class="digital">
+  <div class="m-auto">
+    <div class="digital-body text-start">
+      {% if request.user.grade.grade < 6 %}
+      <p>
+        The Internet is a big space. It is very open and vast, connecting people
+        all around the world. It teaches us, students, so many important things.
+        It is, also, very dangerous if we do not understand where we need to go
+        or how we need to responsibly use the World Wide Web.
+      </p>
+      <p>
+        When you find yourself in a difficult situation, such as finding
+        uncomfortable things online, you may be confused. You mustn't worry! The
+        Safety Ambassadors encourage you to think of an adult- it may be your
+        parents or your teachers. Letting an adult know about what you find
+        disturbing is a good start to making the Internet a much safer space for
+        you and your friends to learn and grow.
+      </p>
+      {% else %}
+      <p>
+        Seeing inappropriate content at a young age can leave children feeling
+        confused and unable to process what they have seen or experienced.
+      </p>
+      <p>We must first understand the effect it has on us…</p>
+      <p>
+        Viewing age-inappropriate content online can subconsciously alter a
+        student's developing mindset and encourage them to behave erratically.
+        Inappropriate content hazards a safety risk- it can cause mental and
+        emotional damage to children of any age, especially very young children.
+        It can cause them to have nightmares or a change in behavior, more so if
+        the content was very vivid.
+      </p>
+      {% endif %}
+    </div>
+  </div>
+  <div class="m-auto">
+    <div>
+      {% if request.user.grade.grade < 6 %}
+      <img
+        style="width: 70vh; object-fit: cover"
+        src="https://englishtribuneimages.blob.core.windows.net/gallary-content/2021/11/Desk/2021_11$largeimg_1100653790.jpg"
+      />
+      {% else %}
+      <img
+        style="width: 70vh; object-fit: cover"
+        src="https://americansecuritytoday.com/wp-content/uploads/2020/03/child-online-safety-shutterstock_1419573548.jpg"
+      />
+      {% endif %}
+    </div>
+  </div>
+  <br />
+  <!-- <div class = "section-questions">
+      {% if 5 < request.user.grade.grade %}
+          <div class = "question-container">
+              <h4 class="text-danger">Q) </h4>
+              <h4>You post a comment on a YouTube video. Someone disagrees with your comment and replies angrily and irrationally, using harsh language. How do you respond? </h4>
+          </div>
+          <br>
+          <select onclick="startTimer()" class="form-select answer-fields" id = "Co" aria-label="Default select example">
+              <option id = "correct-answer">A) You ignore the comment.</option>
+              <option>B) You argue back, stating why you are right.</option>
+              <option>C) You type a heated reply to make the commenter feel worse.</option>
+          </select>
+           
+      {% else %}
+          <div class = "question-container">
+              <h4 class="text-danger">Q) </h4>
+              <h4>When talking to people online, what all is ok to share?</h4>
+          </div>
+          <br>
+          <select onclick="startTimer()" class="form-select answer-fields" id = "Co" aria-label="Default select example">
+              <option selected id = "correct-answer">A) Your favorite TV shows and cartoons.</option>
+              <option>B) Your daily routine.</option>
+              <option>C) Where you live and your parent’s phone numbers. </option>
+              <option>D) Birthday, School name and facts about you.</option>
+          </select>
+      {% endif %}
+      <br>
+      <br>
+      <button onclick="verifyAnswer(this)" class = "btn btn-secondary">Verify Answer</button>
+      <div class="alert alert-danger" role="alert" id = "output-msg">
+          <br>
+          {% if 5 < request.user.grade.grade %}
+              Most hackers use information such as your nickname or the name of your first pet. etc to hack into accounts. This is why websites suggest a random combination of characters to make a strong password.       
+          {% else %}
+              Do not share any other such information as in options b,c,d with strangers on the internet. If a stranger asks you for such information, please report it to a trusted adult immediately. 
+          {% endif %}    
+      </div> -->
+</div>
+<br />
+<div class="text-start mx-auto" style="width: 60%">
+  <p>
+    Now that we've understood what is classified as inappropriate on the
+    internet, we must ask ourselves:
+    <br />
+    <strong class="text-center"
+      >What do we do when we find such content?</strong
+    >
+  </p>
+  <p>
+    Stumbling upon inappropriate content at a young age can leave you feeling
+    confused and unable to process what you have seen or experienced.
+  </p>
+  <p>
+    Reporting such a problem is a good step to take to protect your friends and
+    yourself from the same problem. Alerting your teacher, your parent, a
+    trusted adult or a Safety Ambassador is a powerful step to decrease your
+    exposure to the same. We would be able to help you feel more comfortable
+    online, safely browse your interests and learn new things!
+  </p>
+  <p>
+    Summarizing the points, we encourage you to do the following in the case
+    that you have experienced uneasiness online, via. Content:
+  </p>
+  <main>
+    <ol class="gradient-list">
+      <li><b>Report</b> the content/site</li>
+      <li><b>Spread awareness</b> of this problem by cautioning your peers.</li>
+      <li>
+        <b>Alert/Inform</b> a trusted teacher, parent or Safety Ambassador.
+      </li>
+    </ol>
+  </main>
+</div>

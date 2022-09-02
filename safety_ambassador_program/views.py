@@ -13,15 +13,26 @@ from rest_framework.response import Response
 
 # Create your views here.
 
+class scoreAPI(APIView):
+    def get(self, request, *args, **kwargs):
+        return Response(request.user.score)
+    
+    def patch(self, request, *args, **kwargs):
+        request.user.score = request.user.score + request.data['points']
+        request.user.save()
+        return Response(request.user.score)
+
 class answersAPI(APIView):
     def get(self, request, *args, **kwargs):
         qs = Answer.objects.all().filter(section = request.query_params['section'])
+        qs = qs.filter(grade = request.query_params['grade'])
         serializer = PostSerializer(qs, many=True)
         return Response(serializer.data)
 
     def patch(self, request, *args, **kwargs):
         data = request.data
-        answer = Answer.objects.get(section = data["section"])
+        answer = Answer.objects.all().filter(section = data["section"])
+        answer = answer.get(grade = data['grade'])
         if data["answer"] == 'A':
             answer.a = answer.a + 1
         elif data["answer"] == 'B':
@@ -36,7 +47,11 @@ class answersAPI(APIView):
 
 @login_required
 def index(request):
-    # print(user_stats = request.user.objects.user_stats(request.user.start_time, request.user.end_time))
+    # print(User.objects.filter(intro_completed = True).count())
+    # for user in User.objects.filter(intro_completed = True):
+    #     if not user.is_superuser:
+    #         user.intro_completed = False
+    #         user.save()
     return render(request, "safety_ambassador_program/index.html")
 
 @login_required
@@ -46,13 +61,17 @@ def aboutPage(request):
     })
 
 @login_required
+def leaderboard(request):
+    leaderboardUsers = User.objects.order_by('-score')[:10]
+    return render(request, "safety_ambassador_program/leaderboard.html", {
+        "leaderboardUsers": leaderboardUsers,
+        "leaderboardLength": leaderboardUsers.count(),
+    })
+
+@login_required
 def gamesPage(request):
-    gradeGames = []
-    for game in Game.objects.all(): 
-        if request.user.grade in game.grade.all():
-            gradeGames.append(game)
-    return render(request, "safety_ambassador_program/games.html", {
-        "Digital": gradeGames
+    return render(request, "safety_ambassador_program/newGames.html", {
+        "Digital": Game.objects.filter(grade = request.user.grade)
     })
 
 @login_required

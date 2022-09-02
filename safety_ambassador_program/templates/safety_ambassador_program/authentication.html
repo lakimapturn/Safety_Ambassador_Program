@@ -1,72 +1,86 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Safety Ambassador Program</title>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link
+      href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"
+    />
 
     <!-- Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"rel="stylesheet"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+      @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
 
-        body{
-            font-family: 'Poppins', sans-serif !important;
-            font-weight: 300;
-            font-size: 15px;
-            line-height: 1.7;
-            color: #c4c3ca;
-            /* background-color: #1f2029; */
-            background-color: #A8D0E6;
-            background-image: linear-gradient(154deg, #A8D0E6 40%, #fff 40%);
-            overflow-x: hidden;
-        }
-        a {
-            cursor: pointer;
-            transition: all 200ms linear;
-        }
-        a:hover {
-            text-decoration: none;
-        }
-        .link {
+      body {
+        font-family: "Poppins", sans-serif !important;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 1.7;
         color: #c4c3ca;
-        }
-        .link:hover {
-        color: #F8E9A1;
-        }
-        p {
+        /* background-color: #1f2029; */
+        background-color: #a8d0e6;
+        background-image: linear-gradient(154deg, #a8d0e6 40%, #fff 40%);
+        overflow-x: hidden;
+      }
+      a {
+        cursor: pointer;
+        transition: all 200ms linear;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+      .link {
+        color: #c4c3ca;
+      }
+      .link:hover {
+        color: #f8e9a1;
+      }
+      p {
         font-weight: 500;
         font-size: 14px;
         line-height: 1.7;
-        }
-        h4 {
+      }
+      h4 {
         font-weight: 600;
-        }
-        h6 span{
+      }
+      h6 span {
         padding: 0 20px;
         text-transform: uppercase;
         font-weight: 700;
-        }
-        .section{
+      }
+      .section {
         position: relative;
         width: 100%;
         display: block;
-        }
-        .full-height{
+      }
+      .full-height {
         min-height: 100vh;
-        }
-        [type="checkbox"]:checked,
-        [type="checkbox"]:not(:checked){
+      }
+      [type="checkbox"]:checked,
+      [type="checkbox"]:not(:checked) {
         position: absolute;
         left: -9999px;
-        }
-        .authentication-title {
-            color: #24305E;
-        }
-        .checkbox:checked + label,
-        .checkbox:not(:checked) + label{
+      }
+      .authentication-title {
+        color: #24305e;
+      }
+      .checkbox:checked + label,
+      .checkbox:not(:checked) + label {
         position: relative;
         display: block;
         text-align: center;
@@ -76,19 +90,19 @@
         padding: 0;
         margin: 10px auto;
         cursor: pointer;
-        background-color: #F8E9A1;
-        }
-        .checkbox:checked + label:before,
-        .checkbox:not(:checked) + label:before{
+        background-color: #f8e9a1;
+      }
+      .checkbox:checked + label:before,
+      .checkbox:not(:checked) + label:before {
         position: absolute;
         display: block;
         width: 36px;
         height: 36px;
         border-radius: 50%;
-        color: #F8E9A1;
+        color: #f8e9a1;
         background-color: #102770;
-        font-family: 'unicons';
-        content: '\eb4f';
+        font-family: "unicons";
+        content: "\eb4f";
         z-index: 20;
         top: -10px;
         left: -10px;
@@ -96,13 +110,12 @@
         text-align: center;
         font-size: 24px;
         transition: all 0.5s ease;
-        }
-        .checkbox:checked + label:before {
+      }
+      .checkbox:checked + label:before {
         transform: translateX(44px) rotate(-270deg);
-        }
+      }
 
-
-        .card-3d-wrap {
+      .card-3d-wrap {
         position: relative;
         width: 440px;
         max-width: 100%;
@@ -111,25 +124,26 @@
         transform-style: preserve-3d;
         perspective: 800px;
         margin-top: 60px;
-        }
-        .card-3d-wrapper {
+      }
+      .card-3d-wrapper {
         width: 100%;
         height: 100%;
-        position:absolute;    
+        position: absolute;
         top: 0;
-        left: 0;  
+        left: 0;
         -webkit-transform-style: preserve-3d;
         transform-style: preserve-3d;
-        transition: all 600ms ease-out; 
-        }
-        .card-front {
-            height: 520px !important;
-        }
-        .card-front, .card-back {
+        transition: all 600ms ease-out;
+      }
+      .card-front {
+        height: 520px !important;
+      }
+      .card-front,
+      .card-back {
         width: 100%;
         height: 100%;
-        background-color: #24305E;
-        background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+        background-color: #24305e;
+        background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg");
         background-position: bottom center;
         background-repeat: no-repeat;
         background-size: 300%;
@@ -143,14 +157,14 @@
         -moz-backface-visibility: hidden;
         -o-backface-visibility: hidden;
         backface-visibility: hidden;
-        }
-        .card-back {
+      }
+      .card-back {
         transform: rotateY(180deg);
-        }
-        .checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
+      }
+      .checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
         transform: rotateY(180deg);
-        }
-        .center-wrap{
+      }
+      .center-wrap {
         position: absolute;
         width: 100%;
         padding: 0 35px;
@@ -159,14 +173,14 @@
         transform: translate3d(0, -50%, 35px) perspective(100px);
         z-index: 20;
         display: block;
-        }
-        .form-group{ 
+      }
+      .form-group {
         position: relative;
         display: block;
-            margin: 0;
-            padding: 0;
-        }
-        .form-style {
+        margin: 0;
+        padding: 0;
+      }
+      .form-style {
         padding: 13px 20px;
         padding-left: 55px;
         height: 48px;
@@ -183,15 +197,15 @@
         border: none;
         -webkit-transition: all 200ms linear;
         transition: all 200ms linear;
-        box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
-        }
-        .form-style:focus,
-        .form-style:active {
+        box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
+      }
+      .form-style:focus,
+      .form-style:active {
         border: none;
         outline: none;
-        box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
-        }
-        .input-icon {
+        box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
+      }
+      .input-icon {
         position: absolute;
         top: 0;
         left: 18px;
@@ -199,63 +213,63 @@
         font-size: 24px;
         line-height: 48px;
         text-align: left;
-        color: #F8E9A1;
+        color: #f8e9a1;
         -webkit-transition: all 200ms linear;
-            transition: all 200ms linear;
-        }
+        transition: all 200ms linear;
+      }
 
-        .form-group input:-ms-input-placeholder  {
+      .form-group input:-ms-input-placeholder {
         color: #c4c3ca;
         opacity: 0.7;
         -webkit-transition: all 200ms linear;
-            transition: all 200ms linear;
-        }
-        .form-group input::-moz-placeholder  {
+        transition: all 200ms linear;
+      }
+      .form-group input::-moz-placeholder {
         color: #c4c3ca;
         opacity: 0.7;
         -webkit-transition: all 200ms linear;
-            transition: all 200ms linear;
-        }
-        .form-group input:-moz-placeholder  {
+        transition: all 200ms linear;
+      }
+      .form-group input:-moz-placeholder {
         color: #c4c3ca;
         opacity: 0.7;
         -webkit-transition: all 200ms linear;
-            transition: all 200ms linear;
-        }
-        .form-group input::-webkit-input-placeholder  {
+        transition: all 200ms linear;
+      }
+      .form-group input::-webkit-input-placeholder {
         color: #c4c3ca;
         opacity: 0.7;
         -webkit-transition: all 200ms linear;
-            transition: all 200ms linear;
-        }
-        .form-group input:focus:-ms-input-placeholder  {
+        transition: all 200ms linear;
+      }
+      .form-group input:focus:-ms-input-placeholder {
         opacity: 0;
         -webkit-transition: all 200ms linear;
-            transition: all 200ms linear;
-        }
-        .form-group input:focus::-moz-placeholder  {
+        transition: all 200ms linear;
+      }
+      .form-group input:focus::-moz-placeholder {
         opacity: 0;
         -webkit-transition: all 200ms linear;
-            transition: all 200ms linear;
-        }
-        .form-group input:focus:-moz-placeholder  {
+        transition: all 200ms linear;
+      }
+      .form-group input:focus:-moz-placeholder {
         opacity: 0;
         -webkit-transition: all 200ms linear;
-            transition: all 200ms linear;
-        }
-        .form-group input:focus::-webkit-input-placeholder  {
+        transition: all 200ms linear;
+      }
+      .form-group input:focus::-webkit-input-placeholder {
         opacity: 0;
         -webkit-transition: all 200ms linear;
-            transition: all 200ms linear;
-        }
+        transition: all 200ms linear;
+      }
 
-        .btn{  
+      .btn {
         border-radius: 4px;
         height: 44px;
         font-size: 13px;
         font-weight: 600;
         text-transform: uppercase;
-        -webkit-transition : all 200ms linear;
+        -webkit-transition: all 200ms linear;
         transition: all 200ms linear;
         padding: 0 30px;
         letter-spacing: 1px;
@@ -273,127 +287,202 @@
         -ms-flex-pack: center;
         text-align: center;
         border: none;
-        background-color: #F8E9A1;
+        background-color: #f8e9a1;
         color: #102770;
-        box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
-        }
-        .btn:active,
-        .btn:focus{  
+        box-shadow: 0 8px 24px 0 rgba(255, 235, 167, 0.2);
+      }
+      .btn:active,
+      .btn:focus {
         background-color: #102770;
-        color: #F8E9A1;
-        box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
-        }
-        .btn:hover{  
+        color: #f8e9a1;
+        box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
+      }
+      .btn:hover {
         background-color: #102770;
-        color: #F8E9A1;
-        box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
-        }
+        color: #f8e9a1;
+        box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
+      }
 
-        .logo {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            display: block;
-            transition: all 250ms linear;
-            display: flex;
-        }
-        .logo img {
-            width: auto;
-            display: block;
-        }
+      .logo {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        display: block;
+        transition: all 250ms linear;
+        display: flex;
+      }
+      .logo img {
+        width: auto;
+        display: block;
+      }
     </style>
-</head>
-<body>
-    <div class="logo" style="display: block; width: 98%;">
-        <div class = "logo-div" style = "display: flex; margin: 1rem; float: left;">
-            <img class = "logo-img" src = "/media/SAP-logo.png" height="100px">
-            <img class = "logo-img" src = "https://i2.wp.com/dxbmodern.com/wp-content/uploads/2020/10/1564693423_LOGO-1.png?fit=200%2C200" height = "95px">
-        </div>
-        <div style = "display: flex; margin: 1rem; float: right;">
-            <img class = "logo-img" src = "https://iconape.com/wp-content/png_logo_vector/gems-education-logo.png" height = "95px">
-            <img class = "logo-img" src = "https://www.ilearnme.com/wp-content/uploads/2020/05/dxbpolice_logo-3.png" height = "95px">
-        </div>
+  </head>
+  <body>
+    <div class="logo" style="display: block; width: 98%">
+      <div class="logo-div" style="display: flex; margin: 1rem; float: left">
+        <img class="logo-img" src="/media/SAP-logo.png" height="100" />
+        <img
+          class="logo-img"
+          src="https://i2.wp.com/dxbmodern.com/wp-content/uploads/2020/10/1564693423_LOGO-1.png?fit=200%2C200"
+          height="100"
+        />
+      </div>
+      <div style="display: flex; margin: 1rem; float: right">
+        <img
+          class="logo-img"
+          src="https://iconape.com/wp-content/png_logo_vector/gems-education-logo.png"
+          height="100"
+        />
+        <img
+          class="logo-img"
+          src="https://www.ilearnme.com/wp-content/uploads/2020/05/dxbpolice_logo-3.png"
+          height="100"
+        />
+      </div>
     </div>
 
     <div class="section">
-        <div class="container">
-            <div class="row full-height justify-content-center">
-                <div class="col-12 text-center align-self-center py-5">
-                    <div class="section pb-5 pt-5 pt-sm-2 text-center">
-                        <h6 class="mb-0 pb-3"><span class = "authentication-title">Log In </span><span class = "authentication-title">Sign Up</span></h6>
-                        <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
-                        <label for="reg-log"></label>
-                        <div class="card-3d-wrap mx-auto">
-                            <div class="card-3d-wrapper">
-                                <div class="card-front">
-                                    <div class="center-wrap">
-                                        <div class="section text-center">
-                                            <h4 class="mb-4 pb-3">Log In</h4>
-                                            <form action = "{% url 'authentication' %}" method="POST">
-                                                {% csrf_token %}
-                                                <div class="form-group">
-                                                    <input type="text" name="loguser" class="form-style" placeholder="Your Username" id="loguser" autocomplete="off">
-                                                    <i class="input-icon uil uil-at"></i>
-                                                </div>	
-                                                <div class="form-group mt-2">
-                                                    <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
-                                                    <i class="input-icon uil uil-lock-alt"></i>
-                                                    <i class="input-icon uim uim-at"></i>
-                                                </div>
-                                                <input type="hidden" value = "login" name = "purpose">
-                                                <button type="submit" class = "btn mt-4">submit</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    {% if loginMessage %}
-                                        <div class="alert alert-warning" role="alert">
-                                            {{loginMessage}}
-                                        </div>
-                                    {% endif %}
-                                </div>
-                                <div class="card-back">
-                                    <div class="center-wrap">
-                                        <div class="section text-center">
-                                            <h4 class="mb-4 pb-3">Sign Up</h4>
-                                            <form action="{% url 'authentication' %}" method="POST">
-                                                {% csrf_token %}
-                                                <div class="form-group">
-                                                    <input type="text" name="logfname" class="form-style" placeholder="First Name" id="logfname" autocomplete="off">
-                                                    <i class="input-icon uil uil-user"></i>
-                                                </div>	
-                                                <div class="form-group mt-2">
-                                                    <input type="text" name="loglname" class="form-style" placeholder="Last Name" id="loglname" autocomplete="off">
-                                                    <i class="input-icon uil uil-user"></i>
-                                                </div>
-                                                <div class="form-group mt-2">
-                                                    <input max="8" min="3" type="number" name="loggrade" class="form-style" placeholder="Grade" id="loggrade" autocomplete="off">
-                                                    <i class="input-icon uil uil-graduation-cap"></i>
-                                                </div>	
-                                                <div class="form-group mt-2">
-                                                    <input type="text" name="loguname" class="form-style" placeholder="Username" id="loguname" autocomplete="off">
-                                                    <i class="input-icon uil uil-at"></i>
-                                                </div>	
-                                                <div class="form-group mt-2">
-                                                    <input type="password" name="logpass" class="form-style" placeholder="Password" id="logpass" autocomplete="off">
-                                                    <i class="input-icon uil uil-lock-alt"></i>
-                                                </div>
-                                                <input type="hidden" value = "register" name = "purpose">
-                                                <button type="submit" class="btn mt-4">submit</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    {% if registerMessage %}
-                                        <div class="alert alert-warning" role="alert">
-                                            {{registerMessage}}
-                                        </div>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
+      <div class="container">
+        <div class="row full-height justify-content-center">
+          <div class="col-12 text-center align-self-center py-5">
+            <div class="section pb-5 pt-5 pt-sm-2 text-center">
+              <h6 class="mb-0 pb-3">
+                <span class="authentication-title">Log In </span
+                ><span class="authentication-title">Sign Up</span>
+              </h6>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="reg-log"
+                name="reg-log"
+              />
+              <label for="reg-log"></label>
+              <div class="card-3d-wrap mx-auto">
+                <div class="card-3d-wrapper">
+                  <div class="card-front">
+                    <div class="center-wrap">
+                      <div class="section text-center">
+                        <h4 class="mb-4 pb-3">Log In</h4>
+                        <form action="{% url 'authentication' %}" method="POST">
+                          {% csrf_token %}
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              name="loguser"
+                              class="form-style"
+                              placeholder="Your Username"
+                              id="loguser"
+                              autocomplete="off"
+                            />
+                            <i class="input-icon uil uil-at"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input
+                              type="password"
+                              name="logpass"
+                              class="form-style"
+                              placeholder="Your Password"
+                              id="logpass"
+                              autocomplete="off"
+                            />
+                            <i class="input-icon uil uil-lock-alt"></i>
+                            <i class="input-icon uim uim-at"></i>
+                          </div>
+                          <input type="hidden" value="login" name="purpose" />
+                          <button type="submit" class="btn mt-4">submit</button>
+                        </form>
+                      </div>
                     </div>
+                    {% if loginMessage %}
+                    <div class="alert alert-warning" role="alert">
+                      {{loginMessage}}
+                    </div>
+                    {% endif %}
+                  </div>
+                  <div class="card-back">
+                    <div class="center-wrap">
+                      <div class="section text-center">
+                        <h4 class="mb-4 pb-3">Sign Up</h4>
+                        <form action="{% url 'authentication' %}" method="POST">
+                          {% csrf_token %}
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              name="logfname"
+                              class="form-style"
+                              placeholder="First Name"
+                              id="logfname"
+                              autocomplete="off"
+                            />
+                            <i class="input-icon uil uil-user"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input
+                              type="text"
+                              name="loglname"
+                              class="form-style"
+                              placeholder="Last Name"
+                              id="loglname"
+                              autocomplete="off"
+                            />
+                            <i class="input-icon uil uil-user"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input
+                              max="8"
+                              min="3"
+                              type="number"
+                              name="loggrade"
+                              class="form-style"
+                              placeholder="Grade"
+                              id="loggrade"
+                              autocomplete="off"
+                            />
+                            <i class="input-icon uil uil-graduation-cap"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input
+                              type="text"
+                              name="loguname"
+                              class="form-style"
+                              placeholder="Username"
+                              id="loguname"
+                              autocomplete="off"
+                            />
+                            <i class="input-icon uil uil-at"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input
+                              type="password"
+                              name="logpass"
+                              class="form-style"
+                              placeholder="Password"
+                              id="logpass"
+                              autocomplete="off"
+                            />
+                            <i class="input-icon uil uil-lock-alt"></i>
+                          </div>
+                          <input
+                            type="hidden"
+                            value="register"
+                            name="purpose"
+                          />
+                          <button type="submit" class="btn mt-4">submit</button>
+                        </form>
+                      </div>
+                    </div>
+                    {% if registerMessage %}
+                    <div class="alert alert-warning" role="alert">
+                      {{registerMessage}}
+                    </div>
+                    {% endif %}
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
