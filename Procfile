@@ -1,1 +1,1 @@
-web: gunicorn SAP.wsgi
+web: gunicorn SAP.wsgi --log-file
