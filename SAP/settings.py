@@ -26,7 +26,7 @@ SECRET_KEY = 'g^7!uxnnkm(@r-pydt%g48(+yuqjd%+c=oi3hly42uow%^ke_6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['safety-ambassador-program.up.railway.app', 'localhost']
 
 
 # Application definition
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'SAP.wsgi.application'
+WSGI_APPLICATION = 'SAP.wsgi.app'
 
 
 # Database
